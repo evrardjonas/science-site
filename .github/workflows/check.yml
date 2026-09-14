@@ -1,0 +1,28 @@
+name: Vérifier le site
+
+on:
+  pull_request:
+  push:
+    branches-ignore:
+      - main
+
+permissions:
+  contents: read
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Récupérer le dépôt
+        uses: actions/checkout@v4
+      - name: Installer Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: npm
+      - name: Installer les dépendances
+        run: npm ci
+      - name: Vérifier Astro et TypeScript
+        run: npm run check
+      - name: Compiler le site
+        run: npm run build
