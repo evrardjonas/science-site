@@ -1,0 +1,78 @@
+---
+interface MediaItem {
+  type: string;
+  src: string;
+  alt: string;
+  title: string;
+  caption: string;
+  poster: string;
+  reducedMotionSrc: string;
+}
+
+interface Props {
+  item: MediaItem;
+  wide?: boolean;
+}
+
+const { item, wide = false } = Astro.props;
+const assetUrl = (path: string) => path ? `${import.meta.env.BASE_URL}${path}` : undefined;
+---
+
+<figure class:list={['workshop-media', { wide, placeholder: item.type === 'placeholder' }]}>
+  {item.type === 'image' && (
+    <div class="media-frame">
+      <picture>
+        {item.reducedMotionSrc && (
+          <source media="(prefers-reduced-motion: reduce)" srcset={assetUrl(item.reducedMotionSrc)} />
+        )}
+        <img src={assetUrl(item.src)} alt={item.alt} loading="lazy" decoding="async" />
+      </picture>
+    </div>
+  )}
+
+  {item.type === 'video' && (
+    <div class="media-frame video-frame">
+      <video controls playsinline preload="metadata" poster={assetUrl(item.poster)} aria-label={item.title}>
+        <source src={assetUrl(item.src)} type="video/mp4" />
+        Your browser does not support embedded video.
+      </video>
+    </div>
+  )}
+
+  {item.type === 'placeholder' && (
+    <div class="placeholder-copy">
+      <span>Media to add</span>
+      <strong>{item.title}</strong>
+      <small>{item.caption}</small>
+    </div>
+  )}
+
+  {item.type !== 'placeholder' && (item.title || item.caption) && (
+    <figcaption>
+      {item.title && <strong>{item.title}</strong>}
+      {item.caption && <span>{item.caption}</span>}
+    </figcaption>
+  )}
+</figure>
+
+<style>
+  .workshop-media { min-width: 0; margin: 0; }
+  .media-frame { overflow: hidden; border: 1px solid var(--color-line); border-radius: var(--radius-md); background: var(--color-surface-strong); }
+  .media-frame img, .media-frame video { width: 100%; height: auto; }
+  .media-frame img { object-fit: contain; }
+  .video-frame { background: var(--color-bg); }
+  .video-frame video { aspect-ratio: 16 / 9; background: var(--color-bg); object-fit: contain; }
+  figcaption { display: grid; gap: var(--space-1); padding: var(--space-3) var(--space-1) 0; }
+  figcaption strong { font-family: var(--font-display); font-size: 1rem; line-height: 1.2; }
+  figcaption span { color: var(--color-muted); font-size: 0.84rem; }
+  .placeholder { display: grid; min-height: 18rem; padding: var(--space-4); border: 1px dashed var(--color-muted); border-radius: var(--radius-md); background: var(--color-ink); color: var(--color-surface); }
+  .placeholder-copy { display: grid; align-content: end; gap: var(--space-2); }
+  .placeholder-copy span { color: var(--color-accent); font-size: 0.68rem; font-weight: 850; letter-spacing: 0.11em; text-transform: uppercase; }
+  .placeholder-copy strong { font-family: var(--font-display); font-size: 1.1rem; line-height: 1.15; }
+  .placeholder-copy small { color: var(--color-line); }
+  .wide { margin: var(--space-6) 0 0 calc(3rem + var(--space-4)); }
+
+  @media (max-width: 50rem) {
+    .wide { margin-left: 0; }
+  }
+</style>

@@ -1,8 +1,10 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import WorkshopMedia from '../../components/WorkshopMedia.astro';
 import content from '../../content/scienteens.json';
 
-const { meta, hero, interview, other } = content;
+const { meta, hero, interview, game, other } = content;
+const assetUrl = (path: string) => `${import.meta.env.BASE_URL}${path}`;
 ---
 
 <BaseLayout title={meta.title} description={meta.description} lang="en">
@@ -14,6 +16,7 @@ const { meta, hero, interview, other } = content;
         <p class="lead">{hero.introduction}</p>
         <nav class="section-tabs" aria-label="Scienteens Lab sections">
           <a class="primary-tab" href={'#' + interview.id}>{interview.tab}</a>
+          <a href={'#' + game.id}>Game</a>
           <a href={'#' + other.id}>{other.tab}</a>
         </nav>
       </div>
@@ -63,7 +66,7 @@ const { meta, hero, interview, other } = content;
             </div>
           </header>
 
-          <div class:list={['step-layout', { 'with-wave': step.id === 'closed-tube' }]}>
+          <div class:list={['step-layout', { 'with-visual': step.id === 'closed-tube' || Boolean(step.media && step.media.type !== 'placeholder') }]}>
             <div class="step-copy">
               {step.paragraphs.map((paragraph) => <p>{paragraph}</p>)}
 
@@ -98,6 +101,10 @@ const { meta, hero, interview, other } = content;
                 <div class="wave-label"><span>node</span><span class="wave-equation">L = nλ / 2</span><span>node</span></div>
               </div>
             )}
+
+            {step.media && step.media.type !== 'placeholder' && (
+              <WorkshopMedia item={step.media} />
+            )}
           </div>
 
           {step.substeps.length > 0 && (
@@ -111,26 +118,42 @@ const { meta, hero, interview, other } = content;
                     {substep.formula && <code>{substep.formula}</code>}
                   </div>
                   {substep.media && (
-                    <div class="media-placeholder">
-                      <span>Media</span>
-                      <strong>{substep.media}</strong>
-                      <small>This space is ready for the final media.</small>
-                    </div>
+                    <WorkshopMedia item={substep.media} />
                   )}
                 </li>
               ))}
             </ol>
           )}
 
-          {step.media && (
-            <div class="media-placeholder wide-media">
-              <span>Media</span>
-              <strong>{step.media}</strong>
-              <small>The experiment video will conclude the workshop here.</small>
-            </div>
+          {step.media?.type === 'placeholder' && (
+            <WorkshopMedia item={step.media} wide={true} />
           )}
         </article>
       ))}
+    </div>
+  </section>
+
+  <section id={game.id} class="section container game-section" aria-labelledby="game-title">
+    <header class="section-heading compact-heading">
+      <div>
+        <p class="eyebrow">{game.eyebrow}</p>
+        <h2 id="game-title">{game.title}</h2>
+      </div>
+      <p>{game.description}</p>
+    </header>
+
+    <div class="game-shell">
+      <div class="game-toolbar">
+        <span>Interactive HTML activity</span>
+        <a href={assetUrl(game.src)} target="_blank" rel="noreferrer">Open full screen <span aria-hidden="true">↗</span></a>
+      </div>
+      <iframe
+        src={assetUrl(game.src)}
+        title="The Resonance Lab interactive game"
+        loading="lazy"
+        allow="autoplay"
+        allowfullscreen
+      ></iframe>
     </div>
   </section>
 
@@ -142,6 +165,17 @@ const { meta, hero, interview, other } = content;
       </div>
       <p>{other.description}</p>
     </header>
+
+    <div class="resource-list">
+      {other.resources.map((resource) => (
+        <a class="resource-card" href={assetUrl(resource.href)} target="_blank" rel="noreferrer">
+          <span>{resource.label}</span>
+          <h3>{resource.title}</h3>
+          <p>{resource.description}</p>
+          <strong>{resource.meta}<span aria-hidden="true"> ↗</span></strong>
+        </a>
+      ))}
+    </div>
   </section>
 </BaseLayout>
 
@@ -177,7 +211,7 @@ const { meta, hero, interview, other } = content;
   .step-heading h3 { max-width: 18ch; margin: 0; font-family: var(--font-display); font-size: clamp(2rem, 4vw, 3.6rem); letter-spacing: -0.055em; line-height: 1; }
   .step-layout { display: grid; grid-template-columns: minmax(0, 0.8fr) minmax(22rem, 1.2fr); gap: clamp(2rem, 6vw, 6rem); align-items: start; margin-top: var(--space-5); }
   .step-copy { grid-column: 1 / -1; max-width: var(--text-width); margin-left: calc(3rem + var(--space-4)); }
-  .step-layout.with-wave .step-copy { grid-column: auto; margin-left: calc(3rem + var(--space-4)); }
+  .step-layout.with-visual .step-copy { grid-column: auto; margin-left: calc(3rem + var(--space-4)); }
   .step-copy > p { color: var(--color-muted); font-size: 1.05rem; }
   .step-copy > p:first-child { margin-top: 0; }
   .formula-row { display: flex; flex-wrap: wrap; gap: var(--space-2); margin-top: var(--space-4); }
@@ -200,15 +234,20 @@ const { meta, hero, interview, other } = content;
   .substep-copy h4 { margin: var(--space-2) 0; font-family: var(--font-display); font-size: 1.55rem; letter-spacing: -0.035em; line-height: 1.08; }
   .substep-copy p { max-width: var(--text-width); margin-bottom: 0; color: var(--color-muted); }
   .substep-copy code { margin-top: var(--space-3); }
-  .media-placeholder { display: grid; align-content: end; gap: var(--space-2); min-height: 11rem; padding: var(--space-4); border: 1px dashed var(--color-muted); border-radius: var(--radius-md); background: var(--color-surface-strong); }
-  .media-placeholder > span { color: var(--color-primary); font-size: 0.68rem; font-weight: 850; letter-spacing: 0.11em; text-transform: uppercase; }
-  .media-placeholder strong { font-family: var(--font-display); font-size: 1.1rem; line-height: 1.15; }
-  .media-placeholder small { color: var(--color-muted); }
-  .wide-media { min-height: 18rem; margin: var(--space-6) 0 0 calc(3rem + var(--space-4)); background: var(--color-ink); color: var(--color-surface); }
-  .wide-media > span { color: var(--color-accent); }
-  .wide-media small { color: var(--color-line); }
-  .other-section { border-top: 1px solid var(--color-line); }
+  .other-section, .game-section { border-top: 1px solid var(--color-line); }
   .compact-heading { margin-bottom: 0; }
+  .game-shell { overflow: hidden; margin-top: var(--space-6); border: 1px solid var(--color-line); border-radius: var(--radius-lg); background: var(--color-ink); box-shadow: var(--shadow-soft); }
+  .game-toolbar { display: flex; flex-wrap: wrap; justify-content: space-between; gap: var(--space-3); align-items: center; padding: var(--space-3) var(--space-4); color: var(--color-surface); }
+  .game-toolbar > span { color: var(--color-line); font-size: 0.72rem; font-weight: 800; letter-spacing: 0.1em; text-transform: uppercase; }
+  .game-toolbar a { color: var(--color-accent); font-size: 0.82rem; font-weight: 800; text-underline-offset: 0.2em; }
+  .game-shell iframe { display: block; width: 100%; height: min(78vh, 58rem); min-height: 42rem; border: 0; background: #0d1720; }
+  .resource-list { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--space-4); margin-top: var(--space-6); }
+  .resource-card { display: grid; gap: var(--space-2); min-height: 15rem; padding: var(--space-5); border: 1px solid var(--color-line); border-radius: var(--radius-lg); background: var(--color-surface); color: var(--color-ink); text-decoration: none; box-shadow: var(--shadow-soft); }
+  .resource-card:hover { border-color: var(--color-primary); }
+  .resource-card > span { color: var(--color-primary); font-size: 0.72rem; font-weight: 850; letter-spacing: 0.11em; text-transform: uppercase; }
+  .resource-card h3 { margin: auto 0 0; font-family: var(--font-display); font-size: 1.8rem; letter-spacing: -0.04em; line-height: 1; }
+  .resource-card p { max-width: 36rem; margin: 0; color: var(--color-muted); }
+  .resource-card > strong { color: var(--color-primary-dark); font-size: 0.78rem; }
 
   @media (max-width: 62rem) {
     .story-index { grid-template-columns: repeat(2, minmax(0, 1fr)); }
@@ -217,13 +256,13 @@ const { meta, hero, interview, other } = content;
     .story-index li:last-child { grid-column: 1 / -1; border-bottom: 0; }
     .story-index a { min-height: 7rem; }
     .substeps li { grid-template-columns: 1fr; }
-    .media-placeholder { min-height: 9rem; }
   }
   @media (max-width: 50rem) {
     .hero-grid, .section-heading, .step-layout { grid-template-columns: 1fr; }
     .section-heading > p { margin-top: var(--space-4); }
-    .step-copy, .step-layout.with-wave .step-copy, .substeps, .wide-media { margin-left: 0; }
+    .step-copy, .step-layout.with-visual .step-copy, .substeps { margin-left: 0; }
     .wave-lab { min-height: 19rem; }
+    .resource-list { grid-template-columns: 1fr; }
   }
   @media (max-width: 38rem) {
     .section-tabs { display: grid; }
@@ -233,5 +272,6 @@ const { meta, hero, interview, other } = content;
     .story-index a { min-height: auto; gap: var(--space-3); }
     .step-heading { gap: var(--space-3); }
     .step-number { width: 2.6rem; }
+    .game-shell iframe { height: 74vh; min-height: 34rem; }
   }
 </style>

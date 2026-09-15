@@ -57,7 +57,15 @@
         ],
         "substeps": [],
         "formulas": [],
-        "media": null,
+        "media": {
+          "type": "video",
+          "src": "media/scienteens/sound-speed-steel-water-air.mp4",
+          "alt": "",
+          "title": "The speed of sound depends on the medium",
+          "caption": "The disturbance covers the same distance at different rates in steel, water and air. This observation motivates the next question: what property of the medium controls the propagation?",
+          "poster": "media/scienteens/sound-speed-steel-water-air-poster.webp",
+          "reducedMotionSrc": ""
+        },
         "source": {
           "label": "Aristotle, De Anima, Book II, Chapter 8",
           "url": "https://classics.mit.edu/Aristotle/soul.2.ii.html"
@@ -77,21 +85,45 @@
             "title": "A travelling pulse",
             "text": "In a short video, I send individual impulses through a Slinky. Following one coil shows local motion; following the deformation shows propagation from one part of the spring to the next.",
             "formula": null,
-            "media": "Planned video · Slinky pulse"
+            "media": {
+              "type": "image",
+              "src": "media/scienteens/longitudinal-slinky.png",
+              "alt": "A long metal spring used to demonstrate longitudinal compressions and rarefactions.",
+              "title": "Longitudinal motion in a spring",
+              "caption": "A spring model makes local compression and propagation visible. The source credit is retained inside the image.",
+              "poster": "",
+              "reducedMotionSrc": ""
+            }
           },
           {
             "number": "3.2",
             "title": "Transverse waves and standing modes",
             "text": "I then drive the Slinky transversely. Reflections at the ends superpose with incoming waves; at selected frequencies, fixed nodes and standing modes appear. Sound in air is longitudinal, but propagation, reflection, superposition and boundary conditions follow the same wave logic.",
             "formula": null,
-            "media": "Live demonstration · Standing modes"
+            "media": {
+              "type": "image",
+              "src": "media/scienteens/standing-wave-nodes.png",
+              "alt": "Two snapshots of a standing sine wave sharing the same fixed red nodes.",
+              "title": "Fixed nodes, changing amplitude",
+              "caption": "The red points remain at zero displacement while the sections between them oscillate.",
+              "poster": "",
+              "reducedMotionSrc": ""
+            }
           },
           {
             "number": "3.3",
             "title": "Speed, wavelength and frequency",
             "text": "An interactive animation connects the three quantities. For a fixed wave speed, increasing the frequency shortens the wavelength.",
             "formula": "v = fλ",
-            "media": "Planned animation · v, f and λ"
+            "media": {
+              "type": "image",
+              "src": "media/scienteens/wavelength-animation.gif",
+              "alt": "Animation comparing repeated spatial patterns with different wavelengths.",
+              "title": "Comparing wavelengths",
+              "caption": "The spacing of a repeated pattern represents its wavelength. The animation accompanies the relation v = fλ.",
+              "poster": "",
+              "reducedMotionSrc": "media/scienteens/wavelength-animation-still.png"
+            }
           }
         ],
         "formulas": [],
@@ -134,7 +166,15 @@
           "λ = 2d",
           "v = fλ = 2fd"
         ],
-        "media": "Planned video · Kundt tube experiment",
+        "media": {
+          "type": "placeholder",
+          "src": "",
+          "alt": "",
+          "title": "Kundt tube experiment",
+          "caption": "The final experiment video will be added here.",
+          "poster": "",
+          "reducedMotionSrc": ""
+        },
         "source": {
           "label": "August Kundt, On a New Kind of Acoustic Dust Figures (1866)",
           "url": "https://onlinelibrary.wiley.com/doi/10.1002/andp.18662030402"
@@ -142,11 +182,27 @@
       }
     ]
   },
+  "game": {
+    "id": "resonance-game",
+    "eyebrow": "Final activity",
+    "title": "The Resonance Lab",
+    "description": "Use the ideas developed in the workshop to identify resonances and investigate standing-wave modes in different tubes.",
+    "src": "apps/resonance-game/index.html"
+  },
   "other": {
     "id": "other",
     "tab": "Other",
     "eyebrow": "Other",
-    "title": "Additional material",
-    "description": "Short answers and supporting material for the interview can be added here later."
+    "title": "Supporting material",
+    "description": "One set of course notes is available now. Short answers to the interview questions can be added here later.",
+    "resources": [
+      {
+        "label": "Course notes",
+        "title": "Wave properties",
+        "description": "French-language notes on superposition, standing waves, open and closed tubes, harmonics and interference.",
+        "meta": "PDF · 28 pages · French",
+        "href": "media/scienteens/wave-properties-course-notes.pdf"
+      }
+    ]
   }
 }
