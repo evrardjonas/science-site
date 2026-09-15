@@ -95,7 +95,7 @@ const { meta, hero, interview, other } = content;
                     <circle cx="362" cy="150" r="8"></circle><circle cx="527" cy="150" r="8"></circle><circle cx="688" cy="150" r="8"></circle>
                   </g>
                 </svg>
-                <div class="wave-label"><span>node</span><span>L = nλ / 2</span><span>node</span></div>
+                <div class="wave-label"><span>node</span><span class="wave-equation">L = nλ / 2</span><span>node</span></div>
               </div>
             )}
           </div>
@@ -186,6 +186,7 @@ const { meta, hero, interview, other } = content;
   .source-link > span:first-child { color: var(--color-muted); font-size: 0.68rem; font-weight: 800; letter-spacing: 0.11em; text-transform: uppercase; }
   .wave-lab { display: grid; align-content: space-between; min-height: 22rem; padding: var(--space-4); border-radius: var(--radius-md); background: var(--color-ink); color: var(--color-surface); }
   .wave-label { display: flex; justify-content: space-between; gap: var(--space-3); color: var(--color-line); font-size: 0.67rem; font-weight: 750; letter-spacing: 0.09em; text-transform: uppercase; }
+  .wave-equation { letter-spacing: 0; text-transform: none; }
   .wave-lab svg { width: 100%; }
   .wave-lab rect { fill: none; stroke: var(--color-muted); stroke-width: 2; }
   .wave-lab line { stroke: var(--color-muted); stroke-dasharray: 5 7; }
