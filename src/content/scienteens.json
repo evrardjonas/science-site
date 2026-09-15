@@ -1,0 +1,97 @@
+{
+  "meta": {
+    "title": "Scienteens Lab Projects",
+    "description": "Workshops and project ideas developed by Jonas Evrard for science outreach with teenagers."
+  },
+  "hero": {
+    "eyebrow": "Scienteens Lab · Projects",
+    "title": "Workshops and project ideas.",
+    "introduction": "This page presents activities I have built or am currently developing. The first detailed project is a workshop on standing waves using a Kundt tube."
+  },
+  "currentProject": {
+    "id": "standing-waves",
+    "tab": "Standing Waves Lab",
+    "eyebrow": "Current workshop · Acoustics",
+    "title": "Sound Made Visible: Standing Waves in a Kundt Tube",
+    "summary": "Students create resonances in an air column, observe the standing-wave pattern and use measurements to estimate the speed of sound.",
+    "description": "A loudspeaker drives the air inside the tube. Students change the frequency, identify resonances and compare the observed pattern with the wave model. Lightweight particles and a microphone make the response of the air column easier to locate and measure.",
+    "facts": [
+      {
+        "label": "Audience",
+        "value": "Students aged 15+"
+      },
+      {
+        "label": "Main topic",
+        "value": "Standing waves and resonance"
+      },
+      {
+        "label": "Apparatus",
+        "value": "Kundt tube"
+      }
+    ],
+    "tags": [
+      "Physical experiment",
+      "Measurement",
+      "Wave model"
+    ],
+    "objectives": [
+      "Identify resonant frequencies and distinguish successive modes.",
+      "Relate the boundary conditions to nodes and antinodes.",
+      "Measure the distance between equivalent nodes to determine the wavelength.",
+      "Calculate the speed of sound from frequency and wavelength."
+    ],
+    "sequence": [
+      {
+        "number": "01",
+        "title": "Predict",
+        "text": "Choose where nodes and antinodes should appear before switching on the sound."
+      },
+      {
+        "number": "02",
+        "title": "Tune",
+        "text": "Vary the frequency and identify a clear resonance of the air column."
+      },
+      {
+        "number": "03",
+        "title": "Observe",
+        "text": "Compare the visible or measured response with the predicted mode."
+      },
+      {
+        "number": "04",
+        "title": "Measure",
+        "text": "Record the frequency and the distance between equivalent nodes."
+      },
+      {
+        "number": "05",
+        "title": "Calculate",
+        "text": "Determine the wavelength and estimate the speed of sound."
+      }
+    ]
+  },
+  "futureProjects": [
+    {
+      "id": "entropy-chess",
+      "tab": "Entropy & Chess",
+      "eyebrow": "Future project · Statistical physics",
+      "title": "Entropy on a Chessboard",
+      "summary": "Use the distribution of possible moves to compare uncertainty, choice and the fragility of different chess positions.",
+      "status": "Concept under development"
+    },
+    {
+      "id": "physics-on-two-wheels",
+      "tab": "Physics on Two Wheels",
+      "eyebrow": "Future workshop · Mechanics",
+      "title": "Physics on Two Wheels",
+      "summary": "Use a bicycle, a slope and gear ratios to measure force, power and efficiency in a system students already know.",
+      "status": "Workshop concept"
+    },
+    {
+      "id": "light-and-evidence",
+      "tab": "Light & Evidence",
+      "eyebrow": "Future project · Optics",
+      "title": "Light, Claims and Measurements",
+      "summary": "Turn claims about light into testable questions, then use simple measurements to decide what the evidence supports.",
+      "status": "Project idea"
+    }
+  ]
+}
