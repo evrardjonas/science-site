@@ -4,7 +4,7 @@ Socle technique du site pédagogique de Jonas Evrard.
 
 Le projet utilise Astro et est publié automatiquement sur GitHub Pages. La V0 contient uniquement la structure du site, le design system et les composants nécessaires pour accueillir ensuite des cours, images, vidéos, jeux et simulations HTML.
 
-Le parcours principal met en avant une page-portfolio en anglais dédiée à Scienteens Lab.
+Une page dédiée à Scienteens Lab est disponible en anglais depuis un onglet supplémentaire du menu, sans modifier l’accueil ni les rubriques d’origine.
 
 ## Développement local
 
