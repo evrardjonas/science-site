@@ -10,7 +10,9 @@ Une page dédiée à Scienteens Lab est disponible en anglais depuis un onglet s
 
 Tous les textes de cette page sont regroupés dans `src/content/scienteens.json`. Sur GitHub, ouvrir ce fichier, cliquer sur le crayon, modifier uniquement le texte entre guillemets, puis utiliser **Commit changes**. GitHub Pages republie ensuite automatiquement le site.
 
-Le bloc `interview.steps` contient les cinq parties du parcours Mersenne → Kundt. Dans chaque partie, `title` modifie le titre et `paragraphs` contient les paragraphes affichés. Les emplacements de vidéos et d’animations sont indiqués par `media` ; leur intégration pourra donc se faire sans réécrire le reste de la page.
+Le bloc `interview.steps` contient les cinq parties du parcours Mersenne → Kundt. Dans chaque partie, `title` modifie le titre et `paragraphs` contient les paragraphes affichés. Chaque bloc `media` indique son type (`image`, `video` ou `placeholder`), son fichier, son titre, sa légende et son texte alternatif.
+
+Les fichiers de la page sont rangés dans `public/media/scienteens/`. Dans le JSON, leur chemin commence simplement par `media/scienteens/` : le site ajoute automatiquement le préfixe nécessaire à GitHub Pages. La liste `other.resources` contient les documents complémentaires, dont les notes de cours au format PDF. Le jeu autonome se trouve dans `public/apps/resonance-game/` et est intégré à la page avec une iframe.
 
 Le bloc `other` est réservé aux réponses ou documents complémentaires qui seront ajoutés plus tard. Les autres projets ont vocation à rejoindre les rubriques générales du site. Ne pas supprimer les guillemets, virgules ou accolades du fichier JSON.
 
