@@ -77,52 +77,52 @@
         "eyebrow": "Wave model",
         "title": "From a pulse to a standing wave",
         "paragraphs": [
-          "A Slinky makes the distinction between matter and disturbance easy to observe: each coil moves locally while the pulse travels along the spring."
+          "A Slinky and a particle model build the wave concept in three steps: local motion creates a travelling disturbance, periodic motion introduces frequency and wavelength, and superposition with a reflected wave produces a standing pattern."
         ],
         "substeps": [
           {
             "number": "3.1",
             "title": "A travelling pulse",
-            "text": "In a short video, I send individual impulses through a Slinky. Following one coil shows local motion; following the deformation shows propagation from one part of the spring to the next.",
+            "text": "I send a longitudinal impulse through a Slinky. Each coil only oscillates around its equilibrium position, while the compression travels from one coil to the next. This separates the motion of matter from the propagation of energy and information.",
             "formula": null,
             "media": {
               "type": "image",
-              "src": "media/scienteens/longitudinal-slinky.png",
-              "alt": "A long metal spring used to demonstrate longitudinal compressions and rarefactions.",
-              "title": "Longitudinal motion in a spring",
-              "caption": "A spring model makes local compression and propagation visible. The source credit is retained inside the image.",
+              "src": "media/scienteens/longitudinal-slinky.gif",
+              "alt": "Animation of a hand creating a longitudinal pulse in a horizontal spring.",
+              "title": "Matter moves locally; the pulse travels",
+              "caption": "The hand moves parallel to the spring. A compression propagates to the right although the coils remain near their equilibrium positions.",
               "poster": "",
-              "reducedMotionSrc": ""
+              "reducedMotionSrc": "media/scienteens/longitudinal-slinky.png"
             }
           },
           {
             "number": "3.2",
-            "title": "Transverse waves and standing modes",
-            "text": "I then drive the Slinky transversely. Reflections at the ends superpose with incoming waves; at selected frequencies, fixed nodes and standing modes appear. Sound in air is longitudinal, but propagation, reflection, superposition and boundary conditions follow the same wave logic.",
-            "formula": null,
+            "title": "Speed, wavelength and frequency",
+            "text": "A periodic source emits one compression after another. The frequency f counts the source oscillations per second, while the wavelength λ is the distance between two successive compressions. Their product gives the propagation speed: v = fλ. In a given medium, a higher frequency therefore produces a shorter wavelength.",
+            "formula": "v = fλ",
             "media": {
               "type": "image",
-              "src": "media/scienteens/standing-wave-nodes.png",
-              "alt": "Two snapshots of a standing sine wave sharing the same fixed red nodes.",
-              "title": "Fixed nodes, changing amplitude",
-              "caption": "The red points remain at zero displacement while the sections between them oscillate.",
+              "src": "media/scienteens/air-compression-wave.gif",
+              "alt": "Animation of a loudspeaker producing successive compressions in air molecules.",
+              "title": "A periodic disturbance in air",
+              "caption": "The air molecules oscillate locally. The compression pattern moves away from the loudspeaker; the spacing between successive compressions represents one wavelength.",
               "poster": "",
-              "reducedMotionSrc": ""
+              "reducedMotionSrc": "media/scienteens/wavelength-animation-still.png"
             }
           },
           {
             "number": "3.3",
-            "title": "Speed, wavelength and frequency",
-            "text": "An interactive animation connects the three quantities. For a fixed wave speed, increasing the frequency shortens the wavelength.",
-            "formula": "v = fλ",
+            "title": "Transverse waves and standing modes",
+            "text": "I then drive the Slinky transversely so that the displacement is easier to see. The wave reflects at the end and the incoming and reflected waves superpose: y = y₁ + y₂. At selected frequencies, stable nodes and antinodes appear. Sound in air is longitudinal, but reflection, superposition and boundary conditions obey the same wave logic.",
+            "formula": "y = y₁ + y₂",
             "media": {
               "type": "image",
-              "src": "media/scienteens/wavelength-animation.gif",
-              "alt": "Animation comparing repeated spatial patterns with different wavelengths.",
-              "title": "Comparing wavelengths",
-              "caption": "The spacing of a repeated pattern represents its wavelength. The animation accompanies the relation v = fλ.",
+              "src": "media/scienteens/standing-wave-nodes.png",
+              "alt": "Two snapshots of a standing sine wave sharing the same fixed red nodes.",
+              "title": "Fixed nodes, oscillating antinodes",
+              "caption": "The red nodes remain at zero displacement while the sections between them oscillate. This prepares the boundary-condition model used for the Kundt tube.",
               "poster": "",
-              "reducedMotionSrc": "media/scienteens/wavelength-animation-still.png"
+              "reducedMotionSrc": ""
             }
           }
         ],
