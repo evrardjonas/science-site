@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import StandingModeDiagram from '../../components/StandingModeDiagram.astro';
 import WorkshopMedia from '../../components/WorkshopMedia.astro';
 import content from '../../content/scienteens.json';
 
@@ -66,7 +67,7 @@ const assetUrl = (path: string) => `${import.meta.env.BASE_URL}${path}`;
             </div>
           </header>
 
-          <div class:list={['step-layout', { 'with-visual': step.id === 'closed-tube' || Boolean(step.media && step.media.type !== 'placeholder') }]}>
+          <div class:list={['step-layout', { 'with-visual': Boolean(step.media && step.media.type !== 'placeholder') }]}>
             <div class="step-copy">
               {step.paragraphs.map((paragraph) => <p>{paragraph}</p>)}
 
@@ -85,29 +86,7 @@ const assetUrl = (path: string) => `${import.meta.env.BASE_URL}${path}`;
               )}
             </div>
 
-            {step.id === 'closed-tube' && (
-              <div class="visual-stack">
-                {step.media && step.media.type !== 'placeholder' && (
-                  <WorkshopMedia item={step.media} />
-                )}
-                <div class="wave-lab">
-                  <div class="wave-label"><span>closed end</span><span>air displacement</span><span>closed end</span></div>
-                  <svg viewBox="0 0 720 300" role="img" aria-label="Schematic of a standing displacement wave in a tube closed at both ends">
-                    <rect x="32" y="48" width="656" height="204" rx="18"></rect>
-                    <line x1="32" y1="150" x2="688" y2="150"></line>
-                    <path class="wave wave-one" d="M32 150 C87 58 142 58 197 150 S307 242 362 150 S472 58 527 150 S637 242 688 150"></path>
-                    <path class="wave wave-two" d="M32 150 C87 242 142 242 197 150 S307 58 362 150 S472 242 527 150 S637 58 688 150"></path>
-                    <g class="nodes">
-                      <circle cx="32" cy="150" r="8"></circle><circle cx="197" cy="150" r="8"></circle>
-                      <circle cx="362" cy="150" r="8"></circle><circle cx="527" cy="150" r="8"></circle><circle cx="688" cy="150" r="8"></circle>
-                    </g>
-                  </svg>
-                  <div class="wave-label"><span>node</span><span class="wave-equation">L = nλ / 2</span><span>node</span></div>
-                </div>
-              </div>
-            )}
-
-            {step.id !== 'closed-tube' && step.media && step.media.type !== 'placeholder' && (
+            {step.media && step.media.type !== 'placeholder' && (
               <WorkshopMedia item={step.media} />
             )}
           </div>
@@ -122,9 +101,10 @@ const assetUrl = (path: string) => `${import.meta.env.BASE_URL}${path}`;
                     <p>{substep.text}</p>
                     {substep.formula && <code>{substep.formula}</code>}
                   </div>
-                  {substep.media.length > 0 && (
+                  {(substep.media.length > 0 || substep.number === '3.4') && (
                     <div class="substep-media">
                       {substep.media.map((item) => <WorkshopMedia item={item} />)}
+                      {substep.number === '3.4' && <StandingModeDiagram />}
                     </div>
                   )}
                 </li>
@@ -225,18 +205,6 @@ const assetUrl = (path: string) => `${import.meta.env.BASE_URL}${path}`;
   code { display: inline-block; padding: 0.55rem 0.75rem; border-radius: var(--radius-sm); background: var(--color-surface-strong); color: var(--color-primary-dark); font-family: var(--font-display); font-size: 1.05rem; font-weight: 750; }
   .source-link { display: flex; flex-wrap: wrap; gap: var(--space-2); align-items: baseline; width: fit-content; margin-top: var(--space-5); color: var(--color-primary-dark); font-size: 0.82rem; font-weight: 700; text-underline-offset: 0.2em; }
   .source-link > span:first-child { color: var(--color-muted); font-size: 0.68rem; font-weight: 800; letter-spacing: 0.11em; text-transform: uppercase; }
-  .wave-lab { display: grid; align-content: space-between; min-height: 22rem; padding: var(--space-4); border-radius: var(--radius-md); background: var(--color-ink); color: var(--color-surface); }
-  .wave-label { display: flex; justify-content: space-between; gap: var(--space-3); color: var(--color-line); font-size: 0.67rem; font-weight: 750; letter-spacing: 0.09em; text-transform: uppercase; }
-  .visual-stack { display: grid; gap: var(--space-4); min-width: 0; }
-  .visual-stack > :global(.workshop-media) { width: min(100%, 18rem); justify-self: center; }
-  .wave-equation { letter-spacing: 0; text-transform: none; }
-  .wave-lab svg { width: 100%; }
-  .wave-lab rect { fill: none; stroke: var(--color-muted); stroke-width: 2; }
-  .wave-lab line { stroke: var(--color-muted); stroke-dasharray: 5 7; }
-  .wave { fill: none; stroke-width: 4; }
-  .wave-one { stroke: var(--color-accent); }
-  .wave-two { stroke: var(--color-surface-strong); }
-  .nodes circle { fill: var(--color-surface); }
   .substeps { display: grid; gap: var(--space-3); padding: 0; margin: var(--space-6) 0 0 calc(3rem + var(--space-4)); list-style: none; }
   .substeps li { display: grid; grid-template-columns: minmax(0, 1fr) minmax(16rem, 0.58fr); gap: var(--space-4); padding-top: var(--space-4); border-top: 1px solid var(--color-line); }
   .substep-media { display: grid; gap: var(--space-4); min-width: 0; }
@@ -271,7 +239,6 @@ const assetUrl = (path: string) => `${import.meta.env.BASE_URL}${path}`;
     .hero-grid, .section-heading, .step-layout { grid-template-columns: 1fr; }
     .section-heading > p { margin-top: var(--space-4); }
     .step-copy, .step-layout.with-visual .step-copy, .substeps { margin-left: 0; }
-    .wave-lab { min-height: 19rem; }
     .resource-list { grid-template-columns: 1fr; }
   }
   @media (max-width: 38rem) {

@@ -152,7 +152,7 @@
           {
             "number": "3.4",
             "title": "Reflection, superposition and standing modes",
-            "text": "A wave sent along the Slinky reflects at the end. The incoming and reflected waves overlap, and their displacements add: y = y₁ + y₂. At selected driving frequencies, the boundary conditions are satisfied and a stable pattern of nodes and antinodes appears. The filmed demonstration will compare several of these standing modes.",
+            "text": "A wave sent along the Slinky reflects at the end. The incoming and reflected waves overlap, and their displacements add: y = y₁ + y₂. At selected driving frequencies, the boundary conditions are satisfied and a stable pattern of nodes and antinodes appears. In a tube closed at both ends, the ends impose displacement nodes and the allowed modes satisfy L = nλ / 2. The filmed demonstration will compare several of these standing modes.",
             "formula": "y = y₁ + y₂",
             "media": [
               {

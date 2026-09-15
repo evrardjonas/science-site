@@ -1,0 +1,40 @@
+<figure class="standing-mode">
+  <div class="wave-label">
+    <span>closed end</span>
+    <span>air displacement</span>
+    <span>closed end</span>
+  </div>
+  <svg viewBox="0 0 720 300" role="img" aria-label="Standing displacement mode in a tube closed at both ends">
+    <rect x="32" y="48" width="656" height="204" rx="18"></rect>
+    <line x1="32" y1="150" x2="688" y2="150"></line>
+    <path class="wave wave-one" d="M32 150 C87 58 142 58 197 150 S307 242 362 150 S472 58 527 150 S637 242 688 150"></path>
+    <path class="wave wave-two" d="M32 150 C87 242 142 242 197 150 S307 58 362 150 S472 242 527 150 S637 58 688 150"></path>
+    <g class="nodes">
+      <circle cx="32" cy="150" r="8"></circle>
+      <circle cx="197" cy="150" r="8"></circle>
+      <circle cx="362" cy="150" r="8"></circle>
+      <circle cx="527" cy="150" r="8"></circle>
+      <circle cx="688" cy="150" r="8"></circle>
+    </g>
+  </svg>
+  <div class="wave-label">
+    <span>node</span>
+    <span class="wave-equation">L = nλ / 2</span>
+    <span>node</span>
+  </div>
+  <figcaption>In a closed–closed tube, only wavelengths that place displacement nodes at both ends form standing modes.</figcaption>
+</figure>
+
+<style>
+  .standing-mode { display: grid; align-content: space-between; min-height: 22rem; padding: var(--space-4); margin: 0; border-radius: var(--radius-md); background: var(--color-ink); color: var(--color-surface); }
+  .wave-label { display: flex; justify-content: space-between; gap: var(--space-3); color: var(--color-line); font-size: 0.67rem; font-weight: 750; letter-spacing: 0.09em; text-transform: uppercase; }
+  .wave-equation { letter-spacing: 0; text-transform: none; }
+  svg { width: 100%; }
+  rect { fill: none; stroke: var(--color-muted); stroke-width: 2; }
+  line { stroke: var(--color-muted); stroke-dasharray: 5 7; }
+  .wave { fill: none; stroke-width: 4; }
+  .wave-one { stroke: var(--color-accent); }
+  .wave-two { stroke: var(--color-surface-strong); }
+  .nodes circle { fill: var(--color-surface); }
+  figcaption { margin-top: var(--space-3); color: var(--color-line); font-size: 0.84rem; line-height: 1.45; }
+</style>
