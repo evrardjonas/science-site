@@ -1,28 +1,28 @@
 {
   "meta": {
-    "title": "Scienteens Lab Projects",
-    "description": "Workshops and project ideas developed by Jonas Evrard for science outreach with teenagers."
+    "title": "Scienteens Lab · Interview",
+    "description": "Interview material presenting a standing-wave workshop based on the Kundt tube."
   },
   "hero": {
-    "eyebrow": "Scienteens Lab · Projects",
-    "title": "Workshops and project ideas.",
-    "introduction": "This page presents activities I have built or am currently developing. The first detailed project is a workshop on standing waves using a Kundt tube."
+    "eyebrow": "Scienteens Lab",
+    "title": "Interview material.",
+    "introduction": "This page contains the material prepared for the interview. The main section presents a workshop on standing waves and the Kundt tube."
   },
-  "currentProject": {
-    "id": "standing-waves",
-    "tab": "Standing Waves Lab",
-    "eyebrow": "Current workshop · Acoustics",
+  "interview": {
+    "id": "interview",
+    "tab": "Interview",
+    "eyebrow": "Interview · Acoustics",
     "title": "Sound Made Visible: Standing Waves in a Kundt Tube",
-    "summary": "Students create resonances in an air column, observe the standing-wave pattern and use measurements to estimate the speed of sound.",
-    "description": "A loudspeaker drives the air inside the tube. Students change the frequency, identify resonances and compare the observed pattern with the wave model. Lightweight particles and a microphone make the response of the air column easier to locate and measure.",
+    "summary": "Students create resonances in an air column, observe a standing-wave pattern and use measurements to estimate the speed of sound.",
+    "description": "A loudspeaker drives the air inside the tube. At resonance, lightweight particles form a repeatable spatial pattern related to the standing wave. A microphone and Phyphox can provide additional measurements along the tube.",
     "facts": [
       {
         "label": "Audience",
-        "value": "Students aged 15+"
+        "value": "Students around age 15"
       },
       {
-        "label": "Main topic",
-        "value": "Standing waves and resonance"
+        "label": "Question",
+        "value": "How can sound be made visible?"
       },
       {
         "label": "Apparatus",
@@ -31,20 +31,20 @@
     ],
     "tags": [
       "Physical experiment",
-      "Measurement",
-      "Wave model"
+      "Standing waves",
+      "Measurement"
     ],
     "objectives": [
       "Identify resonant frequencies and distinguish successive modes.",
-      "Relate the boundary conditions to nodes and antinodes.",
-      "Measure the distance between equivalent nodes to determine the wavelength.",
-      "Calculate the speed of sound from frequency and wavelength."
+      "Relate pressure and displacement nodes and antinodes to the boundary conditions.",
+      "Measure the spacing d between adjacent displacement nodes and use λ = 2d.",
+      "Calculate the speed of sound with v = fλ and compare it with a reference value."
     ],
     "sequence": [
       {
         "number": "01",
         "title": "Predict",
-        "text": "Choose where nodes and antinodes should appear before switching on the sound."
+        "text": "Draw the expected mode and locate its nodes and antinodes before switching on the sound."
       },
       {
         "number": "02",
@@ -54,44 +54,25 @@
       {
         "number": "03",
         "title": "Observe",
-        "text": "Compare the visible or measured response with the predicted mode."
+        "text": "Compare the particle pattern or microphone signal with the predicted mode."
       },
       {
         "number": "04",
         "title": "Measure",
-        "text": "Record the frequency and the distance between equivalent nodes."
+        "text": "Record the frequency f and the spacing d between adjacent displacement nodes."
       },
       {
         "number": "05",
         "title": "Calculate",
-        "text": "Determine the wavelength and estimate the speed of sound."
+        "text": "Use λ = 2d and v = fλ to estimate the speed of sound."
       }
     ]
   },
-  "futureProjects": [
-    {
-      "id": "entropy-chess",
-      "tab": "Entropy & Chess",
-      "eyebrow": "Future project · Statistical physics",
-      "title": "Entropy on a Chessboard",
-      "summary": "Use the distribution of possible moves to compare uncertainty, choice and the fragility of different chess positions.",
-      "status": "Concept under development"
-    },
-    {
-      "id": "physics-on-two-wheels",
-      "tab": "Physics on Two Wheels",
-      "eyebrow": "Future workshop · Mechanics",
-      "title": "Physics on Two Wheels",
-      "summary": "Use a bicycle, a slope and gear ratios to measure force, power and efficiency in a system students already know.",
-      "status": "Workshop concept"
-    },
-    {
-      "id": "light-and-evidence",
-      "tab": "Light & Evidence",
-      "eyebrow": "Future project · Optics",
-      "title": "Light, Claims and Measurements",
-      "summary": "Turn claims about light into testable questions, then use simple measurements to decide what the evidence supports.",
-      "status": "Project idea"
-    }
-  ]
+  "other": {
+    "id": "other",
+    "tab": "Other",
+    "eyebrow": "Other",
+    "title": "Additional material",
+    "description": "This section is intentionally brief. Additional answers and supporting material can be added here later."
+  }
 }

@@ -2,7 +2,7 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import content from '../../content/scienteens.json';
 
-const { meta, hero, currentProject, futureProjects } = content;
+const { meta, hero, interview, other } = content;
 ---
 
 <BaseLayout title={meta.title} description={meta.description} lang="en">
@@ -12,15 +12,15 @@ const { meta, hero, currentProject, futureProjects } = content;
         <p class="eyebrow">{hero.eyebrow}</p>
         <h1>{hero.title}</h1>
         <p class="lead">{hero.introduction}</p>
-        <nav class="project-tabs" aria-label="Projects">
-          <a href={'#' + currentProject.id} aria-current="location">{currentProject.tab}</a>
-          {futureProjects.map((project) => <a href={'#' + project.id}>{project.tab}</a>)}
+        <nav class="section-tabs" aria-label="Scienteens Lab sections">
+          <a class="primary-tab" href={'#' + interview.id}>{interview.tab}</a>
+          <a href={'#' + other.id}>{other.tab}</a>
         </nav>
       </div>
 
-      <aside class="brief" aria-label="Current workshop summary">
-        <span class="brief-number">Current workshop</span>
-        {currentProject.facts.map((fact) => (
+      <aside class="brief" aria-label="Interview workshop summary">
+        <span class="brief-number">Interview workshop</span>
+        {interview.facts.map((fact) => (
           <div>
             <span>{fact.label}</span>
             <strong>{fact.value}</strong>
@@ -30,24 +30,24 @@ const { meta, hero, currentProject, futureProjects } = content;
     </div>
   </section>
 
-  <section id={currentProject.id} class="section container">
+  <section id={interview.id} class="section container">
     <header class="section-heading">
       <div>
-        <p class="eyebrow">{currentProject.eyebrow}</p>
-        <h2>{currentProject.title}</h2>
+        <p class="eyebrow">{interview.eyebrow}</p>
+        <h2>{interview.title}</h2>
       </div>
-      <p>{currentProject.summary}</p>
+      <p>{interview.summary}</p>
     </header>
 
     <article class="featured-project">
       <div class="project-copy">
-        <p>{currentProject.description}</p>
-        <div class="project-tags" aria-label="Workshop formats">
-          {currentProject.tags.map((tag) => <span>{tag}</span>)}
+        <p>{interview.description}</p>
+        <div class="project-tags" aria-label="Workshop topics">
+          {interview.tags.map((tag) => <span>{tag}</span>)}
         </div>
         <h3>Learning objectives</h3>
         <ul>
-          {currentProject.objectives.map((objective) => <li>{objective}</li>)}
+          {interview.objectives.map((objective) => <li>{objective}</li>)}
         </ul>
       </div>
 
@@ -79,32 +79,21 @@ const { meta, hero, currentProject, futureProjects } = content;
       </header>
 
       <ol class="method-steps">
-        {currentProject.sequence.map((step) => (
+        {interview.sequence.map((step) => (
           <li><span>{step.number}</span><strong>{step.title}</strong><p>{step.text}</p></li>
         ))}
       </ol>
     </div>
   </section>
 
-  <section class="section container" aria-labelledby="future-projects-title">
-    <header class="section-heading">
+  <section id={other.id} class="section container other-section" aria-labelledby="other-title">
+    <header class="section-heading compact-heading">
       <div>
-        <p class="eyebrow">Future projects</p>
-        <h2 id="future-projects-title">Projects to develop.</h2>
+        <p class="eyebrow">{other.eyebrow}</p>
+        <h2 id="other-title">{other.title}</h2>
       </div>
-      <p>These are working ideas. Each project can later receive its own detailed page.</p>
+      <p>{other.description}</p>
     </header>
-
-    <div class="project-grid">
-      {futureProjects.map((project) => (
-        <article id={project.id} class="project-card">
-          <p class="project-index">{project.eyebrow}</p>
-          <h3>{project.title}</h3>
-          <p>{project.summary}</p>
-          <span class="status">{project.status}</span>
-        </article>
-      ))}
-    </div>
   </section>
 </BaseLayout>
 
@@ -113,10 +102,10 @@ const { meta, hero, currentProject, futureProjects } = content;
   .hero-grid { display: grid; grid-template-columns: minmax(0, 1.45fr) minmax(18rem, 0.55fr); gap: clamp(3rem, 8vw, 8rem); align-items: end; }
   h1 { max-width: 11ch; margin: 0; font-family: var(--font-display); font-size: clamp(3.7rem, 8vw, 7.6rem); font-weight: 760; letter-spacing: -0.07em; line-height: 0.9; }
   .lead { max-width: var(--text-width); margin: var(--space-5) 0 0; color: var(--color-muted); font-size: clamp(1.12rem, 2.2vw, 1.45rem); }
-  .project-tabs { display: flex; flex-wrap: wrap; gap: var(--space-2); margin-top: var(--space-5); }
-  .project-tabs a { padding: 0.62rem 0.85rem; border: 1px solid var(--color-line); border-radius: var(--radius-sm); background: var(--color-surface); color: var(--color-primary-dark); font-size: 0.9rem; font-weight: 750; text-decoration: none; }
-  .project-tabs a:hover { border-color: var(--color-primary); }
-  .project-tabs a[aria-current='location'] { border-color: var(--color-ink); background: var(--color-ink); color: var(--color-surface); }
+  .section-tabs { display: flex; flex-wrap: wrap; gap: var(--space-2); margin-top: var(--space-5); }
+  .section-tabs a { padding: 0.62rem 0.85rem; border: 1px solid var(--color-line); border-radius: var(--radius-sm); background: var(--color-surface); color: var(--color-primary-dark); font-size: 0.9rem; font-weight: 750; text-decoration: none; }
+  .section-tabs a:hover { border-color: var(--color-primary); }
+  .section-tabs .primary-tab { border-color: var(--color-ink); background: var(--color-ink); color: var(--color-surface); }
   .brief { display: grid; gap: var(--space-4); padding: var(--space-5); border-radius: var(--radius-lg); background: var(--color-ink); color: var(--color-surface); }
   .brief-number { color: var(--color-accent); font-size: 0.78rem; font-weight: 800; letter-spacing: 0.14em; text-transform: uppercase; }
   .brief div { display: grid; gap: var(--space-1); padding-top: var(--space-3); border-top: 1px solid var(--color-muted); }
@@ -127,13 +116,12 @@ const { meta, hero, currentProject, futureProjects } = content;
   .section-heading h2 { max-width: 16ch; margin: 0; font-family: var(--font-display); font-size: clamp(2.5rem, 5vw, 4.7rem); letter-spacing: -0.06em; line-height: 0.98; }
   .section-heading > p { margin: 0; color: var(--color-muted); }
   .featured-project { display: grid; grid-template-columns: minmax(0, 0.85fr) minmax(23rem, 1.15fr); gap: clamp(2rem, 6vw, 6rem); padding: clamp(1.5rem, 4vw, 3.5rem); border: 1px solid var(--color-line); border-radius: var(--radius-lg); background: var(--color-surface); box-shadow: var(--shadow-soft); }
-  .project-copy h3, .project-card h3 { margin: 0; font-family: var(--font-display); letter-spacing: -0.045em; line-height: 1; }
-  .project-copy h3 { margin-top: var(--space-5); font-size: 1.5rem; }
+  .project-copy h3 { margin: var(--space-5) 0 0; font-family: var(--font-display); font-size: 1.5rem; letter-spacing: -0.045em; line-height: 1; }
   .project-copy > p { margin-top: 0; color: var(--color-muted); font-size: 1.08rem; }
   .project-copy ul { padding-left: var(--space-4); margin: var(--space-4) 0 0; }
   .project-copy li + li { margin-top: var(--space-2); }
   .project-tags { display: flex; flex-wrap: wrap; gap: var(--space-2); margin-block: var(--space-4); }
-  .project-tags span, .status { display: inline-block; padding: 0.35rem 0.55rem; border-radius: var(--radius-sm); background: var(--color-surface-strong); color: var(--color-primary-dark); font-size: 0.75rem; font-weight: 750; }
+  .project-tags span { display: inline-block; padding: 0.35rem 0.55rem; border-radius: var(--radius-sm); background: var(--color-surface-strong); color: var(--color-primary-dark); font-size: 0.75rem; font-weight: 750; }
   .wave-lab { display: grid; align-content: space-between; min-height: 29rem; padding: var(--space-4); border-radius: var(--radius-md); background: var(--color-ink); color: var(--color-surface); }
   .wave-label, .scale { display: flex; justify-content: space-between; gap: var(--space-3); color: var(--color-line); font-size: 0.7rem; font-weight: 750; letter-spacing: 0.09em; text-transform: uppercase; }
   .wave-lab svg { width: 100%; }
@@ -152,12 +140,8 @@ const { meta, hero, currentProject, futureProjects } = content;
   .method-steps span { color: var(--color-accent); font-size: 0.75rem; font-weight: 850; }
   .method-steps strong { display: block; margin-top: var(--space-7); font-family: var(--font-display); font-size: 1.25rem; line-height: 1.1; }
   .method-steps p { color: var(--color-line); font-size: 0.9rem; }
-  .project-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--space-4); }
-  .project-card { display: grid; min-height: 20rem; padding: var(--space-5); scroll-margin-top: var(--space-7); border: 1px solid var(--color-line); border-radius: var(--radius-lg); background: var(--color-surface); }
-  .project-index { margin: 0 0 var(--space-4); color: var(--color-primary); font-size: 0.75rem; font-weight: 850; letter-spacing: 0.11em; text-transform: uppercase; }
-  .project-card h3 { font-size: 2rem; }
-  .project-card > p:not(.project-index) { color: var(--color-muted); }
-  .project-card .status { align-self: end; justify-self: start; }
+  .other-section { border-top: 1px solid var(--color-line); }
+  .compact-heading { margin-bottom: 0; }
 
   @media (max-width: 62rem) {
     .method-steps { grid-template-columns: repeat(2, minmax(0, 1fr)); }
@@ -169,11 +153,9 @@ const { meta, hero, currentProject, futureProjects } = content;
   @media (max-width: 50rem) {
     .hero-grid, .section-heading, .featured-project { grid-template-columns: 1fr; }
     .section-heading > p { margin-top: var(--space-4); }
-    .project-grid { grid-template-columns: 1fr; }
-    .project-card { min-height: 16rem; }
   }
   @media (max-width: 38rem) {
-    .project-tabs { display: grid; }
+    .section-tabs { display: grid; }
     .method-steps { grid-template-columns: 1fr; }
     .method-steps li, .method-steps li:nth-child(2n) { min-height: auto; border-right: 0; }
     .method-steps li:last-child { grid-column: auto; }
