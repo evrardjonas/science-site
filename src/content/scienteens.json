@@ -1,70 +1,144 @@
 {
   "meta": {
-    "title": "Scienteens Lab · Interview",
-    "description": "Interview material presenting a standing-wave workshop based on the Kundt tube."
+    "title": "Scienteens Lab · From Mersenne to Kundt",
+    "description": "An interview workshop that follows the history and physics of sound from Mersenne's measurements to Kundt's tube."
   },
   "hero": {
-    "eyebrow": "Scienteens Lab",
-    "title": "Interview material.",
-    "introduction": "This page contains the material prepared for the interview. The main section presents a workshop on standing waves and the Kundt tube."
+    "eyebrow": "Scienteens Lab · Interview workshop",
+    "title": "Making sound visible.",
+    "introduction": "A five-part workshop that begins with an early measurement of the speed of sound and ends by measuring a standing wave inside a Kundt tube."
   },
   "interview": {
     "id": "interview",
     "tab": "Interview",
     "eyebrow": "Interview · Acoustics",
-    "title": "Sound Made Visible: Standing Waves in a Kundt Tube",
-    "summary": "Students create resonances in an air column, observe a standing-wave pattern and use measurements to estimate the speed of sound.",
-    "description": "A loudspeaker drives the air inside the tube. At resonance, lightweight particles form a repeatable spatial pattern related to the standing wave. A microphone and Phyphox can provide additional measurements along the tube.",
+    "title": "From Mersenne to Kundt",
+    "summary": "The workshop follows one question: how can we move from hearing sound to observing and measuring it?",
     "facts": [
       {
         "label": "Audience",
         "value": "Students around age 15"
       },
       {
-        "label": "Question",
-        "value": "How can sound be made visible?"
+        "label": "Central question",
+        "value": "What is sound—and how can we see it?"
       },
       {
-        "label": "Apparatus",
-        "value": "Kundt tube"
+        "label": "Final measurement",
+        "value": "v = fλ = 2fd"
       }
     ],
-    "tags": [
-      "Physical experiment",
-      "Standing waves",
-      "Measurement"
-    ],
-    "objectives": [
-      "Identify resonant frequencies and distinguish successive modes.",
-      "Relate pressure and displacement nodes and antinodes to the boundary conditions.",
-      "Measure the spacing d between adjacent displacement nodes and use λ = 2d.",
-      "Calculate the speed of sound with v = fλ and compare it with a reference value."
-    ],
-    "sequence": [
+    "steps": [
       {
         "number": "01",
-        "title": "Predict",
-        "text": "Draw the expected mode and locate its nodes and antinodes before switching on the sound."
+        "id": "mersenne",
+        "eyebrow": "History · 1636",
+        "title": "Measuring the speed of sound",
+        "paragraphs": [
+          "In Harmonie universelle (1636), Marin Mersenne reported an early quantitative attempt to measure the speed of sound. He used gunfire over a known distance and compared the visible flash with the delayed report.",
+          "His result was not very accurate, but the method established a powerful idea: if sound covers a known distance in a measured time, its speed can be calculated."
+        ],
+        "substeps": [],
+        "formulas": [],
+        "media": null,
+        "source": {
+          "label": "Marin Mersenne, Harmonie universelle (1636)",
+          "url": "https://archive.org/details/bub_gal_ark_12148_bpt6k5471093v"
+        }
       },
       {
         "number": "02",
-        "title": "Tune",
-        "text": "Vary the frequency and identify a clear resonance of the air column."
+        "id": "what-is-sound",
+        "eyebrow": "The question",
+        "title": "We know its speed—but what is sound?",
+        "paragraphs": [
+          "Measuring a speed does not yet tell us what is moving. This question was already discussed in antiquity. In De Anima, Aristotle connected sound with impact and with motion transmitted through the surrounding air.",
+          "This becomes the central problem of the workshop: what travels from the source to the listener when the air itself does not travel across the room?"
+        ],
+        "substeps": [],
+        "formulas": [],
+        "media": null,
+        "source": {
+          "label": "Aristotle, De Anima, Book II, Chapter 8",
+          "url": "https://classics.mit.edu/Aristotle/soul.2.ii.html"
+        }
       },
       {
         "number": "03",
-        "title": "Observe",
-        "text": "Compare the particle pattern or microphone signal with the predicted mode."
+        "id": "wave-model",
+        "eyebrow": "Wave model",
+        "title": "From a pulse to a standing wave",
+        "paragraphs": [
+          "A Slinky makes the distinction between matter and disturbance easy to observe: each coil moves locally while the pulse travels along the spring."
+        ],
+        "substeps": [
+          {
+            "number": "3.1",
+            "title": "A travelling pulse",
+            "text": "In a short video, I send individual impulses through a Slinky. Following one coil shows local motion; following the deformation shows propagation from one part of the spring to the next.",
+            "formula": null,
+            "media": "Planned video · Slinky pulse"
+          },
+          {
+            "number": "3.2",
+            "title": "Transverse waves and standing modes",
+            "text": "I then drive the Slinky transversely. Reflections at the ends superpose with incoming waves; at selected frequencies, fixed nodes and standing modes appear. Sound in air is longitudinal, but propagation, reflection, superposition and boundary conditions follow the same wave logic.",
+            "formula": null,
+            "media": "Live demonstration · Standing modes"
+          },
+          {
+            "number": "3.3",
+            "title": "Speed, wavelength and frequency",
+            "text": "An interactive animation connects the three quantities. For a fixed wave speed, increasing the frequency shortens the wavelength.",
+            "formula": "v = fλ",
+            "media": "Planned animation · v, f and λ"
+          }
+        ],
+        "formulas": [],
+        "media": null,
+        "source": null
       },
       {
         "number": "04",
-        "title": "Measure",
-        "text": "Record the frequency f and the spacing d between adjacent displacement nodes."
+        "id": "closed-tube",
+        "eyebrow": "Resonance and boundaries",
+        "title": "From Chladni figures to a closed tube",
+        "paragraphs": [
+          "In 1787, Ernst Chladni showed how sand on a vibrating plate traces nodal lines. The plate and the air column are different systems, but the visual idea is the same: a standing vibration can leave a spatial pattern.",
+          "In an ideal tube closed at both ends, air displacement is zero at each end. Only wavelengths that satisfy the boundary conditions can form standing modes; pressure antinodes occur where the displacement nodes are located."
+        ],
+        "substeps": [],
+        "formulas": [
+          "L = nλ / 2",
+          "fₙ = nv / 2L"
+        ],
+        "media": null,
+        "source": {
+          "label": "E. F. F. Chladni, Entdeckungen über die Theorie des Klanges (1787)",
+          "url": "https://archive.org/details/entdeckungenuber00chla"
+        }
       },
       {
         "number": "05",
-        "title": "Calculate",
-        "text": "Use λ = 2d and v = fλ to estimate the speed of sound."
+        "id": "kundt",
+        "eyebrow": "Kundt · 1866",
+        "title": "A wavelength written in dust",
+        "paragraphs": [
+          "In 1866, August Kundt published a method based on acoustic dust figures inside a tube. The repeated pattern reveals the spacing d between adjacent nodes: half a wavelength.",
+          "Measure d, double it to obtain λ, then combine the wavelength with the known driving frequency f. The visible pattern becomes a measurement of the speed of sound.",
+          "The real power of the experiment is comparison. By filling the tube with different gases and repeating the measurement, the speed of sound in each gas can be determined."
+        ],
+        "substeps": [],
+        "formulas": [
+          "d = λ / 2",
+          "λ = 2d",
+          "v = fλ = 2fd"
+        ],
+        "media": "Planned video · Kundt tube experiment",
+        "source": {
+          "label": "August Kundt, On a New Kind of Acoustic Dust Figures (1866)",
+          "url": "https://onlinelibrary.wiley.com/doi/10.1002/andp.18662030402"
+        }
       }
     ]
   },
@@ -73,6 +147,6 @@
     "tab": "Other",
     "eyebrow": "Other",
     "title": "Additional material",
-    "description": "This section is intentionally brief. Additional answers and supporting material can be added here later."
+    "description": "Short answers and supporting material for the interview can be added here later."
   }
 }
