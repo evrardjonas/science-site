@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Résonance — le jeu</title>
+<title>Resonance — the game</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Space+Grotesk:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
@@ -360,7 +360,7 @@
     transition: width 0.08s linear;
   }
 
-  /* Spectre (affiché uniquement quand les indices sont autorisés) */
+  /* Spectrum (shown only when hints are allowed) */
   .spectrum{
     position: relative;
     height: 26px;
@@ -425,7 +425,7 @@
     padding: 0 2px;
   }
 
-  /* Slider longueur (bac à sable uniquement) */
+  /* Length slider (sandbox only) */
   .level-row{
     display: flex;
     align-items: center;
@@ -723,7 +723,7 @@
   .mission-feedback .ok{ color: #6FCF97; font-weight: 600; }
   .mission-feedback .no{ color: var(--gold); font-weight: 600; }
 
-  /* ---------- Révélation en 3 volets ---------- */
+  /* ---------- Three-panel reveal ---------- */
   .reveal-row{
     display:flex;
     gap: 10px;
@@ -759,7 +759,7 @@
   }
   .reveal-panel .formula{ margin: 0; font-size: 0.68rem; padding: 8px; line-height: 1.5; }
 
-  /* ---------- Fiche du scientifique (affichée au Résultat d'un niveau) ---------- */
+  /* ---------- Scientist's fiche (shown at a level's Result) ---------- */
   .notebook-card{
     background: #0A1120;
     border: 1px solid #223252;
@@ -824,46 +824,46 @@
 
   <div class="screen active" id="menuScreen">
     <div class="heading">
-      <h1>Résonance — le jeu</h1>
-      <p>Trouvez les modes propres d'un tube en balayant sa fréquence. Progressez à travers les niveaux, du plus simple au plus exigeant.</p>
+      <h1>Resonance — the game</h1>
+      <p>Find a tube's natural modes by sweeping its frequency. Work through the levels, from simplest to most demanding.</p>
     </div>
     <div class="panel">
-      <div class="section-label">Bac à sable</div>
+      <div class="section-label">Sandbox</div>
       <div class="sandbox-grid">
         <div class="sandbox-mini-card ends-oo" id="sandboxOO">
-          <h4>Ouvert — Ouvert</h4>
-          <p>Toutes les harmoniques.</p>
+          <h4>Open — Open</h4>
+          <p>All harmonics.</p>
         </div>
         <div class="sandbox-mini-card ends-oc" id="sandboxOC">
-          <h4>Ouvert — Fermé</h4>
-          <p>Harmoniques impaires.</p>
+          <h4>Open — Closed</h4>
+          <p>Odd harmonics.</p>
         </div>
         <div class="sandbox-mini-card ends-cc" id="sandboxCC">
-          <h4>Fermé — Fermé</h4>
-          <p>Comme au labo.</p>
+          <h4>Closed — Closed</h4>
+          <p>Just like in the lab.</p>
         </div>
       </div>
-      <div class="section-label" style="margin-top:18px;">Expérience — Tube de Kundt</div>
-      <p class="section-hint">Trouvez un mode propre, mesurez l'écart entre les tas de poudre à la règle, puis calculez la vitesse du son.</p>
+      <div class="section-label" style="margin-top:18px;">Experiment — Kundt's Tube</div>
+      <p class="section-hint">Find a natural mode, measure the gap between the powder piles with the ruler, then calculate the speed of sound.</p>
       <div class="sandbox-card kundt-card" id="kundtEasyCard">
         <div>
-          <h3>🧪 Mode facile — une mesure</h3>
-          <p>Une seule résonance à trouver et à mesurer.</p>
+          <h3>🧪 Easy mode — one measurement</h3>
+          <p>Just one resonance to find and measure.</p>
         </div>
         <div class="go">▶</div>
       </div>
       <div class="sandbox-card kundt-card" id="kundtFullCard">
         <div>
-          <h3>🔬 Expérience complète — 3 mesures</h3>
-          <p>Trois modes différents à trouver et mesurer, puis moyennez vos résultats.</p>
+          <h3>🔬 Full experiment — 3 measurements</h3>
+          <p>Find and measure three different modes, then average your results.</p>
         </div>
         <div class="go">▶</div>
       </div>
-      <div class="section-label" style="margin-top:18px;">Niveaux</div>
+      <div class="section-label" style="margin-top:18px;">Levels</div>
       <div class="level-grid" id="levelGrid"></div>
-      <button class="icon-btn unlock-all-btn" id="unlockAllBtn">🔓 Débloquer tous les niveaux</button>
-      <div class="section-label" style="margin-top:18px;">Trouvez la longueur</div>
-      <p class="section-hint">On vous donne la fréquence, à vous de trouver la longueur du tube — pas d'harmoniques à traquer, juste une bonne oreille.</p>
+      <button class="icon-btn unlock-all-btn" id="unlockAllBtn">🔓 Unlock all levels</button>
+      <div class="section-label" style="margin-top:18px;">Find the Length</div>
+      <p class="section-hint">You're given the frequency — find the tube's length. No harmonics to hunt, just a good ear.</p>
       <div class="level-grid" id="lengthLevelGrid"></div>
     </div>
   </div>
@@ -872,30 +872,30 @@
     <div class="heading">
       <button class="icon-btn" id="missionMenuBtn" style="margin-bottom:10px;">← Menu</button>
       <h1>Mini-mission</h1>
-      <p>Observez avant d'expérimenter.</p>
+      <p>Observe before you experiment.</p>
     </div>
     <div class="panel">
       <div class="mission-card">
         <div class="mission-image-box" id="missionImgBox"><img class="mission-image" id="missionImg" alt=""></div>
         <div class="mission-title" id="missionTitle"></div>
       </div>
-      <div class="mission-question">D'après le dessin, que pensez-vous des deux extrémités de ce résonateur ?</div>
+      <div class="mission-question">Based on the drawing, what do you think about this resonator's two ends?</div>
       <div class="mission-options" id="missionOptions">
-        <button class="mission-opt" data-ends="OO">Ouverte — Ouverte</button>
-        <button class="mission-opt" data-ends="OC">Ouverte — Fermée</button>
-        <button class="mission-opt" data-ends="CC">Fermée — Fermée</button>
+        <button class="mission-opt" data-ends="OO">Open — Open</button>
+        <button class="mission-opt" data-ends="OC">Open — Closed</button>
+        <button class="mission-opt" data-ends="CC">Closed — Closed</button>
       </div>
       <div class="mission-feedback" id="missionFeedback" hidden></div>
       <div class="overlay-buttons">
-        <button class="replay-btn" id="missionContinueBtn" hidden>Expérimenter →</button>
+        <button class="replay-btn" id="missionContinueBtn" hidden>Experiment →</button>
       </div>
     </div>
   </div>
 
   <div class="screen" id="gameScreen">
     <div class="heading">
-      <h1 id="gameTitle">Résonance</h1>
-      <p id="gameSubtitle">Balayez la fréquence avec ← → pour faire vibrer le tube.</p>
+      <h1 id="gameTitle">Resonance</h1>
+      <p id="gameSubtitle">Sweep the frequency with ← → to make the tube vibrate.</p>
     </div>
 
     <div class="panel">
@@ -906,7 +906,7 @@
       <div class="level-identity">
         <img class="level-icon" id="levelIcon" alt="" hidden>
         <div class="level-identity-text">
-          <div class="level-name" id="levelName">Bac à sable</div>
+          <div class="level-name" id="levelName">Sandbox</div>
           <div class="level-sub" id="levelSub"></div>
         </div>
       </div>
@@ -923,11 +923,11 @@
 
       <div class="readout-row">
         <div class="freq-block">
-          <div class="freq-label" id="freqLabel">FRÉQUENCE</div>
+          <div class="freq-label" id="freqLabel">FREQUENCY</div>
           <div class="freq-value" id="freqValue">000.0<span class="freq-unit">Hz</span></div>
           <div class="freq-manual" id="freqManual">
             <input type="number" id="freqInput" step="0.1" placeholder="Hz">
-            <button class="icon-btn" id="freqGoBtn">Aller</button>
+            <button class="icon-btn" id="freqGoBtn">Go</button>
           </div>
         </div>
         <div class="meter-block">
@@ -947,7 +947,7 @@
       </div>
 
       <div class="level-row" id="lengthRow">
-        <label for="lengthSlider">Longueur L</label>
+        <label for="lengthSlider">Length L</label>
         <input type="range" id="lengthSlider" min="0.3" max="3.5" step="0.05" value="1.7">
         <span class="value" id="lengthValue">1.70 m</span>
       </div>
@@ -960,21 +960,21 @@
         <button class="step fine" data-step="1">+1</button>
         <button class="step fine" data-step="10">+10</button>
       </div>
-      <div class="step-hint" id="stepHint">Pas des flèches : <strong id="stepHintValue">1</strong> Hz</div>
-      <div class="step-hint" id="lengthHint" hidden>Astuce : cliquez sur le curseur puis utilisez ← → pour affiner la longueur au mm près.</div>
+      <div class="step-hint" id="stepHint">Arrow step: <strong id="stepHintValue">1</strong> Hz</div>
+      <div class="step-hint" id="lengthHint" hidden>Tip: click the slider, then use ← → to fine-tune the length to the millimeter.</div>
 
       <div class="footer-row" id="footerRow">
         <label class="hint-toggle" id="hintRow">
           <input type="checkbox" id="hintToggle">
-          Mode débutant (indique la direction)
+          Beginner mode (shows direction)
         </label>
-        <button class="icon-btn" id="muteBtn">🔊 Son</button>
+        <button class="icon-btn" id="muteBtn">🔊 Sound</button>
       </div>
 
       <div class="kbd-hint">
-        <kbd>←</kbd> <kbd>→</kbd> utilisent le pas sélectionné ci-dessus ·
-        <kbd>Shift</kbd> + flèches = 0.1 Hz ·
-        <kbd>Ctrl</kbd> + flèches = 10 Hz
+        <kbd>←</kbd> <kbd>→</kbd> use the step selected above ·
+        <kbd>Shift</kbd> + arrows = 0.1 Hz ·
+        <kbd>Ctrl</kbd> + arrows = 10 Hz
       </div>
     </div>
   </div>
@@ -983,7 +983,7 @@
 
 <div class="overlay" id="overlay">
   <div class="overlay-card">
-    <h2 id="overlayTitle">Résonance trouvée</h2>
+    <h2 id="overlayTitle">Resonance found</h2>
     <div id="overlayBody"></div>
     <div class="overlay-buttons" id="overlayButtons"></div>
   </div>
@@ -991,12 +991,12 @@
 
 <script>
 (function(){
-  // ================= Physique =================
-  const V = 340; // vitesse du son (m/s)
+  // ================= Physics =================
+  const V = 340; // speed of sound (m/s)
 
   const LEVEL = {
-    tubeType: 'CF',   // 'CF' = harmoniques entières (tube ouvert-ouvert ou fermé-fermé) | 'OC' = ouvert-fermé (harmoniques impaires)
-    ends: 'CC',       // 'CC' fermé-fermé | 'OO' ouvert-ouvert | 'OC' ouvert-fermé — pilote uniquement le dessin
+    tubeType: 'CF',   // 'CF' = integer harmonics (open-open or closed-closed tube) | 'OC' = open-closed (odd harmonics)
+    ends: 'CC',       // 'CC' closed-closed | 'OO' open-open | 'OC' open-closed — only drives the drawing
     tint: '#9C7A57',
     L: 1.7,
     sigma: 3.0,
@@ -1027,9 +1027,9 @@
     return Math.sqrt(-2 * Math.log(u)) * Math.cos(2 * Math.PI * v) * sigma;
   }
 
-  let resonances = [];  // [{ idx, m, f }, ...] triés par fréquence croissante
+  let resonances = [];  // [{ idx, m, f }, ...] sorted by ascending frequency
   let freq = 100;
-  let locked = false;   // utilisé uniquement en bac à sable
+  let locked = false;   // used only in sandbox mode
   let muted = false;
   let audioCtx = null, osc = null, gainNode = null;
   let visualPhase = 0;
@@ -1101,73 +1101,73 @@
     return Math.sin(idx * Math.PI * xNorm);
   }
 
-  // ================= Niveaux =================
-  // ends pilote uniquement le dessin (CC/OO/OC) ; tubeType pilote la formule (CF = harmoniques entières, OC = impaires)
+  // ================= Levels =================
+  // ends only drives the drawing (CC/OO/OC); tubeType drives the formula (CF = integer harmonics, OC = odd)
   const LEVELS = [
-    { title: 'Le tube de Kundt (labo)', ends: 'CC', tubeType: 'CF', L: 1.7,
+    { title: "Kundt's tube (lab)", ends: 'CC', tubeType: 'CF', L: 1.7,
       tolerance: 0.5, sigma: 3.5, modesToFind: 1, hints: true, timeLimit: null, parTime: 12,
       tint: '#5EC8D8', image: 'assets/levels/kundt-tube.svg',
-      blurb: "Un tube rigide fermé à ses deux bouts, comme en séance de travaux pratiques." },
+      blurb: "A rigid tube closed at both ends, just like in a physics lab session." },
 
-    { title: 'Une flûte traversière', ends: 'OO', tubeType: 'CF', L: 0.66,
+    { title: 'A transverse flute', ends: 'OO', tubeType: 'CF', L: 0.66,
       tolerance: 0.4, sigma: 3.2, modesToFind: 2, hints: true, timeLimit: null, parTime: 22,
       tint: '#C9B37A', image: 'assets/levels/flute-traversiere.svg',
-      blurb: "Ouverte à l'embouchure et à la sortie : toutes les harmoniques peuvent résonner." },
+      blurb: "Open at the mouthpiece and the far end: every harmonic can resonate." },
 
-    { title: 'Une flûte de Pan', ends: 'OC', tubeType: 'OC', L: 0.4,
+    { title: 'A pan flute', ends: 'OC', tubeType: 'OC', L: 0.4,
       tolerance: 0.35, sigma: 3.0, modesToFind: 2, hints: true, timeLimit: null, parTime: 25,
       tint: '#8FBF6B', image: 'assets/levels/flute-de-pan.svg',
-      blurb: "Un roseau fermé à sa base, ouvert en haut : seules les harmoniques impaires résonnent." },
+      blurb: "A reed closed at its base, open at the top: only odd harmonics resonate." },
 
-    { title: 'Une clarinette', ends: 'OC', tubeType: 'OC', L: 0.6,
+    { title: 'A clarinet', ends: 'OC', tubeType: 'OC', L: 0.6,
       tolerance: 0.3, sigma: 2.8, modesToFind: 3, hints: false, timeLimit: 100,
       tint: '#3B2A20', image: 'assets/levels/clarinette.svg',
-      blurb: "L'anche ferme un bout du tube, le pavillon reste ouvert." },
+      blurb: "The reed closes one end of the tube; the bell stays open." },
 
-    { title: 'Un ponceau routier', ends: 'OO', tubeType: 'CF', L: 3.0,
+    { title: 'A road culvert', ends: 'OO', tubeType: 'CF', L: 3.0,
       tolerance: 0.25, sigma: 2.5, modesToFind: 3, hints: false, timeLimit: 90,
       tint: '#8B8F94', image: 'assets/levels/ponceau.svg',
-      blurb: "Une buse de drainage sous une route : ouverte aux deux bouts, longue et grave." },
+      blurb: "A drainage pipe under a road: open at both ends, long and low-pitched." },
 
-    { title: 'Une bouteille', ends: 'OC', tubeType: 'OC', L: 0.22,
+    { title: 'A bottle', ends: 'OC', tubeType: 'OC', L: 0.22,
       tolerance: 0.3, sigma: 2.6, modesToFind: 2, hints: false, timeLimit: 75, meterHidden: true,
       tint: '#4FA3A0', image: 'assets/levels/bouteille.svg',
-      blurb: "Souffler sur le goulot excite le mode fondamental — pas de jauge cette fois, fiez-vous à l'oreille." },
+      blurb: "Blowing across the neck excites the fundamental mode — no gauge this time, trust your ear." },
 
-    { title: 'Un didgeridoo', ends: 'OO', tubeType: 'CF', L: 1.4,
+    { title: 'A didgeridoo', ends: 'OO', tubeType: 'CF', L: 1.4,
       tolerance: 0.22, sigma: 2.3, modesToFind: 2, hints: false, timeLimit: 75, meterHidden: true,
       tint: '#7A4B2A', image: 'assets/levels/didgeridoo.svg',
-      blurb: "Long tuyau ouvert aux deux bouts. Toujours sans jauge : écoutez le son enfler." },
+      blurb: "A long tube open at both ends. Still no gauge: listen for the sound to swell." },
 
-    { title: "Un tuyau d'orgue bouché", ends: 'OC', tubeType: 'OC', L: 1.0,
+    { title: 'A stopped organ pipe', ends: 'OC', tubeType: 'OC', L: 1.0,
       tolerance: 0.16, sigma: 2.0, modesToFind: 3, hints: false, timeLimit: 65,
       tint: '#B08D57', image: 'assets/levels/orgue-bouche.svg',
-      blurb: "Un tuyau bouché sonne une octave plus grave qu'un tuyau ouvert de même longueur." },
+      blurb: "A stopped pipe sounds an octave lower than an open pipe of the same length." },
 
-    { title: "Un tuyau d'orgue ouvert", ends: 'OO', tubeType: 'CF', L: [0.8, 2.0],
+    { title: 'An open organ pipe', ends: 'OO', tubeType: 'CF', L: [0.8, 2.0],
       tolerance: 0.12, sigma: 1.8, modesToFind: 3, hints: false, timeLimit: 60,
       tint: '#C9A227', image: 'assets/levels/orgue-ouvert.svg',
-      blurb: "Longueur inconnue : repérez toute la série d'harmoniques." },
+      blurb: "Unknown length: track down the whole harmonic series." },
 
-    { title: 'Maître résonateur', ends: 'OC', tubeType: 'OC', L: [0.4, 3.0],
+    { title: 'Master resonator', ends: 'OC', tubeType: 'OC', L: [0.4, 3.0],
       tolerance: 0.08, sigma: 1.5, modesToFind: 3, hints: false, timeLimit: 90, meterHidden: true,
       tint: '#E8A33D',
-      blurb: "Tolérance extrême, sans jauge : la justesse parfaite se mérite." },
+      blurb: "Extreme tolerance, no gauge: perfect pitch has to be earned." },
 
-    { title: 'Une paille', ends: 'OO', tubeType: 'CF', L: 0.19,
+    { title: 'A drinking straw', ends: 'OO', tubeType: 'CF', L: 0.19,
       tolerance: 0.07, sigma: 1.3, modesToFind: 3, hints: false, timeLimit: 70, meterHidden: true,
       tint: '#E85D9E', image: 'assets/levels/paille.svg',
-      blurb: "Très courte, donc très aiguë : les modes sont espacés de plus de 800 Hz. Sans jauge." },
+      blurb: "Very short, so very high-pitched: modes are spaced more than 800 Hz apart. No gauge." },
 
-    { title: "Un tuyau d'aspirateur", ends: 'OO', tubeType: 'CF', L: [1.8, 2.6],
+    { title: 'A vacuum cleaner hose', ends: 'OO', tubeType: 'CF', L: [1.8, 2.6],
       tolerance: 0.06, sigma: 1.2, modesToFind: 3, hints: false, timeLimit: 55, meterHidden: true,
       tint: '#6B7A8F', image: 'assets/levels/aspirateur.svg',
-      blurb: "Long, souple, longueur inconnue : quatre modes à débusquer à l'oreille." },
+      blurb: "Long, floppy, unknown length: three modes to track down by ear." },
 
-    { title: 'Le grand bourdon', ends: 'OC', tubeType: 'OC', L: [2.0, 4.0],
+    { title: 'The cathedral bourdon', ends: 'OC', tubeType: 'OC', L: [2.0, 4.0],
       tolerance: 0.05, sigma: 1.0, modesToFind: 3, hints: false, timeLimit: 50, meterHidden: true,
       tint: '#4A3B6B', image: 'assets/levels/grand-bourdon.svg',
-      blurb: "Un tuyau de cathédrale, grave et démesuré. Tolérance record, sans jauge : l'épreuve finale." },
+      blurb: "A cathedral-sized pipe, deep and oversized. Record tolerance, no gauge: the final challenge." },
   ];
 
   const SAVE_KEY = 'resonance_game_save_v1';
@@ -1205,43 +1205,43 @@
   function randRange(a, b){ return a + Math.random() * (b - a); }
 
   function endsLabel(ends){
-    if (ends === 'OO') return 'ouvert aux deux bouts';
-    if (ends === 'OC') return 'ouvert-fermé';
-    return 'fermé aux deux bouts';
+    if (ends === 'OO') return 'open at both ends';
+    if (ends === 'OC') return 'open-closed';
+    return 'closed at both ends';
   }
 
   const KUNDT = {
     L: 1.2, tubeType: 'CF', ends: 'CC', tint: '#5EC8D8', image: 'assets/levels/kundt-tube.svg',
-    idxPool: [3, 4, 5, 6], // modes ayant assez de nœuds internes pour être mesurés
+    idxPool: [3, 4, 5, 6], // modes with enough internal nodes to measure
     easy: { tolerance: 0.3, sigma: 2.5, trials: 1 },
     full: { tolerance: 0.2, sigma: 2.0, trials: 3 },
   };
 
-  // Niveaux "Trouvez la longueur" : la fréquence est fixée, on cherche L (toujours accessibles, pas de déblocage séquentiel).
-  // tolerance/sigma sont calculées à l'entrée du niveau (voir enterLengthLevel) pour rester atteignables avec le pas du curseur.
+  // "Find the length" levels: the frequency is fixed, you search for L (always available, no sequential unlocking).
+  // tolerance/sigma are computed on level entry (see enterLengthLevel) so they stay reachable with the slider's step.
   const FINEST_L_STEP = 0.01;
   const LENGTH_LEVELS = [
-    { title: 'Un sifflet à coulisse', ends: 'OO', tubeType: 'CF', tint: '#5EC8D8', image: 'assets/levels/flute-traversiere.svg',
+    { title: 'A slide whistle', ends: 'OO', tubeType: 'CF', tint: '#5EC8D8', image: 'assets/levels/flute-traversiere.svg',
       targetFreq: 440, Lrange: [0.15, 1.2], timeLimit: null, parTime: 25,
-      blurb: "Un sifflet à coulisse change de longueur pour changer de hauteur. Trouvez L pour obtenir un La (440 Hz)." },
-    { title: 'Une flûte à bec', ends: 'OO', tubeType: 'CF', tint: '#C9B37A', image: 'assets/levels/flute-de-pan.svg',
+      blurb: "A slide whistle changes length to change pitch. Find L to get an A (440 Hz)." },
+    { title: 'A recorder', ends: 'OO', tubeType: 'CF', tint: '#C9B37A', image: 'assets/levels/flute-de-pan.svg',
       targetFreq: 523.3, Lrange: [0.1, 0.9], timeLimit: null, parTime: 20,
-      blurb: "Trouvez L pour obtenir un Do aigu (523 Hz) sur cette flûte ouverte aux deux bouts." },
-    { title: 'Un trombone à coulisse', ends: 'OC', tubeType: 'OC', tint: '#B08D57', image: 'assets/levels/clarinette.svg',
+      blurb: "Find L to get a high C (523 Hz) on this flute, open at both ends." },
+    { title: 'A slide trombone', ends: 'OC', tubeType: 'OC', tint: '#B08D57', image: 'assets/levels/clarinette.svg',
       targetFreq: 233, Lrange: [0.2, 2.2], timeLimit: 60,
-      blurb: "La coulisse allonge le tube. Trouvez L pour obtenir un Si♭ (233 Hz)." },
-    { title: 'Une corne de brume', ends: 'OC', tubeType: 'OC', tint: '#6B7A8F', image: 'assets/levels/aspirateur.svg',
+      blurb: "The slide lengthens the tube. Find L to get a B♭ (233 Hz)." },
+    { title: 'A foghorn', ends: 'OC', tubeType: 'OC', tint: '#6B7A8F', image: 'assets/levels/aspirateur.svg',
       targetFreq: 110, Lrange: [0.5, 3.0], timeLimit: 60,
-      blurb: "Grave et puissante. Trouvez L pour obtenir un La grave (110 Hz)." },
-    { title: 'Un appeau', ends: 'OC', tubeType: 'OC', tint: '#8FBF6B', image: 'assets/levels/paille.svg',
+      blurb: "Deep and powerful. Find L to get a low A (110 Hz)." },
+    { title: 'A duck call', ends: 'OC', tubeType: 'OC', tint: '#8FBF6B', image: 'assets/levels/paille.svg',
       targetFreq: 880, Lrange: [0.05, 0.5], timeLimit: 40,
-      blurb: "Très court, donc très sensible à la longueur. Trouvez L pour obtenir un La aigu (880 Hz)." },
-    { title: 'Système mystère', ends: null, tubeType: null, tint: '#E8A33D', image: null,
+      blurb: "Very short, so very sensitive to length. Find L to get a high A (880 Hz)." },
+    { title: 'Mystery system', ends: null, tubeType: null, tint: '#E8A33D', image: null,
       targetFreq: null, Lrange: [0.15, 2.5], timeLimit: 40,
-      blurb: "Type de tube ET fréquence inconnus à chaque essai : c'est l'épreuve finale de ce laboratoire." },
+      blurb: "Both the tube type AND the frequency are unknown each time: the final challenge of this lab." },
   ];
 
-  // ================= État du jeu =================
+  // ================= Game state =================
   const Game = {
     mode: null,          // 'sandbox' | 'level' | 'kundt' | 'findL'
     levelIndex: null,
@@ -1341,7 +1341,7 @@
   }
 
   function setFreqControlsVisible(visible){
-    freqLabelEl.textContent = visible ? 'FRÉQUENCE' : 'FRÉQUENCE CIBLE';
+    freqLabelEl.textContent = visible ? 'FREQUENCY' : 'TARGET FREQUENCY';
     freqManualEl.hidden = !visible;
     freqControlsEl.hidden = !visible;
     stepHintEl.hidden = !visible;
@@ -1349,13 +1349,13 @@
   }
 
   function endsExplanation(ends){
-    if (ends === 'OO') return "Les deux bouts sont ouverts à l'air libre : toutes les harmoniques (n = 1, 2, 3…) peuvent résonner.";
-    if (ends === 'OC') return "Un bout est fermé, l'autre ouvert : seules les harmoniques impaires (n = 1, 3, 5…) résonnent.";
-    return "Les deux bouts sont fermés/rigides : comme un tube ouvert-ouvert, toutes les harmoniques résonnent.";
+    if (ends === 'OO') return "Both ends are open to the air: every harmonic (n = 1, 2, 3…) can resonate.";
+    if (ends === 'OC') return "One end is closed, the other open: only odd harmonics (n = 1, 3, 5…) resonate.";
+    return "Both ends are closed/rigid: just like an open-open tube, every harmonic resonates.";
   }
 
   function seriesLabel(tubeType){
-    return tubeType === 'OC' ? 'harmoniques impaires (n = 1, 3, 5…)' : 'harmoniques entières (n = 1, 2, 3…)';
+    return tubeType === 'OC' ? 'odd harmonics (n = 1, 3, 5…)' : 'integer harmonics (n = 1, 2, 3…)';
   }
 
   function levelFundamental(level){
@@ -1387,14 +1387,14 @@
   function revealRowHTML({ tubeType, m, idx, L, f, image, tint }){
     const color = tint || '#5EC8D8';
     const objectPanel = image
-      ? `<div class="reveal-panel"><div class="reveal-box"><img src="${image}" alt=""></div><span>Objet</span></div>`
+      ? `<div class="reveal-panel"><div class="reveal-box"><img src="${image}" alt=""></div><span>Object</span></div>`
       : '';
     const shapePanel = `<div class="reveal-panel"><div class="reveal-box">${modeShapeSVG(tubeType, idx, color)}</div><span>Mode n=${m}</span></div>`;
-    const formulaPanel = `<div class="reveal-panel formula-panel"><div class="formula">${formulaFor(tubeType, m, L, f)}</div><span>Formule</span></div>`;
+    const formulaPanel = `<div class="reveal-panel formula-panel"><div class="formula">${formulaFor(tubeType, m, L, f)}</div><span>Formula</span></div>`;
     return `<div class="reveal-row">${objectPanel}${shapePanel}${formulaPanel}</div>`;
   }
 
-  // ================= Overlay générique =================
+  // ================= Generic overlay =================
   function showOverlay({ title, bodyHTML, buttons }){
     overlayTitleEl.textContent = title;
     overlayBodyEl.innerHTML = bodyHTML;
@@ -1423,7 +1423,7 @@
     toastTimer = setTimeout(() => toastEl.classList.remove('show'), 1400);
   }
 
-  // ================= Spectre =================
+  // ================= Spectrum =================
   function rebuildSpectrum(list){
     spectrumTrack.innerHTML = '';
     spectrumLabels.innerHTML = '';
@@ -1490,7 +1490,7 @@
     spectrumLabels.classList.toggle('show', on);
   }
 
-  // ================= Affichage =================
+  // ================= Display =================
   function updateReadout(){
     const r = responseAt(freq);
     freqValueEl.innerHTML = fmt(freq) + '<span class="freq-unit">Hz</span>';
@@ -1502,7 +1502,7 @@
     if (hintToggle.checked && hintRow.style.display !== 'none' && !locked){
       const cl = closestResonance(freq);
       if (cl){
-        const dir = freq < cl.f ? 'plus haut →' : freq > cl.f ? 'plus bas ←' : 'pile dessus';
+        const dir = freq < cl.f ? 'higher →' : freq > cl.f ? 'lower ←' : 'right on it';
         meterPctEl.textContent = pct + '% · ' + dir;
       }
     }
@@ -1539,8 +1539,8 @@
     if (!audioCtx) return;
     const r = responseAt(freq);
     osc.frequency.setTargetAtTime(freq, audioCtx.currentTime, 0.03);
-    // Le son balayé reste toujours audible (comme un haut-parleur qui pousse le tube) ;
-    // il enfle nettement quand la fréquence tombe sur une résonance.
+    // The swept tone stays audible at all times (like a speaker driving the tube);
+    // it swells noticeably when the frequency lands on a resonance.
     const baseGain = 0.045;
     const boostGain = r * 0.18;
     const targetGain = muted ? 0 : (baseGain + boostGain);
@@ -1571,12 +1571,12 @@
     });
   }
 
-  // ================= Formule =================
+  // ================= Formula =================
   function formulaFor(tubeType, m, L, f){
     const subs = '₀₁₂₃₄₅₆₇₈₉';
     const sub = m.toString().split('').map(d => subs[+d]).join('');
     if (tubeType === 'OC'){
-      return `f${sub} = n · v / (4L)   [n = ${m}, impair]\n` +
+      return `f${sub} = n · v / (4L)   [n = ${m}, odd]\n` +
              `     = ${m} × ${V} / (4 × ${L.toFixed(2)})\n` +
              `     = ${f.toFixed(1)} Hz`;
     }
@@ -1585,7 +1585,7 @@
            `     = ${f.toFixed(1)} Hz`;
   }
 
-  // ================= Boucle de jeu =================
+  // ================= Game loop =================
   let activeStep = 1;
 
   function canTune(){
@@ -1641,7 +1641,7 @@
       if (!isTarget) return;
       Game.foundIdx.add(hit.idx);
       playChime(hit.f);
-      showToast(`Mode n=${hit.m} trouvé · ${Math.round(hit.f)} Hz`);
+      showToast(`Mode n=${hit.m} found · ${Math.round(hit.f)} Hz`);
       freqValueEl.classList.remove('pulse'); void freqValueEl.offsetWidth; freqValueEl.classList.add('pulse');
       updateModePips();
       if (Game.foundIdx.size >= Game.target.length){
@@ -1654,11 +1654,11 @@
     } else if (Game.mode === 'kundt'){
       if (locked) return;
       if (!KUNDT.idxPool.includes(hit.idx)){
-        showToast(`Mode n=${hit.idx} : pas assez de nœuds internes pour mesurer. Cherchez un autre mode.`);
+        showToast(`Mode n=${hit.idx}: not enough internal nodes to measure. Look for another mode.`);
         return;
       }
       if (Game.kundtMode === 'full' && Game.kundtUsedIdx.has(hit.idx)){
-        showToast(`Mode n=${hit.idx} déjà mesuré cette expérience — cherchez-en un autre.`);
+        showToast(`Mode n=${hit.idx} already measured this experiment — look for another one.`);
         return;
       }
       locked = true;
@@ -1671,15 +1671,15 @@
   }
 
   function showSandboxFound(r){
-    const desc = `Vous avez atteint le mode n = ${r.m}.`;
+    const desc = `You've reached mode n = ${r.m}.`;
     const body = `<p>${desc}</p>` +
       revealRowHTML({ tubeType: LEVEL.tubeType, m: r.m, idx: r.idx, L: LEVEL.L, f: r.f, image: SANDBOX_IMAGE[LEVEL.ends], tint: LEVEL.tint }) +
-      `<p>Longueur du tube L = ${LEVEL.L.toFixed(2)} m · célérité v = ${V} m/s</p>`;
+      `<p>Tube length L = ${LEVEL.L.toFixed(2)} m · speed of sound v = ${V} m/s</p>`;
     showOverlay({
-      title: 'Résonance trouvée',
+      title: 'Resonance found',
       bodyHTML: body,
       buttons: [
-        { label: 'Rejouer', primary: true, onClick: () => {
+        { label: 'Replay', primary: true, onClick: () => {
             hideOverlay();
             locked = false;
             freq = randomStart();
@@ -1692,7 +1692,7 @@
     playChime(r.f);
   }
 
-  // ---------- Prédire la suite ----------
+  // ---------- Predict what's next ----------
   function buildPredictOptions(t1, t2, t3){
     const correct = Math.round(t3.f);
     const trap = Math.round(t1.f * (t2.m + 1));
@@ -1713,11 +1713,14 @@
   }
 
   function askPredictNext(){
+    // Guard: if the player found the remaining modes before this delayed prompt fired,
+    // the level is already complete — don't clobber the completion overlay.
+    if (Game.mode !== 'level' || Game.foundIdx.size >= Game.target.length) return;
     const [t1, t2, t3] = Game.target;
     const { opts, correct } = buildPredictOptions(t1, t2, t3);
     showOverlay({
-      title: 'Devinez la suite',
-      bodyHTML: `<p>Vous avez trouvé ${Math.round(t1.f)} Hz et ${Math.round(t2.f)} Hz.</p><p>D'après vous, quelle sera la fréquence du prochain mode ?</p>`,
+      title: "Guess what's next",
+      bodyHTML: `<p>You found ${Math.round(t1.f)} Hz and ${Math.round(t2.f)} Hz.</p><p>What do you think the next mode's frequency will be?</p>`,
       buttons: opts.map((v) => ({ label: v + ' Hz', onClick: () => revealPredictAnswer(v, correct) })),
     });
   }
@@ -1726,13 +1729,13 @@
     const ok = chosen === correct;
     const level = LEVELS[Game.levelIndex];
     showOverlay({
-      title: ok ? 'Bien vu !' : 'Pas tout à fait',
-      bodyHTML: `<p>La bonne réponse était <strong>${correct} Hz</strong>.</p><p>${endsExplanation(level.ends)}</p>`,
-      buttons: [{ label: 'Continuer à chercher', primary: true, onClick: hideOverlay }],
+      title: ok ? 'Nice catch!' : 'Not quite',
+      bodyHTML: `<p>The correct answer was <strong>${correct} Hz</strong>.</p><p>${endsExplanation(level.ends)}</p>`,
+      buttons: [{ label: 'Keep searching', primary: true, onClick: hideOverlay }],
     });
   }
 
-  // ---------- Tube de Kundt ----------
+  // ---------- Kundt's tube ----------
   function buildKundtSVG(totalCm, jitteredCm){
     const w = 480, h = 74;
     const marginX = 20;
@@ -1787,7 +1790,7 @@
     if (dxEl){
       dxEl.textContent = Game.kundtClicks.length === 2
         ? Math.abs(Game.kundtClicks[1] - Game.kundtClicks[0]).toFixed(1) + ' cm'
-        : (Game.kundtClicks.length === 1 ? 'cliquez un 2ᵉ tas…' : '—');
+        : (Game.kundtClicks.length === 1 ? 'click a 2nd pile…' : '—');
     }
   }
 
@@ -1795,7 +1798,7 @@
     const fb = document.getElementById('kundtFeedback');
     if (!fb) return;
     if (Game.kundtClicks.length < 2){
-      fb.innerHTML = '<span style="color:var(--gold);">Cliquez sur deux tas de poudre pour mesurer Δx avant de vérifier.</span>';
+      fb.innerHTML = '<span style="color:var(--gold);">Click two powder piles to measure Δx before checking.</span>';
       return;
     }
     const measuredDxCm = Math.abs(Game.kundtClicks[1] - Game.kundtClicks[0]);
@@ -1808,17 +1811,17 @@
     const cfg = KUNDT[Game.kundtMode];
     const isLast = Game.kundtTrials.length >= cfg.trials;
     const qualityMsg = errPct <= 3
-      ? 'Excellent — très proche de la valeur de référence.'
+      ? 'Excellent — very close to the reference value.'
       : errPct <= 8
-      ? "Correct, dans la marge d'erreur expérimentale habituelle."
-      : "Assez loin — l'imprécision de la mesure explique l'écart, comme en vrai labo.";
+      ? 'Correct, within the usual experimental margin of error.'
+      : 'Pretty far off — measurement imprecision explains the gap, just like in a real lab.';
 
-    fb.innerHTML = `<p>Δx mesuré ≈ ${measuredDxCm.toFixed(1)} cm → v ≈ ${v.toFixed(0)} m/s.</p><p>${qualityMsg}</p>`;
+    fb.innerHTML = `<p>Measured Δx ≈ ${measuredDxCm.toFixed(1)} cm → v ≈ ${v.toFixed(0)} m/s.</p><p>${qualityMsg}</p>`;
 
     overlayButtonsEl.innerHTML = '';
     const btn = document.createElement('button');
     btn.className = 'replay-btn';
-    btn.textContent = isLast ? 'Voir le bilan' : `Mesure suivante (${Game.kundtTrials.length + 1}/${cfg.trials}) →`;
+    btn.textContent = isLast ? 'See the summary' : `Next measurement (${Game.kundtTrials.length + 1}/${cfg.trials}) →`;
     btn.onclick = isLast ? showKundtSummary : () => { hideOverlay(); startKundtSearch(); };
     overlayButtonsEl.appendChild(btn);
   }
@@ -1833,14 +1836,14 @@
     Game.kundtClicks = [];
     const cfg = KUNDT[Game.kundtMode];
     const nInterior = hit.idx - 1;
-    const trialLine = cfg.trials > 1 ? `<p class="kundt-trial-label">Mesure ${Game.kundtTrials.length + 1} / ${cfg.trials}</p>` : '';
+    const trialLine = cfg.trials > 1 ? `<p class="kundt-trial-label">Measurement ${Game.kundtTrials.length + 1} / ${cfg.trials}</p>` : '';
 
     const body = `
       ${trialLine}
-      <p>Fréquence trouvée : <strong>${hit.f.toFixed(1)} Hz</strong> (mode n = ${hit.idx}, ${nInterior} nœud${nInterior > 1 ? 's' : ''} interne${nInterior > 1 ? 's' : ''}).</p>
+      <p>Frequency found: <strong>${hit.f.toFixed(1)} Hz</strong> (mode n = ${hit.idx}, ${nInterior} internal node${nInterior > 1 ? 's' : ''}).</p>
       <div class="kundt-svg-wrap" id="kundtRulerWrap">${svgHtml}</div>
-      <p>La poudre s'accumule aux nœuds, avec une légère dispersion comme en vraie expérience. <strong>Cliquez sur deux tas consécutifs</strong> pour mesurer Δx.</p>
-      <div class="kundt-measured">Δx mesuré : <strong id="kundtMeasuredDx">—</strong></div>
+      <p>Powder collects at the nodes, with a bit of scatter just like in a real experiment. <strong>Click two consecutive piles</strong> to measure Δx.</p>
+      <div class="kundt-measured">Measured Δx: <strong id="kundtMeasuredDx">—</strong></div>
       <div class="kundt-inputs">
         <label>v (m/s) <input type="number" id="kundtV" step="1"></label>
       </div>
@@ -1848,10 +1851,10 @@
     `;
 
     showOverlay({
-      title: 'Résonance stable — mesurez !',
+      title: 'Resonance locked — take a measurement!',
       bodyHTML: body,
       buttons: [
-        { label: 'Vérifier', primary: true, onClick: () => checkKundtAnswer(hit) },
+        { label: 'Check', primary: true, onClick: () => checkKundtAnswer(hit) },
         { label: 'Menu', onClick: backToMenu },
       ],
     });
@@ -1873,14 +1876,14 @@
         <thead><tr><th>#</th><th>Mode</th><th>f</th><th>Δx</th><th>v</th></tr></thead>
         <tbody>${rows}</tbody>
       </table></div>
-      <p>Moyenne des ${trials.length} mesure${trials.length > 1 ? 's' : ''} : <strong>v ≈ ${avgV.toFixed(0)} m/s</strong> (écart de ${errPct.toFixed(1)}% avec la valeur de référence, ${V} m/s).</p>
-      ${trials.length > 1 ? "<p>Comme en vrai labo, moyenner plusieurs mesures indépendantes réduit l'effet des erreurs de lecture individuelles.</p>" : ''}
+      <p>Average of ${trials.length} measurement${trials.length > 1 ? 's' : ''}: <strong>v ≈ ${avgV.toFixed(0)} m/s</strong> (${errPct.toFixed(1)}% off the reference value, ${V} m/s).</p>
+      ${trials.length > 1 ? '<p>Just like in a real lab, averaging several independent measurements reduces the effect of individual reading errors.</p>' : ''}
     `;
     showOverlay({
-      title: Game.kundtMode === 'full' ? "Bilan de l'expérience" : 'Résultat',
+      title: Game.kundtMode === 'full' ? 'Experiment summary' : 'Result',
       bodyHTML: body,
       buttons: [
-        { label: 'Recommencer', primary: true, onClick: () => { hideOverlay(); enterKundt(Game.kundtMode); } },
+        { label: 'Start over', primary: true, onClick: () => { hideOverlay(); enterKundt(Game.kundtMode); } },
         { label: 'Menu', onClick: backToMenu },
       ],
     });
@@ -1896,11 +1899,11 @@
     freq = randomStart();
 
     const cfg = KUNDT[Game.kundtMode];
-    const trialTag = cfg.trials > 1 ? ` — mesure ${Game.kundtTrials.length + 1}/${cfg.trials}` : '';
-    gameSubtitle.textContent = 'Trouvez un mode propre (au moins 2 nœuds) pour révéler la poudre à mesurer.';
-    levelName.textContent = 'Bonus — Tube de Kundt' + (Game.kundtMode === 'full' ? ' (expérience)' : ' (facile)');
+    const trialTag = cfg.trials > 1 ? ` — measurement ${Game.kundtTrials.length + 1}/${cfg.trials}` : '';
+    gameSubtitle.textContent = 'Find a natural mode (at least 2 nodes) to reveal the powder to measure.';
+    levelName.textContent = "Kundt's tube" + (Game.kundtMode === 'full' ? ' — full experiment' : ' — easy mode');
     setLevelIcon(KUNDT.image);
-    levelSub.textContent = `Tube fermé aux deux bouts · L = ${LEVEL.L.toFixed(2)} m${trialTag}`;
+    levelSub.textContent = `Tube closed at both ends · L = ${LEVEL.L.toFixed(2)} m${trialTag}`;
 
     updateBeginnerMode();
     rebuildSpectrum(resonances);
@@ -1947,7 +1950,7 @@
     Game.lengthIndex = i;
     const level = LENGTH_LEVELS[i];
 
-    // "Système mystère" : type de tube ET fréquence tirés au sort à chaque tentative.
+    // "Mystery system": both tube type AND frequency are randomized on every attempt.
     const tubeType = level.tubeType || (Math.random() < 0.5 ? 'CF' : 'OC');
     const ends = level.ends || (tubeType === 'OC' ? 'OC' : (Math.random() < 0.5 ? 'OO' : 'CC'));
     LEVEL.tubeType = tubeType;
@@ -1963,9 +1966,9 @@
       answerL = randRange(level.Lrange[0], level.Lrange[1]);
       target = Math.round((V / (k * answerL)) * 10) / 10;
     }
-    // Tolérance/largeur du pic dérivées de la sensibilité f(L) autour de la réponse,
-    // pour rester atteignables avec le pas de curseur FINEST_L_STEP (sinon la fenêtre valide
-    // peut être plus étroite qu'un cran du curseur, rendant le niveau insoluble).
+    // Tolerance/peak width derived from the sensitivity of f(L) around the answer,
+    // so they stay reachable with the FINEST_L_STEP slider step (otherwise the valid
+    // window could be narrower than one slider notch, making the level unsolvable).
     LEVEL.tolerance = Math.max(0.3, Math.round(FINEST_L_STEP * V / (k * answerL * answerL) * 1.5 * 10) / 10);
     LEVEL.sigma = LEVEL.tolerance * 2.5;
 
@@ -1982,8 +1985,8 @@
     } while (attempts < 30 && resonances.some(r => Math.abs(freq - r.f) < LEVEL.tolerance * 3));
     locked = false;
 
-    gameSubtitle.textContent = `Trouvez la longueur qui fait résonner ce tube à ${target.toFixed(1)} Hz.`;
-    levelName.textContent = 'Longueur — ' + level.title;
+    gameSubtitle.textContent = `Find the length that makes this tube resonate at ${target.toFixed(1)} Hz.`;
+    levelName.textContent = 'Length — ' + level.title;
     setLevelIcon(level.image);
     levelSub.textContent = `${level.blurb} · Tube ${endsLabel(ends)}`;
     modePipsEl.innerHTML = '';
@@ -2018,7 +2021,7 @@
     resizeCanvas();
   }
 
-  // ---------- Minuteur ----------
+  // ---------- Timer ----------
   function tick(){
     Game.timeLeft = Math.max(0, Game.timeLeft - 0.1);
     const pct = (Game.timeLeft / Game.timeLimit) * 100;
@@ -2091,28 +2094,61 @@
           </div>
         </div>
       `;
-      const ficheButtons = [{ label: 'Rejouer', onClick: goRejouer }];
-      if (hasNext) ficheButtons.push({ label: 'Niveau suivant', primary: true, onClick: goNext });
+      const ficheButtons = [{ label: 'Replay', onClick: goRejouer }];
+      if (hasNext) ficheButtons.push({ label: 'Next level', primary: true, onClick: goNext });
       else ficheButtons.push({ label: 'Menu', primary: true, onClick: backToMenu });
       if (hasNext) ficheButtons.push({ label: 'Menu', onClick: backToMenu });
       showOverlay({ title: entry.title, bodyHTML: body, buttons: ficheButtons });
     }
 
     const buttons = [
-      { label: 'Résultat', primary: true, onClick: showFiche },
-      { label: 'Rejouer', onClick: goRejouer },
+      { label: 'Result', primary: true, onClick: showFiche },
+      { label: 'Replay', onClick: goRejouer },
     ];
-    if (hasNext) buttons.push({ label: 'Niveau suivant', onClick: goNext });
+    if (hasNext) buttons.push({ label: 'Next level', onClick: goNext });
     else buttons.push({ label: 'Menu', onClick: backToMenu });
 
     showOverlay({
-      title: 'Niveau terminé !',
-      bodyHTML: starsHTML(stars) + `<p>Temps : ${(elapsedMs / 1000).toFixed(1)} s</p>`,
+      title: 'Level complete!',
+      bodyHTML: starsHTML(stars) + `<p>Time: ${(elapsedMs / 1000).toFixed(1)} s</p>`,
       buttons,
     });
   }
 
-  // ---------- Trouvez la longueur ----------
+  // Reopen a level's result fiche from the menu, rebuilt from the saved notebook entry
+  // (the fundamental is stored, so the fundamental's length is recovered from f = V/(k·L)).
+  function showLevelFicheFromMenu(levelNum){
+    const entry = progress.notebook[levelNum];
+    const tint = entry.tint || '#5EC8D8';
+    const k = entry.tubeType === 'OC' ? 4 : 2;
+    const Lm = V / (k * entry.fundamental);
+    const revealHTML = revealRowHTML({ tubeType: entry.tubeType, m: 1, idx: 1, L: Lm, f: entry.fundamental, image: null, tint });
+    const imageHTML = entry.image
+      ? `<div class="notebook-card-image" style="background:${rgba(tint, 0.14)};"><img src="${entry.image}" alt=""></div>`
+      : '';
+    const body = `
+      <div class="notebook-card">
+        ${imageHTML}
+        <div class="notebook-card-body">
+          <div class="notebook-fundamental">f₁ ≈ ${Math.round(entry.fundamental)}<span>Hz</span></div>
+          <div class="notebook-identity">Tube ${endsLabel(entry.ends)} · ${seriesLabel(entry.tubeType)}</div>
+          ${revealHTML}
+          <p class="notebook-sentence">${entry.sentence}</p>
+          <p class="notebook-pedagogy">${endsExplanation(entry.ends)}</p>
+        </div>
+      </div>
+    `;
+    showOverlay({
+      title: entry.title,
+      bodyHTML: body,
+      buttons: [
+        { label: 'Replay', onClick: () => { hideOverlay(); enterLevel(levelNum - 1); } },
+        { label: 'Menu', primary: true, onClick: backToMenu },
+      ],
+    });
+  }
+
+  // ---------- Find the length ----------
   function checkLengthHit(){
     if (locked) return;
     const hit = resonances.find(r => Math.abs(freq - r.f) <= LEVEL.tolerance);
@@ -2135,10 +2171,10 @@
 
     const hasNext = i < LENGTH_LEVELS.length - 1;
     const buttons = [
-      { label: 'Rejouer', onClick: () => { hideOverlay(); enterLengthLevel(i); } },
+      { label: 'Replay', onClick: () => { hideOverlay(); enterLengthLevel(i); } },
     ];
     if (hasNext){
-      buttons.push({ label: 'Niveau suivant', primary: true, onClick: () => { hideOverlay(); enterLengthLevel(i + 1); } });
+      buttons.push({ label: 'Next level', primary: true, onClick: () => { hideOverlay(); enterLengthLevel(i + 1); } });
     } else {
       buttons.push({ label: 'Menu', primary: true, onClick: backToMenu });
     }
@@ -2146,9 +2182,9 @@
 
     const revealHTML = revealRowHTML({ tubeType: level.tubeType, m: hit.m, idx: hit.idx, L: LEVEL.L, f: hit.f, image: level.image, tint: level.tint });
     showOverlay({
-      title: 'Longueur trouvée !',
-      bodyHTML: `<p>L ≈ <strong>${LEVEL.L.toFixed(2)} m</strong> fait résonner ce tube à ${hit.f.toFixed(1)} Hz (mode n=${hit.m}).</p>` +
-        starsHTML(stars) + revealHTML + `<p>Temps : ${(elapsedMs / 1000).toFixed(1)} s</p>`,
+      title: 'Length found!',
+      bodyHTML: `<p>L ≈ <strong>${LEVEL.L.toFixed(2)} m</strong> makes this tube resonate at ${hit.f.toFixed(1)} Hz (mode n=${hit.m}).</p>` +
+        starsHTML(stars) + revealHTML + `<p>Time: ${(elapsedMs / 1000).toFixed(1)} s</p>`,
       buttons,
     });
   }
@@ -2156,20 +2192,20 @@
   function timeUp(){
     if (Game.mode === 'findL'){
       showOverlay({
-        title: 'Temps écoulé',
-        bodyHTML: `<p>La bonne longueur n'a pas été trouvée à temps.</p>`,
+        title: "Time's up",
+        bodyHTML: `<p>You didn't find the right length in time.</p>`,
         buttons: [
-          { label: 'Réessayer', primary: true, onClick: () => { hideOverlay(); enterLengthLevel(Game.lengthIndex); } },
+          { label: 'Try again', primary: true, onClick: () => { hideOverlay(); enterLengthLevel(Game.lengthIndex); } },
           { label: 'Menu', onClick: backToMenu },
         ],
       });
       return;
     }
     showOverlay({
-      title: 'Temps écoulé',
-      bodyHTML: `<p>Vous avez trouvé ${Game.foundIdx.size} / ${Game.target.length} modes.</p>`,
+      title: "Time's up",
+      bodyHTML: `<p>You found ${Game.foundIdx.size} / ${Game.target.length} modes.</p>`,
       buttons: [
-        { label: 'Réessayer', primary: true, onClick: () => { hideOverlay(); enterLevel(Game.levelIndex); } },
+        { label: 'Try again', primary: true, onClick: () => { hideOverlay(); enterLevel(Game.levelIndex); } },
         { label: 'Menu', onClick: backToMenu },
       ],
     });
@@ -2185,7 +2221,7 @@
       const card = document.createElement('div');
       card.className = 'level-card' + (isLocked ? ' locked' : '');
       const flags = [`<span class="level-flag">${endsLabel(level.ends)}</span>`];
-      if (level.meterHidden) flags.push('<span class="level-flag blind">sans jauge</span>');
+      if (level.meterHidden) flags.push('<span class="level-flag blind">no gauge</span>');
       if (level.timeLimit) flags.push(`<span class="level-flag">⏱ ${level.timeLimit}s</span>`);
       const thumb = level.image ? `<div class="level-thumb"><img src="${level.image}" alt=""></div>` : '';
       card.innerHTML = isLocked
@@ -2195,7 +2231,10 @@
            <div class="level-stars">${'★'.repeat(stars)}${'☆'.repeat(3 - stars)}</div>
            <div class="level-flags">${flags.join('')}</div>`;
       if (!isLocked){
-        card.addEventListener('click', () => startMission(i));
+        card.addEventListener('click', () => {
+          if (progress.notebook[num]) showLevelFicheFromMenu(num);
+          else startMission(i);
+        });
       }
       levelGrid.appendChild(card);
     });
@@ -2217,7 +2256,7 @@
       const stars = progress.lengthStars[num] || 0;
       const card = document.createElement('div');
       card.className = 'level-card';
-      const flags = [`<span class="level-flag">${level.ends ? endsLabel(level.ends) : 'type inconnu'}</span>`];
+      const flags = [`<span class="level-flag">${level.ends ? endsLabel(level.ends) : 'unknown type'}</span>`];
       if (level.timeLimit) flags.push(`<span class="level-flag">⏱ ${level.timeLimit}s</span>`);
       const thumb = level.image ? `<div class="level-thumb"><img src="${level.image}" alt=""></div>` : '';
       card.innerHTML = `${thumb}<div class="level-title">${level.title}</div>
@@ -2274,7 +2313,7 @@
       correctBtn.classList.add('correct');
       if (chosen !== level.ends) btn.classList.add('wrong');
       missionFeedback.hidden = false;
-      missionFeedback.innerHTML = (chosen === level.ends ? '<span class="ok">Exact !</span> ' : '<span class="no">Pas tout à fait.</span> ') + endsExplanation(level.ends);
+      missionFeedback.innerHTML = (chosen === level.ends ? '<span class="ok">Correct!</span> ' : '<span class="no">Not quite.</span> ') + endsExplanation(level.ends);
       missionContinueBtn.hidden = false;
     });
   });
@@ -2309,10 +2348,10 @@
     locked = false;
     freq = randomStart();
 
-    gameSubtitle.textContent = "Balayez la fréquence avec ← → pour faire vibrer le tube. Changez la longueur L pour décaler les modes.";
-    levelName.textContent = 'Bac à sable — ' + endsLabel(ends);
+    gameSubtitle.textContent = "Sweep the frequency with ← → to make the tube vibrate. Change the length L to shift the modes.";
+    levelName.textContent = 'Sandbox — ' + endsLabel(ends);
     setLevelIcon(SANDBOX_IMAGE[ends]);
-    levelSub.textContent = `Tube ${endsLabel(LEVEL.ends)} · longueur réglable`;
+    levelSub.textContent = `Tube ${endsLabel(LEVEL.ends)} · adjustable length`;
     timebarWrap.style.display = 'none';
     lengthRow.style.display = 'flex';
     lengthValue.textContent = LEVEL.L.toFixed(2) + ' m';
@@ -2357,8 +2396,8 @@
     Game.timeLeft = level.timeLimit || 0;
     Game.startTs = performance.now();
 
-    gameSubtitle.textContent = 'Trouvez tous les modes indiqués ci-dessous pour terminer le niveau.';
-    levelName.textContent = `Niveau ${i + 1} — ${level.title}`;
+    gameSubtitle.textContent = 'Find every mode listed below to complete the level.';
+    levelName.textContent = `Level ${i + 1} — ${level.title}`;
     setLevelIcon(level.image);
     levelSub.textContent = `${level.blurb} · L = ${LEVEL.L.toFixed(2)} m`;
     lengthRow.style.display = 'none';
@@ -2386,7 +2425,7 @@
     resizeCanvas();
   }
 
-  // ================= Contrôles =================
+  // ================= Controls =================
   document.querySelectorAll('button.step').forEach(btn => {
     btn.addEventListener('click', () => {
       const delta = parseFloat(btn.dataset.step);
@@ -2398,7 +2437,9 @@
 
   window.addEventListener('keydown', (e) => {
     if (!gameScreen.classList.contains('active')) return;
-    if (document.activeElement === freqInput) return;
+    // Let native inputs handle their own arrow keys (manual Hz entry, or the length slider
+    // in "find the length" levels — clicking it then pressing ← → nudges it by its step).
+    if (document.activeElement === freqInput || document.activeElement === lengthSlider) return;
     if (e.key === 'ArrowLeft' || e.key === 'ArrowRight'){
       e.preventDefault();
       const dir = e.key === 'ArrowLeft' ? -1 : 1;
@@ -2421,7 +2462,7 @@
 
   muteBtn.addEventListener('click', () => {
     muted = !muted;
-    muteBtn.textContent = muted ? '🔇 Muet' : '🔊 Son';
+    muteBtn.textContent = muted ? '🔇 Muted' : '🔊 Sound';
     updateAudio();
   });
 
@@ -2460,7 +2501,7 @@
   sandboxCC.addEventListener('click', () => enterSandbox('CC'));
   menuBtn.addEventListener('click', backToMenu);
 
-  // ================= Dessin =================
+  // ================= Drawing =================
   function resizeCanvas(){
     const rect = canvas.getBoundingClientRect();
     const dpr = window.devicePixelRatio || 1;
