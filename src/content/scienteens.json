@@ -77,7 +77,7 @@
         "eyebrow": "Wave model",
         "title": "From a pulse to a standing wave",
         "paragraphs": [
-          "A Slinky and a particle model build the wave concept in three steps: local motion creates a travelling disturbance, periodic motion introduces frequency and wavelength, and superposition with a reflected wave produces a standing pattern."
+          "A Slinky and a particle model build the wave concept in four steps: local motion creates a travelling disturbance, periodic motion introduces frequency and wavelength, a transverse representation makes the geometry visible, and superposition with a reflected wave produces a standing pattern."
         ],
         "substeps": [
           {
@@ -85,45 +85,86 @@
             "title": "A travelling pulse",
             "text": "I send a longitudinal impulse through a Slinky. Each coil only oscillates around its equilibrium position, while the compression travels from one coil to the next. This separates the motion of matter from the propagation of energy and information.",
             "formula": null,
-            "media": {
-              "type": "image",
-              "src": "media/scienteens/longitudinal-slinky.gif",
-              "alt": "Animation of a hand creating a longitudinal pulse in a horizontal spring.",
-              "title": "Matter moves locally; the pulse travels",
-              "caption": "The hand moves parallel to the spring. A compression propagates to the right although the coils remain near their equilibrium positions.",
-              "poster": "",
-              "reducedMotionSrc": "media/scienteens/longitudinal-slinky.png"
-            }
+            "media": [
+              {
+                "type": "image",
+                "src": "media/scienteens/longitudinal-slinky.gif",
+                "alt": "Animation of a hand creating a longitudinal pulse in a horizontal spring.",
+                "title": "Matter moves locally; the pulse travels",
+                "caption": "The hand moves parallel to the spring. A compression propagates to the right although the coils remain near their equilibrium positions.",
+                "poster": "",
+                "reducedMotionSrc": "media/scienteens/longitudinal-slinky.png"
+              }
+            ]
           },
           {
             "number": "3.2",
             "title": "Speed, wavelength and frequency",
             "text": "A periodic source emits one compression after another. The frequency f counts the source oscillations per second, while the wavelength λ is the distance between two successive compressions. Their product gives the propagation speed: v = fλ. In a given medium, a higher frequency therefore produces a shorter wavelength.",
             "formula": "v = fλ",
-            "media": {
-              "type": "image",
-              "src": "media/scienteens/air-compression-wave.gif",
-              "alt": "Animation of a loudspeaker producing successive compressions in air molecules.",
-              "title": "A periodic disturbance in air",
-              "caption": "The air molecules oscillate locally. The compression pattern moves away from the loudspeaker; the spacing between successive compressions represents one wavelength.",
-              "poster": "",
-              "reducedMotionSrc": "media/scienteens/wavelength-animation-still.png"
-            }
+            "media": [
+              {
+                "type": "image",
+                "src": "media/scienteens/air-compression-wave.gif",
+                "alt": "Animation of a loudspeaker producing successive compressions in air molecules.",
+                "title": "A periodic disturbance in air",
+                "caption": "The air molecules oscillate locally. The compression pattern moves away from the loudspeaker; the spacing between successive compressions represents one wavelength.",
+                "poster": "",
+                "reducedMotionSrc": "media/scienteens/wavelength-animation-still.png"
+              },
+              {
+                "type": "image",
+                "src": "media/scienteens/wavelength-animation.gif",
+                "alt": "Animation comparing several periodic patterns with different spatial repetitions.",
+                "title": "Different wavelengths in the same medium",
+                "caption": "The coloured patterns advance through the same medium. A pattern with more repetitions over the same distance has a shorter wavelength and therefore a higher frequency; fewer repetitions mean a longer wavelength and a lower frequency, because v = fλ.",
+                "poster": "",
+                "reducedMotionSrc": "media/scienteens/wavelength-animation-still.png"
+              }
+            ]
           },
           {
             "number": "3.3",
-            "title": "Transverse waves and standing modes",
-            "text": "I then drive the Slinky transversely so that the displacement is easier to see. The wave reflects at the end and the incoming and reflected waves superpose: y = y₁ + y₂. At selected frequencies, stable nodes and antinodes appear. Sound in air is longitudinal, but reflection, superposition and boundary conditions obey the same wave logic.",
+            "title": "A transverse representation",
+            "text": "I then drive the Slinky transversely so that amplitude and wavelength are easier to see. The coils move perpendicular to the direction of propagation. Sound in air remains longitudinal: the sinusoidal curve is a representation of displacement as a function of position, not the trajectory followed by an air molecule.",
+            "formula": null,
+            "media": [
+              {
+                "type": "image",
+                "src": "media/scienteens/wave-types-synthesis.png",
+                "alt": "Diagram comparing compressions in a longitudinal wave with the sinusoidal representation of a transverse wave.",
+                "title": "Longitudinal and transverse waves",
+                "caption": "Particles oscillate parallel to propagation in a longitudinal wave and perpendicular to it in a transverse wave. Both descriptions use the same wavelength, frequency and propagation speed.",
+                "poster": "",
+                "reducedMotionSrc": ""
+              },
+              {
+                "type": "image",
+                "src": "media/scienteens/transverse-wavelength.png",
+                "alt": "Diagram showing wavelength measured horizontally between two equivalent points of a transverse wave.",
+                "title": "Measuring wavelength on a transverse wave",
+                "caption": "One wavelength is the horizontal distance between two consecutive crests—or any two points in the same phase. The particles oscillate vertically while the pattern propagates horizontally.",
+                "poster": "",
+                "reducedMotionSrc": ""
+              }
+            ]
+          },
+          {
+            "number": "3.4",
+            "title": "Reflection, superposition and standing modes",
+            "text": "A wave sent along the Slinky reflects at the end. The incoming and reflected waves overlap, and their displacements add: y = y₁ + y₂. At selected driving frequencies, the boundary conditions are satisfied and a stable pattern of nodes and antinodes appears. The filmed demonstration will compare several of these standing modes.",
             "formula": "y = y₁ + y₂",
-            "media": {
-              "type": "image",
-              "src": "media/scienteens/wave-types-synthesis.png",
-              "alt": "Diagram comparing compressions in a longitudinal wave with the sinusoidal representation of a transverse wave.",
-              "title": "Longitudinal and transverse waves",
-              "caption": "The particles oscillate parallel to propagation in a longitudinal wave and perpendicular to it in a transverse wave. The transverse model makes reflection, superposition, nodes and antinodes easier to visualise before the filmed demonstration of standing modes.",
-              "poster": "",
-              "reducedMotionSrc": ""
-            }
+            "media": [
+              {
+                "type": "image",
+                "src": "media/scienteens/standing-wave-nodes.png",
+                "alt": "Two snapshots of a standing sine wave sharing the same fixed red nodes.",
+                "title": "Fixed nodes, oscillating antinodes",
+                "caption": "The red nodes remain at zero displacement while the sections between them oscillate. This temporary diagram will be complemented by the filmed sequence of standing modes.",
+                "poster": "",
+                "reducedMotionSrc": ""
+              }
+            ]
           }
         ],
         "formulas": [],
