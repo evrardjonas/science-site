@@ -23,3 +23,5 @@ La branche `main` est construite puis publiée par `.github/workflows/deploy.yml
 ## Parcours principal
 
 Le menu conserve les cinq rubriques d’origine : `Accueil`, `Ressources`, `Simulations`, `Jeux` et `Projets`. `Scienteens Lab` est une page supplémentaire, accessible depuis un sixième onglet. Son ajout ne remplace ni l’accueil ni le design d’origine.
+
+La page `Scienteens Lab` reste volontairement limitée à deux sections : `Interview`, consacrée à l’atelier du tube de Kundt, et `Other`, réservée à de futurs compléments. Les autres projets et ressources sont publiés dans les rubriques générales afin de préserver une navigation lisible.

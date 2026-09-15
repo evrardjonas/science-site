@@ -10,7 +10,7 @@ Une page dédiée à Scienteens Lab est disponible en anglais depuis un onglet s
 
 Tous les textes de cette page sont regroupés dans `src/content/scienteens.json`. Sur GitHub, ouvrir ce fichier, cliquer sur le crayon, modifier uniquement le texte entre guillemets, puis utiliser **Commit changes**. GitHub Pages republie ensuite automatiquement le site.
 
-Pour ajouter un futur projet, dupliquer un objet dans `futureProjects` et remplacer son identifiant, son titre, son résumé et son statut. Ne pas supprimer les guillemets, virgules ou accolades du fichier JSON.
+Le bloc `interview` contient la présentation du tube de Kundt. Le bloc `other` est réservé aux réponses ou documents complémentaires qui seront ajoutés plus tard. Les autres projets ont vocation à rejoindre les rubriques générales du site. Ne pas supprimer les guillemets, virgules ou accolades du fichier JSON.
 
 ## Développement local
 
