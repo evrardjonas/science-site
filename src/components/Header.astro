@@ -22,13 +22,7 @@ const isActive = (href: string) => {
     </button>
     <nav id="site-navigation" class="site-navigation" aria-label="Navigation principale">
       {navigation.map((item) => (
-        <a
-          href={withBase(item.href)}
-          class:list={{ featured: item.featured }}
-          aria-current={isActive(item.href) ? 'page' : undefined}
-        >
-          {item.label}
-        </a>
+        <a href={withBase(item.href)} aria-current={isActive(item.href) ? 'page' : undefined}>{item.label}</a>
       ))}
     </nav>
   </div>
@@ -54,12 +48,10 @@ const isActive = (href: string) => {
   .site-navigation { display: flex; align-items: center; gap: 0.2rem; }
   .site-navigation a { padding: 0.55rem 0.75rem; border-radius: var(--radius-sm); color: var(--color-muted); font-size: 0.92rem; font-weight: 650; text-decoration: none; }
   .site-navigation a:hover, .site-navigation a[aria-current='page'] { background: var(--color-surface-strong); color: var(--color-ink); }
-  .site-navigation a.featured { background: var(--color-ink); color: var(--color-surface); }
-  .site-navigation a.featured:hover, .site-navigation a.featured[aria-current='page'] { background: var(--color-primary); color: white; }
   .menu-toggle { display: none; width: 2.75rem; height: 2.75rem; padding: 0.7rem; border: 1px solid var(--color-line); border-radius: var(--radius-sm); background: var(--color-surface); }
   .menu-toggle > span:not(.sr-only) { display: block; height: 2px; margin: 0.35rem 0; background: var(--color-ink); }
   .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0; }
-  @media (max-width: 48rem) {
+  @media (max-width: 58rem) {
     .menu-toggle { display: block; }
     .site-navigation { position: absolute; top: calc(100% + 1px); right: 1rem; left: 1rem; display: none; padding: var(--space-2); border: 1px solid var(--color-line); border-radius: var(--radius-md); background: var(--color-surface); box-shadow: var(--shadow-soft); }
     .site-navigation.is-open { display: grid; }
