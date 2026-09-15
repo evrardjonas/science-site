@@ -117,10 +117,10 @@
             "formula": "y = y₁ + y₂",
             "media": {
               "type": "image",
-              "src": "media/scienteens/standing-wave-nodes.png",
-              "alt": "Two snapshots of a standing sine wave sharing the same fixed red nodes.",
-              "title": "Fixed nodes, oscillating antinodes",
-              "caption": "The red nodes remain at zero displacement while the sections between them oscillate. This prepares the boundary-condition model used for the Kundt tube.",
+              "src": "media/scienteens/wave-types-synthesis.png",
+              "alt": "Diagram comparing compressions in a longitudinal wave with the sinusoidal representation of a transverse wave.",
+              "title": "Longitudinal and transverse waves",
+              "caption": "The particles oscillate parallel to propagation in a longitudinal wave and perpendicular to it in a transverse wave. The transverse model makes reflection, superposition, nodes and antinodes easier to visualise before the filmed demonstration of standing modes.",
               "poster": "",
               "reducedMotionSrc": ""
             }
@@ -144,7 +144,15 @@
           "L = nλ / 2",
           "fₙ = nv / 2L"
         ],
-        "media": null,
+        "media": {
+          "type": "image",
+          "src": "media/scienteens/chladni-plate-illustration.png",
+          "alt": "Historical line drawing of a vibrating plate sprinkled with sand and excited with a bow.",
+          "title": "Making nodal lines visible",
+          "caption": "As the plate vibrates, grains leave the strongly moving regions and collect along nodal lines. Chladni figures turn an invisible standing vibration into a visible spatial pattern.",
+          "poster": "",
+          "reducedMotionSrc": ""
+        },
         "source": {
           "label": "E. F. F. Chladni, Entdeckungen über die Theorie des Klanges (1787)",
           "url": "https://archive.org/details/entdeckungenuber00chla"
