@@ -39,50 +39,98 @@ const { meta, hero, interview, other } = content;
       <p>{interview.summary}</p>
     </header>
 
-    <article class="featured-project">
-      <div class="project-copy">
-        <p>{interview.description}</p>
-        <div class="project-tags" aria-label="Workshop topics">
-          {interview.tags.map((tag) => <span>{tag}</span>)}
-        </div>
-        <h3>Learning objectives</h3>
-        <ul>
-          {interview.objectives.map((objective) => <li>{objective}</li>)}
-        </ul>
-      </div>
-
-      <div class="wave-lab" aria-label="Illustration of a standing wave in a tube">
-        <div class="wave-label"><span>air-column response</span><span>resonant mode</span></div>
-        <svg viewBox="0 0 720 330" role="img" aria-label="Standing-wave pattern between two ends of a tube">
-          <rect x="32" y="56" width="656" height="218" rx="18"></rect>
-          <line x1="32" y1="165" x2="688" y2="165"></line>
-          <path class="wave wave-one" d="M32 165 C87 68 142 68 197 165 S307 262 362 165 S472 68 527 165 S637 262 688 165"></path>
-          <path class="wave wave-two" d="M32 165 C87 262 142 262 197 165 S307 68 362 165 S472 262 527 165 S637 68 688 165"></path>
-          <g class="nodes">
-            <circle cx="32" cy="165" r="8"></circle><circle cx="197" cy="165" r="8"></circle>
-            <circle cx="362" cy="165" r="8"></circle><circle cx="527" cy="165" r="8"></circle><circle cx="688" cy="165" r="8"></circle>
-          </g>
-        </svg>
-        <div class="scale"><span>predict</span><span>observe</span><span>measure</span></div>
-      </div>
-    </article>
-  </section>
-
-  <section class="method-section" aria-labelledby="workshop-sequence-title">
-    <div class="container">
-      <header class="section-heading light">
-        <div>
-          <p class="eyebrow">Workshop sequence</p>
-          <h2 id="workshop-sequence-title">From prediction to a value for the speed of sound.</h2>
-        </div>
-        <p>Each step produces an observation or measurement that can be compared with the initial wave model.</p>
-      </header>
-
-      <ol class="method-steps">
-        {interview.sequence.map((step) => (
-          <li><span>{step.number}</span><strong>{step.title}</strong><p>{step.text}</p></li>
+    <nav aria-label="Workshop sequence">
+      <ol class="story-index">
+        {interview.steps.map((step) => (
+          <li>
+            <a href={'#' + step.id}>
+              <span>{step.number}</span>
+              <strong>{step.title}</strong>
+            </a>
+          </li>
         ))}
       </ol>
+    </nav>
+
+    <div class="story">
+      {interview.steps.map((step) => (
+        <article id={step.id} class:list={['story-step', { 'kundt-step': step.id === 'kundt' }]}>
+          <header class="step-heading">
+            <span class="step-number" aria-hidden="true">{step.number}</span>
+            <div>
+              <p class="eyebrow">{step.eyebrow}</p>
+              <h3>{step.title}</h3>
+            </div>
+          </header>
+
+          <div class:list={['step-layout', { 'with-wave': step.id === 'closed-tube' }]}>
+            <div class="step-copy">
+              {step.paragraphs.map((paragraph) => <p>{paragraph}</p>)}
+
+              {step.formulas.length > 0 && (
+                <div class="formula-row" aria-label="Equations used in this part">
+                  {step.formulas.map((formula) => <code>{formula}</code>)}
+                </div>
+              )}
+
+              {step.source && (
+                <a class="source-link" href={step.source.url} target="_blank" rel="noreferrer">
+                  <span>Primary source</span>
+                  {step.source.label}
+                  <span aria-hidden="true">↗</span>
+                </a>
+              )}
+            </div>
+
+            {step.id === 'closed-tube' && (
+              <div class="wave-lab">
+                <div class="wave-label"><span>closed end</span><span>air displacement</span><span>closed end</span></div>
+                <svg viewBox="0 0 720 300" role="img" aria-label="Schematic of a standing displacement wave in a tube closed at both ends">
+                  <rect x="32" y="48" width="656" height="204" rx="18"></rect>
+                  <line x1="32" y1="150" x2="688" y2="150"></line>
+                  <path class="wave wave-one" d="M32 150 C87 58 142 58 197 150 S307 242 362 150 S472 58 527 150 S637 242 688 150"></path>
+                  <path class="wave wave-two" d="M32 150 C87 242 142 242 197 150 S307 58 362 150 S472 242 527 150 S637 58 688 150"></path>
+                  <g class="nodes">
+                    <circle cx="32" cy="150" r="8"></circle><circle cx="197" cy="150" r="8"></circle>
+                    <circle cx="362" cy="150" r="8"></circle><circle cx="527" cy="150" r="8"></circle><circle cx="688" cy="150" r="8"></circle>
+                  </g>
+                </svg>
+                <div class="wave-label"><span>node</span><span>L = nλ / 2</span><span>node</span></div>
+              </div>
+            )}
+          </div>
+
+          {step.substeps.length > 0 && (
+            <ol class="substeps">
+              {step.substeps.map((substep) => (
+                <li>
+                  <div class="substep-copy">
+                    <span>{substep.number}</span>
+                    <h4>{substep.title}</h4>
+                    <p>{substep.text}</p>
+                    {substep.formula && <code>{substep.formula}</code>}
+                  </div>
+                  {substep.media && (
+                    <div class="media-placeholder">
+                      <span>Media</span>
+                      <strong>{substep.media}</strong>
+                      <small>This space is ready for the final media.</small>
+                    </div>
+                  )}
+                </li>
+              ))}
+            </ol>
+          )}
+
+          {step.media && (
+            <div class="media-placeholder wide-media">
+              <span>Media</span>
+              <strong>{step.media}</strong>
+              <small>The experiment video will conclude the workshop here.</small>
+            </div>
+          )}
+        </article>
+      ))}
     </div>
   </section>
 
@@ -115,15 +163,29 @@ const { meta, hero, interview, other } = content;
   .section-heading { display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(17rem, 0.55fr); column-gap: clamp(2rem, 7vw, 7rem); align-items: end; margin-bottom: var(--space-6); }
   .section-heading h2 { max-width: 16ch; margin: 0; font-family: var(--font-display); font-size: clamp(2.5rem, 5vw, 4.7rem); letter-spacing: -0.06em; line-height: 0.98; }
   .section-heading > p { margin: 0; color: var(--color-muted); }
-  .featured-project { display: grid; grid-template-columns: minmax(0, 0.85fr) minmax(23rem, 1.15fr); gap: clamp(2rem, 6vw, 6rem); padding: clamp(1.5rem, 4vw, 3.5rem); border: 1px solid var(--color-line); border-radius: var(--radius-lg); background: var(--color-surface); box-shadow: var(--shadow-soft); }
-  .project-copy h3 { margin: var(--space-5) 0 0; font-family: var(--font-display); font-size: 1.5rem; letter-spacing: -0.045em; line-height: 1; }
-  .project-copy > p { margin-top: 0; color: var(--color-muted); font-size: 1.08rem; }
-  .project-copy ul { padding-left: var(--space-4); margin: var(--space-4) 0 0; }
-  .project-copy li + li { margin-top: var(--space-2); }
-  .project-tags { display: flex; flex-wrap: wrap; gap: var(--space-2); margin-block: var(--space-4); }
-  .project-tags span { display: inline-block; padding: 0.35rem 0.55rem; border-radius: var(--radius-sm); background: var(--color-surface-strong); color: var(--color-primary-dark); font-size: 0.75rem; font-weight: 750; }
-  .wave-lab { display: grid; align-content: space-between; min-height: 29rem; padding: var(--space-4); border-radius: var(--radius-md); background: var(--color-ink); color: var(--color-surface); }
-  .wave-label, .scale { display: flex; justify-content: space-between; gap: var(--space-3); color: var(--color-line); font-size: 0.7rem; font-weight: 750; letter-spacing: 0.09em; text-transform: uppercase; }
+  .story-index { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); padding: 0; margin: 0 0 var(--space-7); list-style: none; border-block: 1px solid var(--color-line); }
+  .story-index li { border-right: 1px solid var(--color-line); }
+  .story-index li:last-child { border-right: 0; }
+  .story-index a { display: grid; align-content: space-between; min-height: 9.5rem; padding: var(--space-3); color: var(--color-ink); text-decoration: none; }
+  .story-index a:hover { background: var(--color-surface-strong); }
+  .story-index span { color: var(--color-primary); font-size: 0.72rem; font-weight: 850; letter-spacing: 0.1em; }
+  .story-index strong { max-width: 15ch; font-family: var(--font-display); font-size: 1rem; line-height: 1.12; }
+  .story { display: grid; gap: var(--space-6); }
+  .story-step { padding: clamp(1.5rem, 4vw, 3.5rem); scroll-margin-top: var(--space-5); border: 1px solid var(--color-line); border-radius: var(--radius-lg); background: var(--color-surface); box-shadow: var(--shadow-soft); }
+  .step-heading { display: grid; grid-template-columns: auto minmax(0, 1fr); gap: var(--space-4); align-items: start; }
+  .step-number { display: grid; place-items: center; width: 3rem; aspect-ratio: 1; border-radius: var(--radius-sm); background: var(--color-ink); color: var(--color-accent); font-size: 0.75rem; font-weight: 850; letter-spacing: 0.08em; }
+  .step-heading h3 { max-width: 18ch; margin: 0; font-family: var(--font-display); font-size: clamp(2rem, 4vw, 3.6rem); letter-spacing: -0.055em; line-height: 1; }
+  .step-layout { display: grid; grid-template-columns: minmax(0, 0.8fr) minmax(22rem, 1.2fr); gap: clamp(2rem, 6vw, 6rem); align-items: start; margin-top: var(--space-5); }
+  .step-copy { grid-column: 1 / -1; max-width: var(--text-width); margin-left: calc(3rem + var(--space-4)); }
+  .step-layout.with-wave .step-copy { grid-column: auto; margin-left: calc(3rem + var(--space-4)); }
+  .step-copy > p { color: var(--color-muted); font-size: 1.05rem; }
+  .step-copy > p:first-child { margin-top: 0; }
+  .formula-row { display: flex; flex-wrap: wrap; gap: var(--space-2); margin-top: var(--space-4); }
+  code { display: inline-block; padding: 0.55rem 0.75rem; border-radius: var(--radius-sm); background: var(--color-surface-strong); color: var(--color-primary-dark); font-family: var(--font-display); font-size: 1.05rem; font-weight: 750; }
+  .source-link { display: flex; flex-wrap: wrap; gap: var(--space-2); align-items: baseline; width: fit-content; margin-top: var(--space-5); color: var(--color-primary-dark); font-size: 0.82rem; font-weight: 700; text-underline-offset: 0.2em; }
+  .source-link > span:first-child { color: var(--color-muted); font-size: 0.68rem; font-weight: 800; letter-spacing: 0.11em; text-transform: uppercase; }
+  .wave-lab { display: grid; align-content: space-between; min-height: 22rem; padding: var(--space-4); border-radius: var(--radius-md); background: var(--color-ink); color: var(--color-surface); }
+  .wave-label { display: flex; justify-content: space-between; gap: var(--space-3); color: var(--color-line); font-size: 0.67rem; font-weight: 750; letter-spacing: 0.09em; text-transform: uppercase; }
   .wave-lab svg { width: 100%; }
   .wave-lab rect { fill: none; stroke: var(--color-muted); stroke-width: 2; }
   .wave-lab line { stroke: var(--color-muted); stroke-dasharray: 5 7; }
@@ -131,34 +193,44 @@ const { meta, hero, interview, other } = content;
   .wave-one { stroke: var(--color-accent); }
   .wave-two { stroke: var(--color-surface-strong); }
   .nodes circle { fill: var(--color-surface); }
-  .method-section { padding-block: var(--space-7); background: var(--color-ink); color: var(--color-surface); }
-  .section-heading.light h2 { color: var(--color-surface); }
-  .section-heading.light > p { color: var(--color-line); }
-  .method-steps { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); padding: 0; margin: 0; list-style: none; border-block: 1px solid var(--color-muted); }
-  .method-steps li { min-height: 18rem; padding: var(--space-4); border-right: 1px solid var(--color-muted); }
-  .method-steps li:last-child { border-right: 0; }
-  .method-steps span { color: var(--color-accent); font-size: 0.75rem; font-weight: 850; }
-  .method-steps strong { display: block; margin-top: var(--space-7); font-family: var(--font-display); font-size: 1.25rem; line-height: 1.1; }
-  .method-steps p { color: var(--color-line); font-size: 0.9rem; }
+  .substeps { display: grid; gap: var(--space-3); padding: 0; margin: var(--space-6) 0 0 calc(3rem + var(--space-4)); list-style: none; }
+  .substeps li { display: grid; grid-template-columns: minmax(0, 1fr) minmax(16rem, 0.58fr); gap: var(--space-4); padding-top: var(--space-4); border-top: 1px solid var(--color-line); }
+  .substep-copy > span { color: var(--color-primary); font-size: 0.73rem; font-weight: 850; letter-spacing: 0.1em; }
+  .substep-copy h4 { margin: var(--space-2) 0; font-family: var(--font-display); font-size: 1.55rem; letter-spacing: -0.035em; line-height: 1.08; }
+  .substep-copy p { max-width: var(--text-width); margin-bottom: 0; color: var(--color-muted); }
+  .substep-copy code { margin-top: var(--space-3); }
+  .media-placeholder { display: grid; align-content: end; gap: var(--space-2); min-height: 11rem; padding: var(--space-4); border: 1px dashed var(--color-muted); border-radius: var(--radius-md); background: var(--color-surface-strong); }
+  .media-placeholder > span { color: var(--color-primary); font-size: 0.68rem; font-weight: 850; letter-spacing: 0.11em; text-transform: uppercase; }
+  .media-placeholder strong { font-family: var(--font-display); font-size: 1.1rem; line-height: 1.15; }
+  .media-placeholder small { color: var(--color-muted); }
+  .wide-media { min-height: 18rem; margin: var(--space-6) 0 0 calc(3rem + var(--space-4)); background: var(--color-ink); color: var(--color-surface); }
+  .wide-media > span { color: var(--color-accent); }
+  .wide-media small { color: var(--color-line); }
   .other-section { border-top: 1px solid var(--color-line); }
   .compact-heading { margin-bottom: 0; }
 
   @media (max-width: 62rem) {
-    .method-steps { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-    .method-steps li { border-bottom: 1px solid var(--color-muted); }
-    .method-steps li:nth-child(2n) { border-right: 0; }
-    .method-steps li:last-child { grid-column: 1 / -1; min-height: 13rem; }
-    .method-steps strong { margin-top: var(--space-5); }
+    .story-index { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .story-index li { border-bottom: 1px solid var(--color-line); }
+    .story-index li:nth-child(2n) { border-right: 0; }
+    .story-index li:last-child { grid-column: 1 / -1; border-bottom: 0; }
+    .story-index a { min-height: 7rem; }
+    .substeps li { grid-template-columns: 1fr; }
+    .media-placeholder { min-height: 9rem; }
   }
   @media (max-width: 50rem) {
-    .hero-grid, .section-heading, .featured-project { grid-template-columns: 1fr; }
+    .hero-grid, .section-heading, .step-layout { grid-template-columns: 1fr; }
     .section-heading > p { margin-top: var(--space-4); }
+    .step-copy, .step-layout.with-wave .step-copy, .substeps, .wide-media { margin-left: 0; }
+    .wave-lab { min-height: 19rem; }
   }
   @media (max-width: 38rem) {
     .section-tabs { display: grid; }
-    .method-steps { grid-template-columns: 1fr; }
-    .method-steps li, .method-steps li:nth-child(2n) { min-height: auto; border-right: 0; }
-    .method-steps li:last-child { grid-column: auto; }
-    .wave-lab { min-height: 20rem; }
+    .story-index { grid-template-columns: 1fr; }
+    .story-index li, .story-index li:nth-child(2n) { border-right: 0; }
+    .story-index li:last-child { grid-column: auto; }
+    .story-index a { min-height: auto; gap: var(--space-3); }
+    .step-heading { gap: var(--space-3); }
+    .step-number { width: 2.6rem; }
   }
 </style>
