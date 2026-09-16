@@ -229,7 +229,7 @@ const assetUrl = (path: string) => `${import.meta.env.BASE_URL}${path}`;
   .step-heading h3 { max-width: 18ch; margin: 0; font-family: var(--font-display); font-size: clamp(2rem, 4vw, 3.6rem); letter-spacing: -0.055em; line-height: 1; }
   .step-layout { margin: var(--space-5) 0 0 calc(3rem + var(--space-4)); }
   .step-copy { display: flow-root; min-width: 0; }
-  .step-copy > p { max-width: var(--text-width); color: var(--color-muted); font-size: 1.05rem; }
+  .step-copy > p { color: var(--color-muted); font-size: 1.05rem; text-align: justify; hyphens: auto; }
   .step-copy > p:first-of-type { margin-top: 0; }
   .step-media { float: right; width: 42%; max-width: calc(var(--text-width) * 0.55); margin: 0 0 var(--space-4) var(--space-4); }
   .formula-row { display: flex; flex-wrap: wrap; gap: var(--space-2); margin-top: var(--space-4); }
@@ -243,12 +243,12 @@ const assetUrl = (path: string) => `${import.meta.env.BASE_URL}${path}`;
   .substep-media.instrument-media :global(.media-frame img) { display: block; width: auto; height: auto; max-width: 100%; max-height: 16rem; margin-inline: auto; }
   .standing-waves-embed { grid-column: 1 / -1; min-width: 0; margin-top: var(--space-4); }
   .standing-waves-embed h5 { margin: 0 0 var(--space-3); font-family: var(--font-display); font-size: 1.25rem; line-height: 1.2; }
-  .standing-waves-embed > p { max-width: var(--text-width); margin: 0 0 var(--space-4); color: var(--color-muted); }
+  .standing-waves-embed > p { margin: 0 0 var(--space-4); color: var(--color-muted); text-align: justify; hyphens: auto; }
   .standing-waves-embed :global(.interactive-frame) { margin-bottom: var(--space-4); }
   .substep-copy { display: flow-root; min-width: 0; }
   .substep-copy > span { color: var(--color-primary); font-size: 0.73rem; font-weight: 850; letter-spacing: 0.1em; }
   .substep-copy h4 { margin: var(--space-2) 0; font-family: var(--font-display); font-size: 1.55rem; letter-spacing: -0.035em; line-height: 1.08; }
-  .substep-copy p { max-width: var(--text-width); margin-bottom: 0; color: var(--color-muted); }
+  .substep-copy p { margin-bottom: 0; color: var(--color-muted); text-align: justify; hyphens: auto; }
   .step-copy > p:last-of-type, .substep-copy > p:last-of-type { clear: both; }
   .substep-copy code { margin-top: var(--space-3); }
   .other-section, .game-section { border-top: 1px solid var(--color-line); }
