@@ -6,6 +6,12 @@ const assetUrl = (path: string) => `${import.meta.env.BASE_URL}${path}`;
 ---
 <BaseLayout title="Simulations">
   <section class="page-intro container"><p class="eyebrow">Observer et manipuler</p><h1>Simulations</h1><p>Les animations et expériences interactives seront réunies ici, qu’elles soient intégrées ou ouvertes en plein écran.</p></section>
+  <section class="sim-section container" aria-labelledby="sound-waves-title">
+    <p class="eyebrow">Ondes mécaniques</p>
+    <h2 id="sound-waves-title">Ondes sonores</h2>
+    <p>Suivez une compression qui se propage dans l’air et comparez-la au mouvement local d’une particule. Faites varier la fréquence et l’amplitude, observez le graphe de pression et mesurez la longueur d’onde.</p>
+    <InteractiveFrame src={assetUrl("simulations/sound-waves/")} title="Sound Waves : propagation du son" height="46rem" />
+  </section>
   <section class="sim-section container" aria-labelledby="standing-waves-title">
     <p class="eyebrow">Ondes mécaniques</p>
     <h2 id="standing-waves-title">Ondes stationnaires</h2>
