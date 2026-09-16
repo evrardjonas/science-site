@@ -65,7 +65,7 @@
         },
         "references": [
           {
-            "label": "François Baskevitch, Calculer la vitesse du son après Newton : le défi du jeune Euler, pp. 5–6",
+            "label": "François Baskevitch, Calculer la vitesse du son après Newton : le défi du jeune Euler, pp. 5 to 6",
             "url": "https://univ-montpellier3-paul-valery.hal.science/hal-03806400/document"
           }
         ]
@@ -74,7 +74,7 @@
         "number": "02",
         "id": "what-is-sound",
         "eyebrow": "The question",
-        "title": "We know its speed—but what is sound?",
+        "title": "We know its speed. What is sound?",
         "paragraphs": [
           "We have a method for measuring the speed of sound, but what is sound? When a bell rings, what happens between the bell and our ears? The bell vibrates, yet it stays where it is. We hear it at a distance. How can its motion produce a change somewhere else in the room?",
           "This question was already being discussed in antiquity. In De Anima, Aristotle associated the production of sound with an impact and with motion of the surrounding air. His account connects an event at the source to the air through which sound is heard. We can take up the same physical question: what happens to the air when an object vibrates, and how is this motion transmitted?",
@@ -219,46 +219,37 @@
           },
           {
             "number": "3.5",
-            "title": "Standing waves in musical instruments",
-            "text": "Why does pressing a guitar string against a fret raise its pitch? Why does opening a hole change a flute’s note? In each case, we need to identify what vibrates and the constraints on its motion. These constraints determine which standing waves can form.",
+            "title": "Standing waves on a guitar string",
+            "text": "Pluck an open guitar string, then press it against the twelfth fret and pluck it again. Before listening, predict what will happen to the note. The same string is used in both cases, but pressing it against a fret changes the length of the part that can vibrate. Giancoli’s illustration shows these two situations: the whole string in (a), then a shorter vibrating section in (b).",
             "paragraphs": [
-              "A guitar string is approximately fixed at both ends. Its transverse displacement is therefore zero at each end: both ends are nodes. In the simplest mode, half a wavelength fits into the vibrating length L, giving λ₁ = 2L. The next modes contain two, three and more half-wavelengths. Applying v = fλ gives frequencies f₁, 2f₁, 3f₁ and so on. The speed here is the wave speed on the string, which depends on its tension and mass per unit length.",
-              "Pressing a string against a fret shortens the length that can vibrate. If the wave speed remains approximately unchanged, halving this length halves the wavelength of the fundamental mode and doubles its frequency. Tightening the string also raises the frequency, but for a different reason: it increases the propagation speed on the string. Predict how the note will change when the length or tension is changed, then compare with the sound produced.",
-              "In a wind instrument, a column of air oscillates. At an ideal closed end, air cannot move through the wall, so there is a displacement node. At an ideal open end, the pressure remains close to the outside pressure while air can move into and out of the opening. There is approximately a displacement antinode. These conditions concern the air’s acoustic motion and explain why changing an opening changes the allowed modes.",
-              "A flute can be represented approximately by an air column open at both ends, at the embouchure and at the effective other opening. Its simplest mode contains half a wavelength, so λ₁ = 2L. A cylindrical clarinet in its lower register is approximately closed at the reed end and open at the other end. A node at one end and an antinode at the other fit one quarter-wavelength into L, giving λ₁ = 4L. The following allowed modes contain three, five and more quarter-wavelengths, giving frequencies f₁, 3f₁, 5f₁ and so on.",
-              "The lowest natural frequency is called the fundamental. Harmonics have frequencies that are integer multiples of it; the ideal tube closed at one end has resonances at the odd harmonics. A musical sound generally contains several frequency components. Their relative amplitudes, and the way the sound begins and decays, contribute to its timbre. Two instruments can therefore play the same fundamental frequency and still be recognised by their different sounds.",
-              "Real instruments have tone holes, shaped bores and openings that alter the effective acoustic length. The models in the table are approximations. Opening a flute hole changes the effective length of its resonating air column and hence its notes. With a simple tube, we can examine the effect of the end condition alone: predict how its lowest resonance will change when one end is closed, then measure and compare the frequencies."
+              "When the string is pulled sideways and released, its tension produces a restoring force. The displaced section starts moving back towards equilibrium and sets neighbouring sections in motion. Transverse waves travel along the string and reflect at its supports. For a small vibration, we can treat the string as flexible, uniformly stretched and fixed at both ends of its vibrating length.",
+              "For an open string, this length L extends from the nut, the small support near the head of the guitar, to the bridge on its body. Neither support allows appreciable transverse motion, so the two ends are approximately displacement nodes. In the simplest standing mode, the section between them oscillates with one antinode at its centre. One half-wavelength fits into L: the fundamental wavelength is therefore λ₁ = 2L.",
+              "The fundamental is the lowest natural frequency of the string. Using v = fλ gives f₁ = vₛ / (2L), where vₛ is the propagation speed along the string. It is not the speed of sound in the surrounding air. Higher modes fit two, three or more half-wavelengths into the same length. In this ideal model, their frequencies are 2f₁, 3f₁ and so on. These integer multiples of the fundamental are called harmonics.",
+              "Pressing the string firmly against a fret creates a new support. The section that mainly vibrates now extends from that fret to the bridge. Its length is shorter, while its tension and mass per unit length remain approximately unchanged. The propagation speed is consequently almost the same. A shorter wavelength must then correspond to a higher frequency. At the twelfth fret, the vibrating length is half the open-string length: the fundamental frequency doubles and the note rises by one octave.",
+              "For example, consider a vibrating length of 0.65 m and a wave speed of 143 m/s along the string. The fundamental wavelength is 1.30 m and the frequency is 143 / 1.30 = 110 Hz. Shortening the vibrating length to 0.325 m gives a wavelength of 0.65 m and a frequency of 220 Hz. Each point of the string now completes twice as many oscillations per second.",
+              "The tuning peg changes the note in another way. Tightening the string increases its tension and the propagation speed, so its natural frequencies rise even if L stays the same. The mass per unit length matters too. A heavier string has more inertia for the same tension, giving a lower wave speed and lower frequencies. This explains why guitar strings of approximately equal vibrating length can produce different notes.",
+              "A plucked string usually vibrates in several modes at once. How strongly each mode is excited depends, among other things, on where and how the string is plucked. Try plucking near the bridge and then nearer the centre. The note can keep the same fundamental frequency while its tone changes because the relative amplitudes of the harmonics differ.",
+              "The bridge transmits the string’s vibration to the soundboard. The larger vibrating surface moves the surrounding air much more effectively than the thin string alone. The outgoing sound consists of longitudinal pressure disturbances in air, whereas the string’s motion is transverse. Their frequencies correspond, but their propagation speeds and wavelengths are different. The string and the Kundt tube therefore share standing-wave patterns, even though the material that oscillates and the direction of its motion are different."
             ],
-            "formula": null,
-            "media": [],
-            "comparison": {
-              "caption": "Ideal models of a string and air columns. L is the vibrating or effective acoustic length; vₛ is the wave speed on a string and vₐ is the speed of sound in air.",
-              "headers": [
-                "Example and model",
-                "Fundamental frequency",
-                "First resonant frequencies"
-              ],
-              "rows": [
-                [
-                  "Guitar string · two fixed ends",
-                  "f₁ = vₛ / (2L)",
-                  "f₁, 2f₁, 3f₁, 4f₁, …"
-                ],
-                [
-                  "Flute model · two open ends",
-                  "f₁ = vₐ / (2L)",
-                  "f₁, 2f₁, 3f₁, 4f₁, …"
-                ],
-                [
-                  "Clarinet model · one closed end",
-                  "f₁ = vₐ / (4L)",
-                  "f₁, 3f₁, 5f₁, 7f₁, …"
-                ]
-              ]
-            },
+            "formula": "λ₁ = 2L     f₁ = vₛ / (2L)",
+            "media": [
+              {
+                "type": "image",
+                "src": "media/scienteens/giancoli-guitar-figure-12-8.png",
+                "alt": "Giancoli’s guitar illustration: (a) an open string with a fundamental standing-wave pattern; (b) a finger presses a fret, shortening the vibrating section between the fret and bridge.",
+                "title": "An open string and a fingered string",
+                "caption": "In (a), the string vibrates from the nut to the bridge. In (b), the fret becomes one end of the shorter vibrating section. Only one string and its fundamental mode are represented. The paired curves show the string at opposite extremes of its oscillation.",
+                "poster": "",
+                "reducedMotionSrc": "",
+                "credit": {
+                  "label": "Douglas C. Giancoli, Physics: Principles with Applications, 7th edition (2014), figure 12-8, p. 336. Illustration extracted from the textbook.",
+                  "url": "https://pre-med.jumedicine.com/wp-content/uploads/sites/12/2020/10/Giancoli-Physics-Principles-with-Applications-7th-c2014-txtbk-1.pdf#page=357"
+                }
+              }
+            ],
             "source": {
-              "label": "My course notes, Les Propriétés Ondulatoires, pp. 10–19",
-              "url": "media/scienteens/wave-properties-course-notes.pdf"
+              "label": "Giancoli, Physics: Principles with Applications, 7th edition, section 12-4, p. 336",
+              "url": "https://pre-med.jumedicine.com/wp-content/uploads/sites/12/2020/10/Giancoli-Physics-Principles-with-Applications-7th-c2014-txtbk-1.pdf#page=357"
             }
           }
         ],

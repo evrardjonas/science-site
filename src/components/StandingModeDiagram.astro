@@ -4,7 +4,7 @@
     <span>air displacement</span>
     <span>closed end</span>
   </div>
-  <svg viewBox="0 0 720 300" role="img" aria-label="Standing displacement mode in a tube closed at both ends">
+  <svg viewBox="0 0 720 300" width="720" height="300" preserveAspectRatio="xMidYMid meet" role="img" aria-label="Standing displacement mode in a tube closed at both ends">
     <rect x="32" y="48" width="656" height="204" rx="18"></rect>
     <line x1="32" y1="150" x2="688" y2="150"></line>
     <path class="wave wave-one" d="M32 150 C87 58 142 58 197 150 S307 242 362 150 S472 58 527 150 S637 242 688 150"></path>
@@ -26,11 +26,11 @@
 </figure>
 
 <style>
-  .standing-mode { display: grid; grid-template-columns: minmax(0, 1fr); align-content: space-between; min-width: 0; min-height: 22rem; padding: var(--space-4); margin: 0; border-radius: var(--radius-md); background: var(--color-ink); color: var(--color-surface); }
+  .standing-mode { display: grid; grid-template-columns: minmax(0, 1fr); align-content: start; gap: var(--space-3); min-width: 0; padding: var(--space-4); margin: 0; border-radius: var(--radius-md); background: var(--color-ink); color: var(--color-surface); }
   .wave-label { display: flex; justify-content: space-between; gap: var(--space-3); color: var(--color-line); font-size: 0.67rem; font-weight: 750; letter-spacing: 0.09em; text-transform: uppercase; }
   .wave-equation { letter-spacing: 0; text-transform: none; }
   .wave-label > span { min-width: 0; overflow-wrap: anywhere; }
-  svg { width: 100%; }
+  svg { width: 100%; height: auto; aspect-ratio: 12 / 5; }
   rect { fill: none; stroke: var(--color-muted); stroke-width: 2; }
   line { stroke: var(--color-muted); stroke-dasharray: 5 7; }
   .wave { fill: none; stroke-width: 4; }
