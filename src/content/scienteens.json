@@ -41,10 +41,12 @@
         "substeps": [],
         "formulas": [],
         "media": null,
-        "source": {
-          "label": "Marin Mersenne, Harmonie universelle (1636)",
-          "url": "https://archive.org/details/bub_gal_ark_12148_bpt6k5471093v"
-        }
+        "sources": [
+          {
+            "label": "Marin Mersenne, Harmonie universelle (1636)",
+            "url": "https://archive.org/details/bub_gal_ark_12148_bpt6k5471093v"
+          }
+        ]
       },
       {
         "number": "02",
@@ -53,7 +55,8 @@
         "title": "We know its speed—but what is sound?",
         "paragraphs": [
           "Measuring a speed does not yet tell us what is moving. This question was already discussed in antiquity. In De Anima, Aristotle connected sound with impact and with motion transmitted through the surrounding air.",
-          "This becomes the central problem of the workshop: what travels from the source to the listener when the air itself does not travel across the room?"
+          "In his Traité de la lumière (1690), Christiaan Huygens used sound as an example of motion passed successively from one part of the air to another. He linked this transmission to the compressibility of air and its tendency to regain its volume. His mechanical model of light invoked an ether; modern physics describes light as an electromagnetic wave that can travel through a vacuum.",
+          "This becomes the central problem of the workshop: how can a local movement produce a disturbance that travels from the source to the listener, without a stream of air crossing the room?"
         ],
         "substeps": [],
         "formulas": [],
@@ -66,10 +69,16 @@
           "poster": "media/scienteens/sound-speed-steel-water-air-poster.webp",
           "reducedMotionSrc": ""
         },
-        "source": {
-          "label": "Aristotle, De Anima, Book II, Chapter 8",
-          "url": "https://classics.mit.edu/Aristotle/soul.2.ii.html"
-        }
+        "sources": [
+          {
+            "label": "Aristotle, De Anima, Book II, Chapter 8",
+            "url": "https://classics.mit.edu/Aristotle/soul.2.ii.html"
+          },
+          {
+            "label": "Christiaan Huygens, Traité de la lumière (1690), Chapter I · English translation",
+            "url": "https://www.gutenberg.org/files/14725/14725-h/14725-h.htm#CHAPTER_I"
+          }
+        ]
       },
       {
         "number": "03",
@@ -77,14 +86,29 @@
         "eyebrow": "Wave model",
         "title": "From a pulse to a standing wave",
         "paragraphs": [
-          "A Slinky and a particle model build the wave concept in four steps: local motion creates a travelling disturbance, periodic motion introduces frequency and wavelength, a transverse representation makes the geometry visible, and superposition with a reflected wave produces a standing pattern."
+          "A travelling wave is a disturbance that propagates: a physical quantity changes locally, and this change is transmitted to other positions. The quantity may be the displacement of a spring, pressure in air, or an electric field. A single pulse is already a wave; periodic repetition is not required.",
+          "Mechanical waves, such as sound, need a material medium whose parts interact to transmit the disturbance. Electromagnetic waves, including light, do not need a material medium. With the Slinky, we will distinguish local motion from propagation, introduce periodic waves, compare longitudinal and transverse motion, and explore standing patterns."
         ],
         "substeps": [
           {
             "number": "3.1",
             "title": "A travelling pulse",
-            "text": "I send a longitudinal impulse through a Slinky. Each coil only oscillates around its equilibrium position, while the compression travels from one coil to the next. This separates the motion of matter from the propagation of energy and information.",
+            "paragraphs": [
+              "I send a longitudinal pulse through a Slinky. Watch a marked coil: does it travel with the compression? Moving the end changes the local spacing between coils. The deformation produces elastic forces that accelerate neighbouring sections; their motion deforms the next sections in turn.",
+              "Each section has mass and takes time to accelerate. Elasticity transmits forces, while inertia governs the response: together they determine the propagation speed. For a small pulse, each coil undergoes a temporary local displacement rather than travelling along the spring with the compression. Energy is passed along through the motion and deformation of successive sections.",
+              "Sound follows a similar mechanism. A loudspeaker creates local changes in pressure and density. Pressure differences accelerate neighbouring regions of air, transmitting compressions and rarefactions. The speed depends on the medium's elastic response and inertia—in a fluid, its resistance to compression and its mass density."
+            ],
             "formula": null,
+            "sources": [
+              {
+                "label": "OpenStax · Forces, inertia and mechanical wave speed",
+                "url": "https://openstax.org/books/university-physics-volume-1/pages/16-3-wave-speed-on-a-stretched-string"
+              },
+              {
+                "label": "OpenStax · Speed of sound in different media",
+                "url": "https://openstax.org/books/university-physics-volume-1/pages/17-2-speed-of-sound"
+              }
+            ],
             "media": [
               {
                 "type": "image",
@@ -100,15 +124,25 @@
           {
             "number": "3.2",
             "title": "Speed, wavelength and frequency",
-            "text": "A periodic source emits one compression after another. The frequency f counts the source oscillations per second, while the wavelength λ is the distance between two successive compressions. Their product gives the propagation speed: v = fλ. In a given medium, a higher frequency therefore produces a shorter wavelength.",
-            "formula": "v = fλ",
+            "paragraphs": [
+              "Repeating the motion periodically produces successive compressions. The period T is the time for one complete cycle, and the frequency f = 1/T counts cycles per second. At a fixed instant, the wavelength λ is the distance between successive equivalent points, such as two neighbouring compressions.",
+              "During one period, the pattern advances by one wavelength: λ = vT. Combining this with f = 1/T gives v = fλ.",
+              "Under unchanged conditions, if the speed depends little on frequency, increasing f shortens λ. This is a good approximation for audible sound in air; it is not a universal rule for all waves."
+            ],
+            "formula": "λ = vT; f = 1/T ⇒ v = fλ",
+            "sources": [
+              {
+                "label": "OpenStax · Wavelength, period and wave speed",
+                "url": "https://openstax.org/books/university-physics-volume-1/pages/16-1-traveling-waves"
+              }
+            ],
             "media": [
               {
                 "type": "image",
                 "src": "media/scienteens/air-compression-wave.gif",
                 "alt": "Animation of a loudspeaker producing successive compressions in air molecules.",
                 "title": "A periodic disturbance in air",
-                "caption": "The air molecules oscillate locally. The compression pattern moves away from the loudspeaker; the spacing between successive compressions represents one wavelength.",
+                "caption": "The model shows organised acoustic motion, superposed in real air on random thermal molecular motion. The compression pattern travels outward; the distance between successive compressions is one wavelength.",
                 "poster": "",
                 "reducedMotionSrc": "media/scienteens/wavelength-animation-still.png"
               },
@@ -117,7 +151,7 @@
                 "src": "media/scienteens/wavelength-animation.gif",
                 "alt": "Animation comparing several periodic patterns with different spatial repetitions.",
                 "title": "Different wavelengths in the same medium",
-                "caption": "The coloured patterns advance through the same medium. A pattern with more repetitions over the same distance has a shorter wavelength and therefore a higher frequency; fewer repetitions mean a longer wavelength and a lower frequency, because v = fλ.",
+                "caption": "Compare the spacing between equivalent points in each coloured pattern. More repetitions over a fixed distance mean a shorter wavelength. If the propagation speeds are the same, the shorter-wavelength pattern has the higher frequency, because v = fλ.",
                 "poster": "",
                 "reducedMotionSrc": "media/scienteens/wavelength-animation-still.png"
               }
@@ -125,16 +159,25 @@
           },
           {
             "number": "3.3",
-            "title": "A transverse representation",
-            "text": "I then drive the Slinky transversely so that amplitude and wavelength are easier to see. The coils move perpendicular to the direction of propagation. Sound in air remains longitudinal: the sinusoidal curve is a representation of displacement as a function of position, not the trajectory followed by an air molecule.",
+            "title": "Transverse waves and wave graphs",
+            "paragraphs": [
+              "I then move the Slinky sideways. Its coils move perpendicular to the direction in which the disturbance travels: this is a real transverse wave. A snapshot shows the spring's actual shape, making transverse displacement, amplitude and wavelength visible.",
+              "Sound in air remains longitudinal. A sinusoidal graph can represent pressure variation, density variation or longitudinal displacement as a function of position at a fixed instant. Its vertical axis must identify the quantity: an upward curve does not mean that air moves upward, and the curve is not a molecule's trajectory."
+            ],
             "formula": null,
+            "sources": [
+              {
+                "label": "Daniel A. Russell, Penn State · Interpreting sound-wave graphs",
+                "url": "https://www.acs.psu.edu/drussell/Demos/StandingWaves/StandingWaves.html"
+              }
+            ],
             "media": [
               {
                 "type": "image",
                 "src": "media/scienteens/wave-types-synthesis.png",
                 "alt": "Diagram comparing compressions in a longitudinal wave with the sinusoidal representation of a transverse wave.",
                 "title": "Longitudinal and transverse waves",
-                "caption": "Particles oscillate parallel to propagation in a longitudinal wave and perpendicular to it in a transverse wave. Both descriptions use the same wavelength, frequency and propagation speed.",
+                "caption": "Motion is parallel to propagation for a longitudinal wave and perpendicular for a transverse wave. Wavelength, frequency and wave speed describe both types; their numerical values need not be the same.",
                 "poster": "",
                 "reducedMotionSrc": ""
               },
@@ -143,7 +186,7 @@
                 "src": "media/scienteens/transverse-wavelength.png",
                 "alt": "Diagram showing wavelength measured horizontally between two equivalent points of a transverse wave.",
                 "title": "Measuring wavelength on a transverse wave",
-                "caption": "One wavelength is the horizontal distance between two consecutive crests—or any two points in the same phase. The particles oscillate vertically while the pattern propagates horizontally.",
+                "caption": "Here the vertical axis represents transverse displacement. One wavelength is the horizontal distance between consecutive crests—or successive equivalent points in the same phase. The marked particles move vertically while the pattern travels horizontally.",
                 "poster": "",
                 "reducedMotionSrc": ""
               }
@@ -152,8 +195,18 @@
           {
             "number": "3.4",
             "title": "Reflection, superposition and standing modes",
-            "text": "A wave sent along the Slinky reflects at the end. The incoming and reflected waves overlap, and their displacements add: y = y₁ + y₂. At selected driving frequencies, the boundary conditions are satisfied and a stable pattern of nodes and antinodes appears. In a tube closed at both ends, the ends impose displacement nodes and the allowed modes satisfy L = nλ / 2. The filmed demonstration will compare several of these standing modes.",
+            "paragraphs": [
+              "A wave reflects at the end of the Slinky. For small disturbances, the incident and reflected displacements add: y = y₁ + y₂. Two sinusoidal waves of the same frequency and amplitude travelling in opposite directions form an ideal standing wave: displacement nodes stay at zero, while the regions between them oscillate, most strongly at the antinodes.",
+              "Boundary conditions constrain the motion at every frequency. The system's natural modes are standing patterns compatible with those constraints. Driving a real system near a natural frequency can produce a much larger response: this is resonance, with the amplitude limited by losses.",
+              "For an ideal tube with two rigid closed ends, the ends impose displacement nodes and its modes satisfy L = nλ / 2, with n = 1, 2, 3, … . The filmed demonstration will compare several standing modes."
+            ],
             "formula": "y = y₁ + y₂",
+            "sources": [
+              {
+                "label": "OpenStax · Standing waves and resonance",
+                "url": "https://openstax.org/books/university-physics-volume-1/pages/16-6-standing-waves-and-resonance"
+              }
+            ],
             "media": [
               {
                 "type": "image",
@@ -169,7 +222,12 @@
         ],
         "formulas": [],
         "media": null,
-        "source": null
+        "sources": [
+          {
+            "label": "OpenStax · Travelling waves and types of waves",
+            "url": "https://openstax.org/books/university-physics-volume-1/pages/16-1-traveling-waves"
+          }
+        ]
       },
       {
         "number": "04",
@@ -178,7 +236,8 @@
         "title": "From Chladni figures to a closed tube",
         "paragraphs": [
           "In 1787, Ernst Chladni showed how sand on a vibrating plate traces nodal lines. The plate and the air column are different systems, but the visual idea is the same: a standing vibration can leave a spatial pattern.",
-          "In an ideal tube closed at both ends, air displacement is zero at each end. Only wavelengths that satisfy the boundary conditions can form standing modes; pressure antinodes occur where the displacement nodes are located."
+          "In an ideal tube with two rigid closed ends, the longitudinal displacement of air is zero at each end. The natural modes therefore fit an integer number n of half-wavelengths into the length L, giving L = nλ / 2 and fₙ = nv / 2L for n = 1, 2, 3, … .",
+          "Displacement and pressure have different nodes. At a displacement node, neighbouring air regions alternately approach and move apart, producing the largest pressure variations: a pressure antinode. Conversely, a displacement antinode corresponds to a pressure node. A microphone measures pressure variation, so the largest oscillation amplitude in a scan identifies a pressure antinode, not a displacement antinode."
         ],
         "substeps": [],
         "formulas": [
@@ -194,10 +253,16 @@
           "poster": "",
           "reducedMotionSrc": ""
         },
-        "source": {
-          "label": "E. F. F. Chladni, Entdeckungen über die Theorie des Klanges (1787)",
-          "url": "https://archive.org/details/entdeckungenuber00chla"
-        }
+        "sources": [
+          {
+            "label": "E. F. F. Chladni, Entdeckungen über die Theorie des Klanges (1787)",
+            "url": "https://archive.org/details/entdeckungenuber00chla"
+          },
+          {
+            "label": "Daniel A. Russell, Penn State · Displacement and pressure in standing sound waves",
+            "url": "https://www.acs.psu.edu/drussell/Demos/StandingWaves/StandingWaves.html"
+          }
+        ]
       },
       {
         "number": "05",
@@ -205,9 +270,10 @@
         "eyebrow": "Kundt · 1866",
         "title": "A wavelength written in dust",
         "paragraphs": [
-          "In 1866, August Kundt published a method based on acoustic dust figures inside a tube. The repeated pattern reveals the spacing d between adjacent nodes: half a wavelength.",
-          "Measure d, double it to obtain λ, then combine the wavelength with the known driving frequency f. The visible pattern becomes a measurement of the speed of sound.",
-          "The real power of the experiment is comparison. By filling the tube with different gases and repeating the measurement, the speed of sound in each gas can be determined."
+          "In 1866, August Kundt published a method using acoustic dust figures in a tube to determine the speed of sound in solids and gases. The particles make the spatial organisation of a standing sound wave visible, but their behaviour depends on the material, particle size and sound level.",
+          "Cork dust and polystyrene beads can form small, closely spaced ripples in regions of large acoustic air velocity—displacement antinodes. The distance between neighbouring small ripples is therefore not necessarily half a wavelength, and every particle line should not be labelled a displacement node.",
+          "First identify the repeated regions belonging to the standing mode, checking them with a microphone pressure-amplitude scan if needed. In a single ideal mode, neighbouring displacement nodes—or neighbouring displacement antinodes—are separated by d = λ / 2. Only after identifying that spacing should we use λ = 2d and v = fλ = 2fd. Measuring across several intervals helps reduce uncertainty.",
+          "Repeating the measurement with different gases at a controlled temperature allows their sound speeds to be compared. The visible pattern becomes a measurement only when we know which features of the mode we are measuring."
         ],
         "substeps": [],
         "formulas": [
@@ -224,10 +290,16 @@
           "poster": "",
           "reducedMotionSrc": ""
         },
-        "source": {
-          "label": "August Kundt, On a New Kind of Acoustic Dust Figures (1866)",
-          "url": "https://onlinelibrary.wiley.com/doi/10.1002/andp.18662030402"
-        }
+        "sources": [
+          {
+            "label": "August Kundt, On a New Kind of Acoustic Dust Figures (1866)",
+            "url": "https://onlinelibrary.wiley.com/doi/10.1002/andp.18662030402"
+          },
+          {
+            "label": "Julia Moldenhauer and Kai Stratmann · Dust Figures in Kundt's Tube (DAGA 2004)",
+            "url": "https://pub.dega-akustik.de/DAGA_1999-2008/data/articles/001612.pdf"
+          }
+        ]
       }
     ]
   },
