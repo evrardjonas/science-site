@@ -7,6 +7,10 @@ interface MediaItem {
   caption: string;
   poster: string;
   reducedMotionSrc: string;
+  credit?: {
+    label: string;
+    url: string;
+  };
 }
 
 interface Props {
@@ -15,7 +19,7 @@ interface Props {
 }
 
 const { item, wide = false } = Astro.props;
-const assetUrl = (path: string) => path ? `${import.meta.env.BASE_URL}${path}` : undefined;
+const assetUrl = (path: string) => path ? (/^https?:\/\//.test(path) ? path : `${import.meta.env.BASE_URL}${path}`) : undefined;
 ---
 
 <figure class:list={['workshop-media', { wide, placeholder: item.type === 'placeholder' }]}>
@@ -47,10 +51,11 @@ const assetUrl = (path: string) => path ? `${import.meta.env.BASE_URL}${path}` :
     </div>
   )}
 
-  {item.type !== 'placeholder' && (item.title || item.caption) && (
+  {item.type !== 'placeholder' && (item.title || item.caption || item.credit) && (
     <figcaption>
       {item.title && <strong>{item.title}</strong>}
       {item.caption && <span>{item.caption}</span>}
+      {item.credit && <a href={item.credit.url} target="_blank" rel="noreferrer">{item.credit.label}</a>}
     </figcaption>
   )}
 </figure>
@@ -65,6 +70,7 @@ const assetUrl = (path: string) => path ? `${import.meta.env.BASE_URL}${path}` :
   figcaption { display: grid; gap: var(--space-1); padding: var(--space-3) var(--space-1) 0; }
   figcaption strong { font-family: var(--font-display); font-size: 1rem; line-height: 1.2; }
   figcaption span { color: var(--color-muted); font-size: 0.84rem; }
+  figcaption a { color: var(--color-muted); font-size: 0.84rem; text-underline-offset: 0.2em; }
   .placeholder { display: grid; min-height: 18rem; padding: var(--space-4); border: 1px dashed var(--color-muted); border-radius: var(--radius-md); background: var(--color-ink); color: var(--color-surface); }
   .placeholder-copy { display: grid; align-content: end; gap: var(--space-2); }
   .placeholder-copy span { color: var(--color-accent); font-size: 0.68rem; font-weight: 850; letter-spacing: 0.11em; text-transform: uppercase; }

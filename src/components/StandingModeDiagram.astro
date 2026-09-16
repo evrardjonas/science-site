@@ -22,13 +22,14 @@
     <span class="wave-equation">L = nλ / 2</span>
     <span>node</span>
   </div>
-  <figcaption>In a closed–closed tube, only wavelengths that place displacement nodes at both ends form standing modes.</figcaption>
+  <figcaption>The curves show air displacement at two opposite stages of one cycle; the air moves along the tube. This mode fits four half-wavelengths between the closed ends. The red points are displacement nodes, which remain at rest, and pressure antinodes, where a microphone measures a large pressure variation.</figcaption>
 </figure>
 
 <style>
-  .standing-mode { display: grid; align-content: space-between; min-height: 22rem; padding: var(--space-4); margin: 0; border-radius: var(--radius-md); background: var(--color-ink); color: var(--color-surface); }
+  .standing-mode { display: grid; grid-template-columns: minmax(0, 1fr); align-content: space-between; min-width: 0; min-height: 22rem; padding: var(--space-4); margin: 0; border-radius: var(--radius-md); background: var(--color-ink); color: var(--color-surface); }
   .wave-label { display: flex; justify-content: space-between; gap: var(--space-3); color: var(--color-line); font-size: 0.67rem; font-weight: 750; letter-spacing: 0.09em; text-transform: uppercase; }
   .wave-equation { letter-spacing: 0; text-transform: none; }
+  .wave-label > span { min-width: 0; overflow-wrap: anywhere; }
   svg { width: 100%; }
   rect { fill: none; stroke: var(--color-muted); stroke-width: 2; }
   line { stroke: var(--color-muted); stroke-dasharray: 5 7; }
