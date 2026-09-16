@@ -177,7 +177,7 @@
           {
             "number": "3.3",
             "title": "Transverse waves and their graphs",
-            "text": "Now move one end of the Slinky from side to side, perpendicular to its length. The coils move perpendicular to the direction in which the disturbance propagates. This defines a transverse wave. The motion of a vibrating piano string is another example.",
+            "text": "Now move one end of the Slinky from side to side, perpendicular to its length. The coils move perpendicular to the direction in which the disturbance propagates. This defines a transverse wave. The motion of a vibrating guitar string is another example.",
             "formula": null,
             "media": [
               {
@@ -223,32 +223,33 @@
           },
           {
             "number": "3.5",
-            "title": "A piano string: two fixed ends",
-            "text": "In a piano, a hammer strikes a stretched string and sets it vibrating. Its vibrating length is bounded by two supports. We treat these ends as fixed, so there is a displacement node at each end. This gives the same end condition for displacement as the air in a tube closed at both ends.",
+            "title": "Standing waves on a guitar string",
+            "text": "Compare the two situations in Giancoli’s illustration. In (a), the string can vibrate between its two supports. In (b), a finger presses it against a fret. Which part can now vibrate, and what will happen to the note?",
             "paragraphs": [
-              "In the simplest standing mode, one half-wavelength fits between the supports: λ₁ = 2L. Applying v = fλ gives the fundamental frequency f₁ = vₛ / (2L), where vₛ is the wave speed on the string. The next modes fit two, three or more half-wavelengths into L, giving approximately f₁, 2f₁, 3f₁ and so on. A struck string can vibrate in several of these modes at once.",
-              "The photograph from Giancoli shows the strings inside a piano. Longer, heavier strings produce lower notes, while tension is adjusted during tuning. The soundboard receives the vibration through the bridge and moves a larger area of air than the string alone could.",
-              "The comparison concerns the end conditions: a piano has a string fixed at both ends, rather than a sealed air column. The string moves transversely; the air in our closed tube moves longitudinally. In each ideal model, the displacement is zero at both ends and the allowed wavelengths satisfy L = nλ / 2."
+              "A stretched guitar string is approximately fixed at both ends of its vibrating length L. These ends are displacement nodes. In the simplest standing mode, one half-wavelength fits between them: λ₁ = 2L. Using v = fλ gives the fundamental frequency f₁ = vₛ / (2L). Here, vₛ is the wave speed along the string, not the speed of sound in air.",
+              "The fret provides a new support and shortens the vibrating length. If the tension and mass per unit length stay approximately unchanged, the wave speed is almost the same. A shorter wavelength then gives a higher frequency. At the twelfth fret, the vibrating length is halved, so the fundamental frequency doubles: the note rises by one octave.",
+              "How does this vibration reach our ears? The string transfers its motion through the bridge to the soundboard, which pushes on the surrounding air. Compressions and rarefactions then propagate through the air. The string moves transversely, while the audible wave in air is longitudinal. Their frequencies correspond, but their wave speeds and wavelengths differ.",
+              "The guitar illustrates two fixed displacement nodes; our closed Kundt tube has the same end constraint on air displacement."
             ],
             "formula": null,
             "media": [
               {
                 "type": "image",
-                "src": "media/scienteens/giancoli-piano-figure-12-9a.jpg",
-                "alt": "Photograph from Giancoli showing the strings, bridges and soundboard inside an open grand piano.",
-                "title": "Strings inside a piano",
-                "caption": "The string vibrations pass through the bridges to the soundboard, which helps set the surrounding air in motion.",
+                "src": "media/scienteens/giancoli-guitar-figure-12-8.png",
+                "alt": "Giancoli’s guitar illustration: (a) an open string in its fundamental standing mode; (b) a finger presses a fret and shortens the vibrating section between the fret and bridge.",
+                "title": "An open string and a fingered string",
+                "caption": "The paired curves show opposite extremes of the string’s fundamental mode. Pressing the fret shortens the vibrating section.",
                 "poster": "",
                 "reducedMotionSrc": "",
                 "credit": {
-                  "label": "Giancoli, Physics: Principles with Applications, 7th edition (2014), figure 12-9(a), p. 337. Photograph: Ben Clark/Getty Images.",
-                  "url": "https://pre-med.jumedicine.com/wp-content/uploads/sites/12/2020/10/Giancoli-Physics-Principles-with-Applications-7th-c2014-txtbk-1.pdf#page=358"
+                  "label": "Giancoli, 7th edition, figure 12-8, p. 336.",
+                  "url": "https://pre-med.jumedicine.com/wp-content/uploads/sites/12/2020/10/Giancoli-Physics-Principles-with-Applications-7th-c2014-txtbk-1.pdf#page=357"
                 }
               }
             ],
             "source": {
               "label": "Giancoli, Physics: Principles with Applications, 7th edition, section 12-4, pp. 336 to 337",
-              "url": "https://pre-med.jumedicine.com/wp-content/uploads/sites/12/2020/10/Giancoli-Physics-Principles-with-Applications-7th-c2014-txtbk-1.pdf#page=358"
+              "url": "https://pre-med.jumedicine.com/wp-content/uploads/sites/12/2020/10/Giancoli-Physics-Principles-with-Applications-7th-c2014-txtbk-1.pdf#page=357"
             }
           }
         ],
