@@ -2,6 +2,7 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import StandingModeDiagram from '../../components/StandingModeDiagram.astro';
 import WorkshopMedia from '../../components/WorkshopMedia.astro';
+import InteractiveFrame from '../../components/InteractiveFrame.astro';
 import content from '../../content/scienteens.json';
 
 const { meta, hero, interview, game, other } = content;
@@ -141,6 +142,13 @@ const assetUrl = (path: string) => `${import.meta.env.BASE_URL}${path}`;
                       {substep.number === '3.4' && <StandingModeDiagram />}
                     </div>
                   )}
+
+                  {substep.number === '3.4' && (
+                    <div class="standing-waves-embed">
+                      <p class="embed-intro">Explore how the standing pattern changes when the frequency, string length, tension and linear density are varied.</p>
+                      <InteractiveFrame src={assetUrl('simulations/standing-waves/')} title="Standing Waves simulation" height="46rem" />
+                    </div>
+                  )}
                 </li>
               ))}
             </ol>
@@ -243,6 +251,8 @@ const assetUrl = (path: string) => `${import.meta.env.BASE_URL}${path}`;
   .substeps li { display: grid; grid-template-columns: minmax(0, 1fr); gap: var(--space-4); padding-top: var(--space-4); border-top: 1px solid var(--color-line); }
   .substeps li.with-media { grid-template-columns: minmax(0, 1fr) minmax(16rem, 0.58fr); }
   .substep-media { display: grid; gap: var(--space-4); min-width: 0; }
+  .standing-waves-embed { grid-column: 1 / -1; min-width: 0; margin-top: var(--space-4); }
+  .standing-waves-embed .embed-intro { max-width: var(--text-width); margin: 0 0 var(--space-3); color: var(--color-muted); }
   .substep-copy { min-width: 0; }
   .substep-copy > span { color: var(--color-primary); font-size: 0.73rem; font-weight: 850; letter-spacing: 0.1em; }
   .substep-copy h4 { margin: var(--space-2) 0; font-family: var(--font-display); font-size: 1.55rem; letter-spacing: -0.035em; line-height: 1.08; }
