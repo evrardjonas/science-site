@@ -1,0 +1,103 @@
+---
+import measurements from '../content/kundt-measurements.json';
+
+interface Props {
+  paragraphs: string[];
+}
+
+const { paragraphs } = Astro.props;
+const [apparatus, spacing, powder, workedExample] = paragraphs;
+const assetUrl = (path: string) => `${import.meta.env.BASE_URL}${path}`;
+---
+
+<div class="kundt-experiment">
+  <section class="experiment-stage" aria-labelledby="kundt-demonstration-title">
+    <h4 id="kundt-demonstration-title">Demonstration</h4>
+    <p>{apparatus}</p>
+    <figure class="video-reservation" data-kundt-stage="demonstration">
+      <div class="video-space">
+        <strong>Demonstration video</strong>
+        <span>Recording to follow</span>
+      </div>
+      <figcaption>Observe how the pattern changes as the driving frequency is varied, then follow one resonant mode.</figcaption>
+    </figure>
+  </section>
+
+  <section class="experiment-stage" aria-labelledby="kundt-measurement-title">
+    <h4 id="kundt-measurement-title">Measurement</h4>
+    <p>{spacing}</p>
+    <p>{powder}</p>
+    <p>The measurements below were taken at an air temperature of {measurements.airTemperatureC.toFixed(1)} °C. For each mode, the reported distance is the mean of the measured distances between neighbouring nodes. Each point on the graph therefore represents a mean spacing.</p>
+    <figure class="video-reservation" data-kundt-stage="measurement">
+      <div class="video-space">
+        <strong>Measurement video</strong>
+        <span>Recording to follow</span>
+      </div>
+      <figcaption>Identify neighbouring nodes, measure their separations and compare the mean distances for modes 2, 3, 4 and 5.</figcaption>
+    </figure>
+
+    <figure class="measurement-graph" data-kundt-stage="graph">
+      <picture>
+        <source media="(max-width: 38rem)" srcset={assetUrl('media/scienteens/kundt-node-spacing-mobile.svg')} />
+        <img
+          src={assetUrl('media/scienteens/kundt-node-spacing.svg')}
+          alt="Measured mean spacing between neighbouring nodes: mode 2, 50.5 cm; mode 3, 33.5 cm; mode 4, 25.0 cm; mode 5, 20.1 cm. The spacing decreases with mode number. Air temperature: 22.8 degrees Celsius."
+          loading="lazy"
+          decoding="async"
+        />
+      </picture>
+      <figcaption>
+        <strong>Mean distance between neighbouring nodes</strong>
+        <span>The points are the measured means. The curve is a fit of d = L / n to these four values. It represents the dependence predicted by the ideal model of a tube closed at both ends.</span>
+      </figcaption>
+    </figure>
+
+    <table>
+      <caption>Measured mean spacings and wavelengths calculated using λ = 2d, at {measurements.airTemperatureC.toFixed(1)} °C</caption>
+      <thead>
+        <tr>
+          <th scope="col">Mode n</th>
+          <th scope="col">Mean spacing d (cm)</th>
+          <th scope="col">Wavelength λ (cm)</th>
+        </tr>
+      </thead>
+      <tbody>
+        {measurements.readings.map((reading) => (
+          <tr>
+            <th scope="row">{reading.mode}</th>
+            <td>{reading.meanNodeSpacingCm.toFixed(1)}</td>
+            <td>{(2 * reading.meanNodeSpacingCm).toFixed(1)}</td>
+          </tr>
+        ))}
+      </tbody>
+    </table>
+
+    <p>The wavelength is twice the mean node spacing: for mode 2, d = 50.5 cm gives λ = 101.0 cm. Higher modes have shorter wavelengths. In the ideal closed-tube model, d = L / n, so the product n × d should remain constant. Our four values give products between 100 and 101 cm, consistent with this inverse dependence on mode number.</p>
+    <p>These distances give the wavelengths. To determine the speed of sound, we also need the measured driving frequency for each mode and can then calculate v = 2fd, expressing d in metres.</p>
+    <p>{workedExample}</p>
+  </section>
+</div>
+
+<style>
+  .kundt-experiment { min-width: 0; }
+  .experiment-stage { margin-top: var(--space-5); }
+  h4 { margin: 0 0 var(--space-3); font-family: var(--font-display); font-size: 1.55rem; letter-spacing: -0.035em; line-height: 1.1; }
+  p { color: var(--color-muted); font-size: 1.05rem; text-align: justify; hyphens: auto; }
+  .video-reservation { max-width: var(--text-width); margin: var(--space-4) auto var(--space-5); }
+  .video-space { display: grid; place-content: center; gap: var(--space-2); aspect-ratio: 16 / 9; padding: var(--space-4); border: 1px solid var(--color-line); border-radius: var(--radius-md); background: var(--color-surface-strong); text-align: center; }
+  .video-space strong { font-family: var(--font-display); color: var(--color-primary-dark); font-size: 1.15rem; }
+  .video-space span { color: var(--color-muted); font-size: 0.85rem; }
+  figcaption { display: grid; gap: var(--space-1); padding: var(--space-3) var(--space-1) 0; color: var(--color-muted); font-size: 0.9rem; }
+  figcaption strong { color: var(--color-ink); font-family: var(--font-display); font-size: 1rem; }
+  .measurement-graph { margin: var(--space-5) 0; }
+  .measurement-graph img { width: 100%; height: auto; }
+  table { width: 100%; margin: var(--space-4) 0; border-collapse: collapse; color: var(--color-ink); font-variant-numeric: tabular-nums; }
+  caption { padding-bottom: var(--space-3); color: var(--color-muted); font-size: 0.9rem; text-align: left; }
+  th, td { padding: var(--space-2); border-bottom: 1px solid var(--color-line); text-align: right; }
+  thead th { color: var(--color-primary-dark); background: var(--color-surface-strong); }
+  th:first-child { text-align: left; }
+  @media (max-width: 38rem) {
+    table { font-size: 0.88rem; }
+    th, td { padding: var(--space-2) var(--space-1); }
+  }
+</style>

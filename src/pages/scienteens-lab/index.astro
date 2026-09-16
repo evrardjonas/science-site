@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import StandingModeDiagram from '../../components/StandingModeDiagram.astro';
+import KundtExperiment from '../../components/KundtExperiment.astro';
 import WorkshopMedia from '../../components/WorkshopMedia.astro';
 import InteractiveFrame from '../../components/InteractiveFrame.astro';
 import content from '../../content/scienteens.json';
@@ -75,7 +76,13 @@ const assetUrl = (path: string) => `${import.meta.env.BASE_URL}${path}`;
                   <WorkshopMedia item={step.media} />
                 </div>
               )}
-              {step.paragraphs.map((paragraph) => <p>{paragraph}</p>)}
+              {step.id === 'kundt' ? (
+                <>
+                  <p>{step.paragraphs[0]}</p>
+                  <KundtExperiment paragraphs={step.paragraphs.slice(1, 5)} />
+                  {step.paragraphs.slice(5).map((paragraph) => <p>{paragraph}</p>)}
+                </>
+              ) : step.paragraphs.map((paragraph) => <p>{paragraph}</p>)}
 
               {step.formulas.length > 0 && (
                 <div class="formula-row" aria-label="Equations used in this part">
