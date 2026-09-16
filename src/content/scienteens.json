@@ -208,8 +208,35 @@
           },
           {
             "number": "3.4",
-            "title": "Reflection, superposition and standing modes",
-            "text": "What happens to a crest when a transverse pulse reaches a fixed end? Make a prediction, then send a pulse along the Slinky and observe its return. At the fixed end, the total displacement must remain zero. The incident and reflected displacements cancel there, so the reflected pulse is inverted: a crest returns as a trough.",
+            "title": "Reflection at a fixed end",
+            "text": "What happens to an upward pulse when it reaches the end of a string? In the video, the right end is held by a clamp. Predict the direction and shape of the returning pulse, then watch the recording.",
+            "formula": null,
+            "media": [
+              {
+                "type": "video",
+                "src": "media/scienteens/wave-on-string-reflection.mp4",
+                "alt": "",
+                "title": "A pulse reflected at a fixed end",
+                "caption": "Follow the pulse towards the clamp and compare its shape on the return journey. Then follow one blue point on the string as the pulse passes.",
+                "poster": "media/scienteens/wave-on-string-reflection-poster.webp",
+                "reducedMotionSrc": "",
+                "credit": {
+                  "label": "Recording of Wave on a String, PhET Interactive Simulations, University of Colorado Boulder.",
+                  "url": "https://phet.colorado.edu/en/simulations/wave-on-a-string"
+                }
+              }
+            ],
+            "paragraphs": [
+              "The source first raises the left end briefly, creating an upward pulse that travels towards the clamp. This is the incident pulse. After reaching the right end, the pulse travels back to the left, but its displacement is now downward: a crest returns as a trough. This returning disturbance is the reflected pulse. The blue points help us distinguish the two motions: each point moves up and down locally while the pulse travels along the string.",
+              "The clamp prevents the end of the string from moving. Its displacement must therefore remain zero throughout the reflection. Near the support, the incident and reflected disturbances overlap. At the support itself, their displacements are equal and opposite, so they cancel. This explains the inversion of the reflected pulse: the returning disturbance has the opposite displacement to the incoming one. The pulse also reverses its direction of propagation, so it now travels away from the clamp.",
+              "The video then shows another reflection at the left end. Once the source has returned to rest, this end also behaves as a fixed end: the downward pulse returns as an upward pulse. The setting Damping is zero, so the pulse continues travelling back and forth without progressively fading in this ideal model. On a real string, energy is gradually dissipated and the pulse becomes smaller.",
+              "Sound can also be reflected, as we hear in an echo. At the rigid, closed end of a tube, air cannot move through the wall. The boundary therefore constrains the displacement of the air. We must distinguish this displacement from pressure: a compression reflects from a rigid wall as a compression. The inversion observed on the string concerns displacement; it does not mean that a sound compression always returns as a rarefaction."
+            ]
+          },
+          {
+            "number": "3.5",
+            "title": "Superposition and standing modes",
+            "text": "We have seen an isolated pulse return along the string. What happens if the source keeps oscillating while the reflected wave comes back? Make a prediction, then drive the Slinky regularly and change the frequency slowly. Watch whether any positions remain at equilibrium through a complete cycle.",
             "formula": null,
             "media": [],
             "paragraphs": [
@@ -222,7 +249,7 @@
             ]
           },
           {
-            "number": "3.5",
+            "number": "3.6",
             "title": "Standing waves on a guitar string",
             "text": "Compare the two situations in Giancoli’s illustration. In (a), the string can vibrate between its two supports. In (b), a finger presses it against a fret. Which part can now vibrate, and what will happen to the note?",
             "paragraphs": [

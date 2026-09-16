@@ -110,10 +110,10 @@ const assetUrl = (path: string) => `${import.meta.env.BASE_URL}${path}`;
                     <span>{substep.number}</span>
                     <h4>{substep.title}</h4>
                     <p>{substep.text}</p>
-                    {(substep.media.length > 0 || substep.number === '3.4') && (
-                      <div class:list={['substep-media', { 'instrument-media': substep.number === '3.5' }]}>
+                    {(substep.media.length > 0 || substep.number === '3.5') && (
+                      <div class:list={['substep-media', { 'instrument-media': substep.number === '3.6' }]}>
                         {substep.media.map((item) => <WorkshopMedia item={item} />)}
-                        {substep.number === '3.4' && <StandingModeDiagram />}
+                        {substep.number === '3.5' && <StandingModeDiagram />}
                       </div>
                     )}
                     {('paragraphs' in substep ? substep.paragraphs ?? [] : []).map((paragraph) => <p>{paragraph}</p>)}
@@ -127,7 +127,7 @@ const assetUrl = (path: string) => `${import.meta.env.BASE_URL}${path}`;
                     )}
                   </div>
 
-                  {substep.number === '3.4' && (
+                  {substep.number === '3.5' && (
                     <div class="standing-waves-embed">
                       <h5>Exploring the standing wave</h5>
                       <p>The animation below represents a stretched string driven up and down at its left end. The wave travels along the string and reflects at the other end. The curve shows the transverse displacement of each position at that instant. Its horizontal coordinate locates a point along the string; its height shows how far that point is from equilibrium. A point on the string oscillates vertically while the disturbance propagates along it.</p>
