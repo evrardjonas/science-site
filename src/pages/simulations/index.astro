@@ -1,10 +1,24 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import InteractiveFrame from '../../components/InteractiveFrame.astro';
+
+const assetUrl = (path: string) => `${import.meta.env.BASE_URL}${path}`;
 ---
 <BaseLayout title="Simulations">
   <section class="page-intro container"><p class="eyebrow">Observer et manipuler</p><h1>Simulations</h1><p>Les animations et expériences interactives seront réunies ici, qu’elles soient intégrées ou ouvertes en plein écran.</p></section>
+  <section class="sim-section container" aria-labelledby="standing-waves-title">
+    <p class="eyebrow">Ondes mécaniques</p>
+    <h2 id="standing-waves-title">Ondes stationnaires</h2>
+    <p>Faites varier la fréquence, l’amplitude, la tension et la densité linéique d’une corde tendue pour observer la formation des ondes stationnaires et retrouver les harmoniques prédites.</p>
+    <InteractiveFrame src={assetUrl("simulations/standing-waves/")} title="Ondes stationnaires" />
+  </section>
   <section class="placeholder-grid container" aria-label="Structure prévue">
     <article class="placeholder-card"><span>01</span><h2>Intégrées</h2><p>Des simulations insérées directement dans une page pédagogique.</p></article>
     <article class="placeholder-card"><span>02</span><h2>Autonomes</h2><p>Des applications complètes utilisables seules en classe.</p></article>
   </section>
 </BaseLayout>
+
+<style>
+  .sim-section { margin-top: var(--space-6); }
+  .sim-section h2 { margin: var(--space-2) 0 var(--space-3); }
+</style>
