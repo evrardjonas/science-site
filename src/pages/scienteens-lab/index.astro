@@ -145,7 +145,7 @@ const assetUrl = (path: string) => `${import.meta.env.BASE_URL}${path}`;
 
                   {substep.number === '3.4' && (
                     <div class="standing-waves-embed">
-                      <p class="embed-intro">Explore how the standing pattern changes when the frequency, string length, tension and linear density are varied.</p>
+                      <p class="embed-intro">Predict how changing the string length, tension or mass per unit length will affect its resonant frequencies. Test the prediction by varying one parameter at a time, then adjust the driving frequency to find the modes.</p>
                       <InteractiveFrame src={assetUrl('simulations/standing-waves/')} title="Standing Waves simulation" height="46rem" />
                     </div>
                   )}
@@ -173,7 +173,7 @@ const assetUrl = (path: string) => `${import.meta.env.BASE_URL}${path}`;
 
     <div class="game-shell">
       <div class="game-toolbar">
-        <span>Interactive HTML activity</span>
+        <span>Tube resonances</span>
         <a href={assetUrl(game.src)} target="_blank" rel="noreferrer">Open full screen <span aria-hidden="true">↗</span></a>
       </div>
       <iframe
