@@ -99,7 +99,15 @@ const assetUrl = (path: string) => `${import.meta.env.BASE_URL}${path}`;
                     <span>{substep.number}</span>
                     <h4>{substep.title}</h4>
                     <p>{substep.text}</p>
+                    {('paragraphs' in substep ? substep.paragraphs ?? [] : []).map((paragraph) => <p>{paragraph}</p>)}
                     {substep.formula && <code>{substep.formula}</code>}
+                    {'source' in substep && substep.source && (
+                      <a class="source-link" href={substep.source.url} target="_blank" rel="noreferrer">
+                        <span>Historical reference</span>
+                        {substep.source.label}
+                        <span aria-hidden="true">↗</span>
+                      </a>
+                    )}
                   </div>
                   {(substep.media.length > 0 || substep.number === '3.4') && (
                     <div class="substep-media">

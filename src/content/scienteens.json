@@ -99,8 +99,18 @@
           },
           {
             "number": "3.2",
-            "title": "Speed, wavelength and frequency",
-            "text": "A periodic source emits one compression after another. The frequency f counts the source oscillations per second, while the wavelength λ is the distance between two successive compressions. Their product gives the propagation speed: v = fλ. In a given medium, a higher frequency therefore produces a shorter wavelength.",
+            "title": "Sound propagation, wavelength and frequency",
+            "text": "How can a local disturbance set neighbouring regions in motion? When a loudspeaker moves forward, it compresses the air immediately in front of it. The resulting pressure differences accelerate neighbouring regions, which change the pressure and density farther along. When the loudspeaker moves back, it creates a rarefaction. These local changes are transmitted through the air as a longitudinal sound wave.",
+            "paragraphs": [
+              "The Slinky makes this mechanism visible: deforming one section changes the elastic forces acting on neighbouring sections and sets them in motion. Each section has inertia, so its response takes time. In air, elasticity is associated with resistance to compression. The medium's elastic properties and mass density help determine the propagation speed. The acoustic motion remains local while the disturbance travels through the medium.",
+              "In research presented in 1748 and published in 1750, Leonhard Euler analysed interactions between neighbouring parts of an elastic medium under a disturbance and extended the model to many parts. His work provides a historical route from local interactions to the propagation of a sound wave.",
+              "A periodic source repeats the disturbance at a frequency f, measured in oscillations per second. In the resulting periodic wave, the wavelength λ is the distance between two successive compressions, or between two successive rarefactions. During one period T = 1 / f, the wave advances by one wavelength: λ = vT. Therefore, v = λ / T = fλ.",
+              "For sound in air under the same conditions, the propagation speed is approximately independent of frequency over the audible range. Increasing the frequency then shortens the wavelength. In the Kundt tube, a known driving frequency and a measured wavelength will allow us to determine the speed of sound."
+            ],
+            "source": {
+              "label": "François Baskevitch, Calculer la vitesse du son après Newton : le défi du jeune Euler, p. 45",
+              "url": "https://univ-montpellier3-paul-valery.hal.science/hal-03806400/document"
+            },
             "formula": "v = fλ",
             "media": [
               {
