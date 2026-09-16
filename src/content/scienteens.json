@@ -206,10 +206,10 @@
             "number": "3.4",
             "title": "Reflection, superposition and standing modes",
             "text": "What happens to a crest when a transverse pulse reaches a fixed end? Make a prediction, then send a pulse along the Slinky and observe its return. At the fixed end, the total displacement must remain zero. The incident and reflected displacements cancel there, so the reflected pulse is inverted: a crest returns as a trough.",
-            "formula": "y = y₁ + y₂",
+            "formula": null,
             "media": [],
             "paragraphs": [
-              "When two pulses overlap, their displacements add at each position: y = y₁ + y₂. Displacements in the same direction reinforce one another. Displacements in opposite directions partly or completely cancel. For small disturbances, the pulses continue propagating after the overlap. This is the principle of superposition, which applies to both isolated pulses and periodic waves.",
+              "When two pulses overlap, their displacements add at each position. Displacements in the same direction reinforce one another. Displacements in opposite directions partly or completely cancel. For small disturbances, the pulses continue propagating after the overlap. This is the principle of superposition, which applies to both isolated pulses and periodic waves.",
               "If the source oscillates continuously, the incident wave overlaps with its reflection. Two waves of the same frequency and wavelength, with equal amplitudes and travelling in opposite directions, produce an ideal standing wave. The combined pattern no longer advances along the spring. Some positions stay at rest while the sections between them continue to oscillate.",
               "A displacement node is a position where the displacement remains zero throughout the cycle. A displacement antinode is a position where the oscillation amplitude is greatest. Between two neighbouring nodes, the section of spring moves first to one side of equilibrium, then to the other. The next section, on the other side of a node, moves in the opposite direction.",
               "The distance between two neighbouring nodes is λ / 2. A node and its nearest antinode are separated by λ / 4. To identify a node, follow the point over a complete cycle: it must remain at equilibrium at every instant. A point that crosses equilibrium briefly can still be oscillating and is not necessarily a node.",
