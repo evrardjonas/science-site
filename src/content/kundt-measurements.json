@@ -1,0 +1,9 @@
+{
+  "airTemperatureC": 22.8,
+  "readings": [
+    { "mode": 2, "meanNodeSpacingCm": 50.5 },
+    { "mode": 3, "meanNodeSpacingCm": 33.5 },
+    { "mode": 4, "meanNodeSpacingCm": 25.0 },
+    { "mode": 5, "meanNodeSpacingCm": 20.1 }
+  ]
+}
