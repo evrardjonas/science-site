@@ -12,6 +12,12 @@ const assetUrl = (path: string) => `${import.meta.env.BASE_URL}${path}`;
     <p>Faites varier la fréquence, l’amplitude, la tension et la densité linéique d’une corde tendue pour observer la formation des ondes stationnaires et retrouver les harmoniques prédites.</p>
     <InteractiveFrame src={assetUrl("simulations/standing-waves/")} title="Ondes stationnaires" />
   </section>
+  <section class="sim-section container" aria-labelledby="sound-waves-title">
+    <p class="eyebrow">Ondes mécaniques</p>
+    <h2 id="sound-waves-title">Ondes sonores</h2>
+    <p>Comparez la propagation d'une onde plane et d'une onde sphérique, observez les compressions et raréfactions dans un champ de particules, et faites le lien avec le graphe de pression.</p>
+    <InteractiveFrame src={assetUrl("simulations/sound-waves/")} title="Ondes sonores" />
+  </section>
   <section class="placeholder-grid container" aria-label="Structure prévue">
     <article class="placeholder-card"><span>01</span><h2>Intégrées</h2><p>Des simulations insérées directement dans une page pédagogique.</p></article>
     <article class="placeholder-card"><span>02</span><h2>Autonomes</h2><p>Des applications complètes utilisables seules en classe.</p></article>
