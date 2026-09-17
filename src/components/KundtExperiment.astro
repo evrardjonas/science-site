@@ -17,8 +17,10 @@ const assetUrl = (path: string) => `${import.meta.env.BASE_URL}${path}`;
     <p>{apparatus}</p>
     <figure class="video-reservation" data-kundt-stage="demonstration">
       <div class="video-space">
-        <strong>Demonstration video</strong>
-        <span>Recording to follow</span>
+        <video controls playsinline preload="metadata" poster={assetUrl('media/scienteens/kundt-demonstration-poster.webp')} aria-label="Kundt tube demonstration with beads">
+          <source src={assetUrl('media/scienteens/kundt-demonstration.mp4')} type="video/mp4" />
+          Your browser does not support embedded video.
+        </video>
       </div>
       <figcaption>Observe how the pattern changes as the driving frequency is varied, then follow one resonant mode.</figcaption>
     </figure>
@@ -32,8 +34,10 @@ const assetUrl = (path: string) => `${import.meta.env.BASE_URL}${path}`;
     <p>For each mode, we measured the distances between neighbouring nodes and took their mean, d. The wavelength is twice this mean: λ = 2d. For mode 2, the measured spacing of {measurements.readings[0].meanNodeSpacingCm.toFixed(1)} cm therefore gives a wavelength of {(2 * measurements.readings[0].meanNodeSpacingCm / 100).toFixed(3)} m.</p>
     <figure class="video-reservation" data-kundt-stage="measurement">
       <div class="video-space">
-        <strong>Measurement video</strong>
-        <span>Recording to follow</span>
+        <video controls playsinline preload="metadata" poster={assetUrl('media/scienteens/kundt-measurement-poster.webp')} aria-label="Kundt tube node-spacing measurement, modes 2 to 5">
+          <source src={assetUrl('media/scienteens/kundt-measurement.mp4')} type="video/mp4" />
+          Your browser does not support embedded video.
+        </video>
       </div>
       <figcaption>Identify neighbouring nodes, measure their separations and compare the mean distances for modes 2, 3, 4 and 5.</figcaption>
     </figure>
@@ -93,9 +97,8 @@ const assetUrl = (path: string) => `${import.meta.env.BASE_URL}${path}`;
   h4 { margin: 0 0 var(--space-3); font-family: var(--font-display); font-size: 1.55rem; letter-spacing: -0.035em; line-height: 1.1; }
   p { color: var(--color-muted); font-size: 1.05rem; text-align: justify; hyphens: auto; }
   .video-reservation { max-width: var(--text-width); margin: var(--space-4) auto var(--space-5); }
-  .video-space { display: grid; place-content: center; gap: var(--space-2); aspect-ratio: 16 / 9; padding: var(--space-4); border: 1px solid var(--color-line); border-radius: var(--radius-md); background: var(--color-surface-strong); text-align: center; }
-  .video-space strong { font-family: var(--font-display); color: var(--color-primary-dark); font-size: 1.15rem; }
-  .video-space span { color: var(--color-muted); font-size: 0.85rem; }
+  .video-space { aspect-ratio: 16 / 9; overflow: hidden; border: 1px solid var(--color-line); border-radius: var(--radius-md); background: var(--color-bg); }
+  .video-space video { display: block; width: 100%; height: 100%; object-fit: contain; }
   figcaption { display: grid; gap: var(--space-1); padding: var(--space-3) var(--space-1) 0; color: var(--color-muted); font-size: 0.9rem; }
   figcaption strong { color: var(--color-ink); font-family: var(--font-display); font-size: 1rem; }
   .measurement-graph { margin: var(--space-5) 0; }
