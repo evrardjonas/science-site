@@ -1,10 +1,11 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
+const assetUrl = (path: string) => `${import.meta.env.BASE_URL}${path}`;
 ---
 <BaseLayout title="Ressources">
-  <section class="page-intro container"><p class="eyebrow">Cours et documents</p><h1>Ressources</h1><p>Cette section accueillera les séquences, dossiers, fiches et documents à télécharger.</p></section>
-  <section class="placeholder-grid container" aria-label="Structure prévue">
-    <article class="placeholder-card"><span>01</span><h2>Par thème</h2><p>Un classement transversal pour retrouver rapidement une notion.</p></article>
-    <article class="placeholder-card"><span>02</span><h2>Par niveau</h2><p>Un accès direct aux documents adaptés à chaque classe.</p></article>
+  <section class="page-intro container"><p class="eyebrow">Cours et documents</p><h1>Ressources</h1><p>Les notes de cours complètent les expériences et la simulation. Elles réunissent les définitions, les schémas et les calculs nécessaires pour travailler sur les ondes.</p></section>
+  <section class="placeholder-grid container" aria-label="Ressources disponibles">
+    <article class="placeholder-card"><span>01</span><h2>Les propriétés des ondes</h2><p>Un chapitre en français sur la superposition, les modes stationnaires, les tubes ouverts et fermés, les harmoniques et les interférences. Il contient des exemples résolus et des exercices.</p><a href={assetUrl('media/scienteens/wave-properties-course-notes.pdf')} target="_blank" rel="noreferrer">Lire les notes de cours (PDF)</a></article>
+    <article class="placeholder-card"><span>02</span><h2>Les expériences sur le son</h2><p>Vidéos, animations et résultats du tube de Kundt. Le parcours relie les observations sur un ressort à la mesure de la vitesse du son dans l’air.</p><a href={`${import.meta.env.BASE_URL}scienteens-lab/`}>Ouvrir le parcours de l’atelier</a></article>
   </section>
 </BaseLayout>

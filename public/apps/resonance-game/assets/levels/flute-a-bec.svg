@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 160" role="img">
+  <title>Recorder with a labium opening and an open far end</title>
+  <g fill="#1C2A48" stroke="#C9B37A" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+    
+<path d="M29 64H174L207 69V98L174 101H29Z"/>
+<path d="M29 64L44 76L29 82Z"/>
+<path d="M56 63H74V79H56Z"/>
+<circle cx="100" cy="83" r="4"/><circle cx="124" cy="83" r="4"/><circle cx="148" cy="83" r="4"/>
+<ellipse cx="207" cy="84" rx="7" ry="15"/>
+
+  </g>
+</svg>

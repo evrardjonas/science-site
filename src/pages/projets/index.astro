@@ -1,10 +1,11 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 ---
 <BaseLayout title="Projets">
-  <section class="page-intro container"><p class="eyebrow">Du laboratoire à la classe</p><h1>Projets</h1><p>Les ateliers, prototypes et recherches en cours disposeront ici de leur propre espace.</p></section>
-  <section class="placeholder-grid container" aria-label="Structure prévue">
-    <article class="placeholder-card"><span>01</span><h2>Ateliers</h2><p>Présenter le dispositif, les objectifs et les résultats obtenus.</p></article>
-    <article class="placeholder-card"><span>02</span><h2>Recherche</h2><p>Partager une méthode, des données et les pistes encore ouvertes.</p></article>
+  <section class="page-intro container"><p class="eyebrow">Du laboratoire à la classe</p><h1>Projets</h1><p>Des dispositifs et des simulations pour faire observer un phénomène, puis construire son explication en classe.</p></section>
+  <section class="placeholder-grid container" aria-label="Projets disponibles">
+    <article class="placeholder-card"><span>01</span><h2>Mesurer la vitesse du son</h2><p>L’atelier part des expériences de Mersenne. Un ressort permet d’étudier la propagation et la réflexion, puis le tube de Kundt donne une mesure de la longueur d’onde.</p><a href={`${base}/scienteens-lab/`}>Découvrir l’atelier et ses résultats</a></article>
+    <article class="placeholder-card"><span>02</span><h2>Wave Lab</h2><p>Des simulations pour étudier les ondes. La simulation de corde tendue permet déjà de varier la fréquence, de repérer les nœuds et de comparer les modes stationnaires.</p><a href={`${base}/simulations/`}>Essayer la simulation</a><p><a href="https://github.com/evrardjonas/wave-lab" target="_blank" rel="noreferrer">Consulter le code du projet</a></p></article>
   </section>
 </BaseLayout>

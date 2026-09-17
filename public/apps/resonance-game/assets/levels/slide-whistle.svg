@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 160" role="img">
+  <title>Slide whistle with a piston closing one end</title>
+  <g fill="#1C2A48" stroke="#5EC8D8" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+    
+<path d="M27 67H185V96H27Z"/>
+<path d="M28 67L45 79L28 85Z"/>
+<path d="M145 67V96M147 81H217M215 70V92" fill="none"/>
+<path d="M57 65H72V78H57Z"/>
+
+  </g>
+</svg>

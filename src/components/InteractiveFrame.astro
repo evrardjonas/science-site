@@ -1,12 +1,13 @@
 ---
-interface Props { src: string; title: string; height?: string; allowFullscreen?: boolean; }
-const { src, title, height = '42rem', allowFullscreen = true } = Astro.props;
+interface Props { src: string; title: string; height?: string; allowFullscreen?: boolean; lang?: 'fr' | 'en'; }
+const { src, title, height = '42rem', allowFullscreen = true, lang = 'fr' } = Astro.props;
+const openLabel = lang === 'en' ? 'Open in a new tab' : 'Ouvrir dans un nouvel onglet';
 ---
 
 <section class="interactive-frame" style={`--frame-height: ${height}`}>
   <div class="frame-toolbar">
     <strong>{title}</strong>
-    <a href={src} target="_blank" rel="noreferrer">Ouvrir séparément <span aria-hidden="true">↗</span></a>
+    <a href={src} target="_blank" rel="noreferrer">{openLabel} <span aria-hidden="true">↗</span></a>
   </div>
   <iframe src={src} title={title} loading="lazy" allowfullscreen={allowFullscreen} sandbox="allow-scripts allow-same-origin allow-forms allow-pointer-lock allow-popups"></iframe>
 </section>

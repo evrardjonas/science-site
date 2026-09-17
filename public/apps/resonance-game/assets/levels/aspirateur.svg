@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 160" role="img">
+  <title>A hose with two open ends</title>
+  <g fill="#1C2A48" stroke="#6B7A8F" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+    
+<path d="M37 115C45 33 115 39 137 98C150 137 203 120 203 49L223 49C223 152 151 158 119 106C97 68 63 64 57 119Z"/>
+<ellipse cx="47" cy="116" rx="10" ry="7"/>
+<ellipse cx="213" cy="49" rx="10" ry="7"/>
+<path d="M55 73L70 87M78 56L87 76M103 63L112 82M128 99L147 90M147 128L158 109M174 132L175 112M196 114L185 98M213 81L194 77" fill="none"/>
+
+  </g>
+</svg>

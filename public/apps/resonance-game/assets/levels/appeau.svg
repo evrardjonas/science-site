@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 160" role="img">
+  <title>Reed call with a mouthpiece and an open outlet</title>
+  <g fill="#1C2A48" stroke="#8FBF6B" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+    
+<path d="M32 66H67L90 60H171L207 69V94L171 102H90L67 95H32Z"/>
+<ellipse cx="207" cy="81" rx="7" ry="13"/>
+<path d="M43 80H81M98 62V99M150 61V101" fill="none"/>
+
+  </g>
+</svg>

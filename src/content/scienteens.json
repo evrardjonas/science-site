@@ -1,19 +1,19 @@
 {
   "meta": {
     "title": "Scienteens Lab · From Mersenne to Kundt",
-    "description": "A physics workshop for students around age 15: historical experiments, wave propagation, musical instruments and a measurement of the speed of sound with a Kundt tube."
+    "description": "A sound workshop for students around age 15: follow a wave in a spring, explore standing waves and measure the speed of sound with a Kundt tube."
   },
   "hero": {
     "eyebrow": "Scienteens Lab · Interview workshop",
     "title": "The Kundt tube workshop",
-    "introduction": "How can we measure the speed of sound? We start with Mersenne’s cannon and echo experiments, then examine how a disturbance travels through a spring and through air. Reflection and standing waves lead us to musical instruments and, finally, to a wavelength measurement in a Kundt tube."
+    "introduction": "A distant cannon flashes before we hear it. How can that delay tell us the speed of sound? We begin with Mersenne’s experiments, use a spring to see how a wave travels, then measure a wavelength in a Kundt tube."
   },
   "interview": {
     "id": "interview",
     "tab": "Interview",
     "eyebrow": "Interview · Acoustics",
     "title": "From Mersenne to Kundt",
-    "summary": "The workshop follows five questions: how fast does sound travel, what is sound, how does a wave propagate, which standing waves fit a tube, and how can their wavelength give us the speed of sound?",
+    "summary": "Students follow a disturbance, identify standing waves and use the spacing between their nodes to measure the speed of sound.",
     "facts": [
       {
         "label": "Audience",
@@ -25,7 +25,7 @@
       },
       {
         "label": "Central question",
-        "value": "What is sound, and how does it propagate?"
+        "value": "What travels when sound propagates?"
       },
       {
         "label": "Final measurement",
@@ -39,11 +39,11 @@
         "eyebrow": "History · The seventeenth century",
         "title": "Measuring the speed of sound",
         "paragraphs": [
-          "Why do we see lightning before hearing thunder? A similar delay can be observed when a distant cannon fires: we see the flash, then hear the report. The farther away the cannon is, the longer we wait for the sound. Sound therefore takes time to travel. If we know the distance and can measure this delay, we can calculate its speed.",
-          "Marin Mersenne investigated this question in the seventeenth century, alongside his work on vibrating strings and music. In 1628, he asked a captain involved in the siege of La Rochelle to compare the flash of a cannon with the arrival of its sound. The flash marked the instant of firing, and the report marked the arrival of the sound. At these distances, the travel time of light is negligible compared with that of sound.",
-          "Let D be the distance between the cannon and the observer, and Δt the measured delay. The speed is then v = D / Δt. Obtaining these two measurements was difficult: the distance had to be known, and the delay could be short. Mersenne also used echoes and estimated elapsed time by counting his pulse. For an echo from a wall at distance D, the sound travels to the wall and back. The distance to use in the calculation is therefore 2D.",
-          "Mersenne described his investigations in Harmonie universelle, published in 1636. His measurements did not all give the same result. How accurately could he measure the distance? How accurately could he time the delay? A measured speed depends on both. We can examine his method by identifying these uncertainties and asking whether repeating the experiment would reduce them.",
-          "A Kundt tube allows us to measure the speed of sound over a much shorter distance. We will measure a wavelength and use a known frequency, rather than time a distant cannon report. To understand this method, we first need to examine what travels through the air between the source and the observer."
+          "When a distant cannon fires, we see the flash before hearing the report. Sound takes time to reach us, and the delay grows with the distance. Light travels so much faster that, for this experiment, the flash effectively marks the instant of firing.",
+          "Marin Mersenne investigated the speed of sound in the seventeenth century, alongside his work on vibrating strings and music. In Harmonie universelle, published in 1636, he described experiments with cannon fire and echoes. These methods connected a sound’s travel time with a distance that could be measured.",
+          "If the cannon is at a distance D and the sound arrives after a delay Δt, its speed is v = D / Δt. An echo needs a different distance: the sound travels to the reflecting wall and back. For a wall at distance D, the total path is 2D, so v = 2D / Δt.",
+          "A short delay is difficult to time by hand. A longer path gives a larger delay, which is easier to distinguish. The distance still has to be known: an accurate timing measurement cannot compensate for an incorrect distance.",
+          "A Kundt tube brings the experiment into the classroom. We use a known frequency and measure a wavelength, so there is no short travel time to record. Before using this method, we need to understand what a sound wave is."
         ],
         "substeps": [],
         "formulas": [
@@ -55,7 +55,7 @@
           "src": "media/scienteens/mersenne-and-petit.png",
           "alt": "Historical engraving of Mersenne and Pierre Petit looking upward beside a cannon aimed vertically.",
           "title": "Mersenne and Petit’s cannon experiment",
-          "caption": "Mersenne and Pierre Petit watch a cannonball launched vertically. The engraving concerns the motion of the projectile. In sound experiments, cannon fire supplied two signals: a flash marking the firing and a report arriving after a measurable delay.",
+          "caption": "Mersenne and Petit study the motion of a cannonball. Cannon fire also provides two signals for measuring sound speed: a flash at firing and a report heard after a delay.",
           "poster": "",
           "reducedMotionSrc": "",
           "credit": {
@@ -80,11 +80,11 @@
         "eyebrow": "The question",
         "title": "We know its speed. What is sound?",
         "paragraphs": [
-          "We have a method for measuring the speed of sound, but what is sound? When a bell rings, what happens between the bell and our ears? The bell vibrates, yet it stays where it is. We hear it at a distance. How can its motion produce a change somewhere else in the room?",
-          "This question was already being discussed in antiquity. In De Anima, Aristotle associated the production of sound with an impact and with motion of the surrounding air. His account connects an event at the source to the air through which sound is heard. We can take up the same physical question: what happens to the air when an object vibrates, and how is this motion transmitted?",
-          "A tuning fork, a loudspeaker or a string sets the surrounding material in motion. The disturbance spreads through that material. When it reaches the ear, variations in air pressure set the eardrum in motion. A microphone responds to these pressure variations and produces an electrical signal. We can therefore identify three parts of the process: a vibrating source, a medium that transmits the disturbance, and a receiver that responds to it.",
-          "Sound travels through gases, liquids and solids. The video compares its propagation over the same distance in air, water and steel. Before watching, predict whether the arrival times will be the same, and which medium will transmit sound fastest. Compare this prediction with the observations. Since the distance is the same, a shorter arrival time corresponds to a greater speed.",
-          "Sound is a mechanical wave. Its propagation requires a material whose neighbouring regions interact, so it cannot travel through a vacuum. Other kinds of waves exist: light, for example, can travel through a vacuum. To understand mechanical propagation, we will use a spring. Its deformation and the motion of its parts are large enough to follow directly."
+          "When a bell rings, the bell vibrates but stays where it is. We can hear it across the room. What happens in the air between the bell and our ears?",
+          "This question was already discussed in antiquity. In De Anima, Aristotle connected sound with an impact and the motion of air between an object and the ear. His account raises a question we can investigate experimentally: how does motion at a source produce a change at a distance?",
+          "A vibrating object disturbs the surrounding air. Pressure variations spread away from it and set the eardrum in motion when they reach the ear. A microphone also responds to pressure variations, converting them into an electrical signal that we can record.",
+          "The video compares sound travelling the same distance through air, water and steel. Before watching, predict the order of arrival. Since the distance is the same, the earliest arrival corresponds to the greatest propagation speed.",
+          "Sound is a mechanical wave: its transmission depends on interactions within a material. It can travel through gases, liquids and solids, but not through a vacuum. Light can travel through a vacuum. To examine mechanical propagation directly, we will use a spring whose motion is easy to see."
         ],
         "substeps": [],
         "formulas": [],
@@ -93,7 +93,7 @@
           "src": "media/scienteens/sound-speed-steel-water-air.mp4",
           "alt": "",
           "title": "The speed of sound depends on the medium",
-          "caption": "Predict the order of arrival, then compare the times in steel, water and air. The distance is the same in each case. What does the difference in arrival time tell us about the speed of sound in each material?",
+          "caption": "The distance is the same in all three media. Compare the arrival times to rank their sound speeds.",
           "poster": "media/scienteens/sound-speed-steel-water-air-poster.webp",
           "reducedMotionSrc": ""
         },
@@ -108,15 +108,15 @@
         "eyebrow": "Wave model",
         "title": "From a pulse to a standing wave",
         "paragraphs": [
-          "A travelling wave is a disturbance that propagates from one region to another. What is disturbed depends on the system. In a spring, we can observe a displacement of the coils. In air, sound involves variations in pressure and density. In a light wave, the varying quantities include the electric field. For a mechanical wave, the disturbance spreads because neighbouring parts of the medium interact.",
-          "With a Slinky, we can follow both a compression moving along the spring and one particular coil. These motions are different. The compression can travel from one end to the other while each coil moves only near its equilibrium position. In the ideal wave model, the material oscillates locally and energy is transmitted along the spring without the material travelling with the wave.",
-          "A single movement of the hand produces a pulse. Repeating the movement regularly produces a periodic wave, for which we can measure a frequency and a wavelength. When a wave reaches an end of the spring, it is reflected. The incident and reflected waves can then overlap and produce a standing wave, with positions that remain at rest and others that oscillate."
+          "A wave is a disturbance that propagates. In a spring, the disturbance is a change in the position of the coils. In air, sound involves changes in pressure and density. For a mechanical wave, neighbouring parts of the material exert forces on one another, allowing the disturbance to spread.",
+          "A Slinky makes two motions visible: the movement of one coil and the movement of a compression along the spring. Following them separately helps us distinguish local motion from propagation.",
+          "A brief push produces a pulse. Regular oscillation produces a periodic wave. When the wave reaches an end, it is reflected; the incident and reflected waves can overlap to form a standing wave."
         ],
         "substeps": [
           {
             "number": "3.1",
             "title": "A travelling pulse",
-            "text": "If we briefly compress one end of a stretched Slinky, will a coil travel along the spring with the compression? Make a prediction, then give one end a short push along its length. Follow the compressed region, and repeat the experiment while watching one marked coil.",
+            "text": "Give one end of a stretched Slinky a short push along its length. Before trying it, predict whether a coil will travel with the compression. Follow the compressed region, then repeat while watching one marked coil.",
             "formula": null,
             "media": [
               {
@@ -124,42 +124,42 @@
                 "src": "media/scienteens/longitudinal-slinky.gif",
                 "alt": "Animation of a hand creating a longitudinal pulse in a horizontal spring.",
                 "title": "Following a compression and a coil",
-                "caption": "Follow the compressed region as it advances along the Slinky. Then watch one coil: it moves as the pulse passes and returns close to its initial position. The compression travels along the spring while the coils move locally.",
+                "caption": "Watch one coil as the compression passes. Its motion is local; the compressed region travels along the spring.",
                 "poster": "",
                 "reducedMotionSrc": "media/scienteens/longitudinal-slinky.png"
               }
             ],
             "paragraphs": [
-              "The compressed region advances along the spring. The marked coil moves briefly, then returns close to its original position. As the pulse passes, neighbouring coils move closer together and then separate again. The disturbance is therefore a change in the spacing of the coils that is transmitted along the spring. A single, localised disturbance of this kind is called a pulse.",
-              "The coils move parallel to the direction in which the pulse propagates. This defines a longitudinal wave. Sound in air has the same type of motion: the air moves back and forth along the direction of propagation, producing regions that are more compressed and regions that are less compressed.",
-              "The moving coils have kinetic energy. Compressing or stretching the spring also stores elastic potential energy. As neighbouring sections act on one another, energy passes from one section to the next. The pulse can therefore transfer energy along the spring even though each section moves only around its initial position."
+              "The compression travels along the spring. The marked coil moves as the pulse passes, then returns near its initial position. Neighbouring coils move closer together and separate again: the changing spacing is the disturbance that propagates.",
+              "The coils move parallel to the direction of propagation. This is a longitudinal wave. Sound in air is also longitudinal: its acoustic motion is along the direction in which compressions and rarefactions travel.",
+              "The moving coils have kinetic energy, and deformation of the spring stores elastic potential energy. A moving section deforms its neighbour and exerts a force on it. Energy is passed along the spring through these interactions, while each section moves only locally."
             ]
           },
           {
             "number": "3.2",
             "title": "Sound propagation, wavelength and frequency",
-            "text": "How does compressing one section of a spring make the next section move? The compression changes the elastic forces acting on neighbouring sections. These forces accelerate the neighbouring coils, whose movement then changes the forces on the sections farther along. The disturbance propagates through this succession of local interactions.",
+            "text": "What makes the next coil move? Compressing one section changes the elastic forces on its neighbours. Their motion changes the forces farther along, so the disturbance spreads from section to section.",
             "paragraphs": [
-              "Two properties of the spring are involved. Its elasticity produces forces that oppose deformation and tend to restore the original spacing of the coils. Its sections also have mass and inertia: their velocity changes under the action of a force. The disturbance therefore takes time to spread. Its propagation speed depends on the spring and its tension; changing these can change the speed even if the hand continues to oscillate at the same frequency.",
-              "A loudspeaker produces a similar process in air. As its membrane moves forward, it compresses the air immediately in front of it. The pressure in this region rises above the surrounding pressure. The pressure difference sets neighbouring air in motion, changing the pressure and density farther away. When the membrane moves back, the nearby air expands and its pressure decreases. This region of lower pressure is called a rarefaction. Successive compressions and rarefactions propagate away from the loudspeaker.",
-              "The air has a small back-and-forth acoustic motion around its equilibrium position. It is not carried across the room with the sound. Air resists compression and has mass: its resistance to compression and its mass per unit volume both affect the propagation speed. The dots in the animation represent this collective motion in a simplified way. They do not show the random motion of individual gas molecules.",
-              "Leonhard Euler studied this transmission between neighbouring parts of a medium in work presented in 1748 and published in 1750. He considered the motion of interacting parts of an elastic medium and extended the description to many parts. A disturbance introduced in one region could then be followed as it spread through the medium. The historical question is the same as the one raised by our spring: how do local interactions produce a propagating wave?",
-              "Suppose the source now oscillates regularly. The frequency f is the number of complete oscillations per second, measured in hertz (Hz): a frequency of 100 Hz means 100 oscillations each second. The period T is the time taken for one complete oscillation, so T = 1 / f. The wavelength λ is the distance between successive points at the same stage of the oscillation, such as two neighbouring compressions or two neighbouring rarefactions.",
-              "During one period T, the wave advances by one wavelength λ. Using distance = speed × time, we obtain λ = vT. Since T = 1 / f, this becomes v = fλ. We can thus determine the propagation speed from two measurements: the number of oscillations per second and the distance over which one complete spatial repetition extends.",
-              "For sound in air under the same conditions, the speed is approximately independent of frequency over the audible range. If the source oscillates twice as often, successive compressions are separated by half the distance: the wavelength is halved. For a rounded speed of 340 m/s, a frequency of 100 Hz gives a wavelength of 3.4 m, while 200 Hz gives 1.7 m. In the Kundt tube, we will use the relation in the other direction: measure λ at a known f to find v."
+              "The spring’s elasticity tends to restore the spacing of the coils. The coils also have mass: a force changes their velocity rather than moving them instantaneously into a new position. Elasticity and inertia together determine how fast the disturbance propagates.",
+              "A loudspeaker sets up a similar transmission in air. As its membrane moves forward, it compresses the nearby air and raises its pressure. The pressure difference accelerates neighbouring air, which changes the pressure farther away. As the membrane moves back, the nearby air expands and its pressure falls. This region of lower pressure is a rarefaction. Repeated motion produces successive compressions and rarefactions.",
+              "Small portions of air move back and forth locally as the wave passes. The compression can cross the room while this acoustic motion remains close to equilibrium. The animation’s dots represent that collective motion. Individual gas molecules also have rapid random motion, which is not shown here.",
+              "In the eighteenth century, Euler studied vibrating strings mathematically by considering the motion of interacting parts. Our spring makes this transmission visible: a disturbance spreads through the forces between neighbouring sections.",
+              "For a periodic wave, frequency f counts complete oscillations per second and is measured in hertz. The period T is the time for one oscillation, so T = 1 / f. The wavelength λ is the distance between successive compressions, or between successive rarefactions.",
+              "During one period, the wave travels one wavelength. Its speed is therefore v = λ / T. Substituting T = 1 / f gives v = fλ: propagation speed equals frequency multiplied by wavelength.",
+              "For sound in air under fixed conditions, the speed is approximately the same across these frequencies. Doubling the frequency therefore halves the wavelength. In the Kundt experiment, we set the frequency and measure the wavelength to determine the speed."
             ],
             "source": {
-              "label": "François Baskevitch, Calculer la vitesse du son après Newton : le défi du jeune Euler, p. 45",
-              "url": "https://univ-montpellier3-paul-valery.hal.science/hal-03806400/document"
+              "label": "Leonhard Euler, De vibratione chordarum exercitatio",
+              "url": "https://scholarlycommons.pacific.edu/euler-works/119/"
             },
             "formula": "v = fλ",
             "media": [
               {
                 "type": "image",
                 "src": "media/scienteens/air-compression-wave.gif",
-                "alt": "Animation of a loudspeaker producing successive compressions in air molecules.",
+                "alt": "A loudspeaker produces compressions in dots representing small portions of air.",
                 "title": "A periodic disturbance in air",
-                "caption": "Watch the motion of the dots near the source, then follow a compression as it moves away. The dots oscillate locally while the compression propagates. One wavelength is the distance between two successive compressions.",
+                "caption": "The dots oscillate locally. Follow a compression as it travels away from the source; the distance to the next compression is one wavelength.",
                 "poster": "",
                 "reducedMotionSrc": "media/scienteens/wavelength-animation-still.png"
               },
@@ -168,7 +168,7 @@
                 "src": "media/scienteens/wavelength-animation.gif",
                 "alt": "Animation comparing several periodic patterns with different spatial repetitions.",
                 "title": "Different wavelengths in the same medium",
-                "caption": "Compare how many complete repetitions fit into the same distance. More repetitions correspond to a shorter wavelength. At the same propagation speed, v = fλ, so the shorter wavelength corresponds to the higher frequency.",
+                "caption": "Count the repetitions within the same distance. A shorter wavelength corresponds to a higher frequency when propagation speed is unchanged.",
                 "poster": "",
                 "reducedMotionSrc": "media/scienteens/wavelength-animation-still.png"
               }
@@ -177,7 +177,7 @@
           {
             "number": "3.3",
             "title": "Transverse waves and their graphs",
-            "text": "Now move one end of the Slinky from side to side, perpendicular to its length. The coils move perpendicular to the direction in which the disturbance propagates. This defines a transverse wave. The motion of a vibrating guitar string is another example.",
+            "text": "Move one end of the Slinky sideways, perpendicular to its length. The coils now move across the direction of propagation: this is a transverse wave. A vibrating guitar string provides another example.",
             "formula": null,
             "media": [
               {
@@ -185,7 +185,7 @@
                 "src": "media/scienteens/wave-types-synthesis.png",
                 "alt": "Diagram comparing compressions in a longitudinal wave with the sinusoidal representation of a transverse wave.",
                 "title": "Longitudinal and transverse waves",
-                "caption": "Particles oscillate parallel to propagation in a longitudinal wave and perpendicular to it in a transverse wave. Both descriptions use the same wavelength, frequency and propagation speed.",
+                "caption": "Compare the direction of local motion with the direction of propagation: parallel for a longitudinal wave, perpendicular for a transverse wave.",
                 "poster": "",
                 "reducedMotionSrc": ""
               },
@@ -194,22 +194,22 @@
                 "src": "media/scienteens/transverse-wavelength.png",
                 "alt": "Diagram showing wavelength measured horizontally between two equivalent points of a transverse wave.",
                 "title": "Measuring wavelength on a transverse wave",
-                "caption": "Measure horizontally from one crest to the next, or between other consecutive points in the same phase. This distance is one wavelength. The particles oscillate vertically while the pattern propagates horizontally.",
+                "caption": "One wavelength separates neighbouring crests. Measure it along the direction of propagation, rather than along the curved shape of the wave.",
                 "poster": "",
                 "reducedMotionSrc": ""
               }
             ],
             "paragraphs": [
-              "On a snapshot of the spring, a crest is a point of maximum displacement to one side of equilibrium, and a trough is a point of maximum displacement to the other side. The amplitude is the greatest displacement from equilibrium. Measure the wavelength along the spring between two consecutive crests or two consecutive troughs. These are equivalent points of the repeating pattern.",
-              "We can also follow one coil over time and record its displacement. This gives a different graph. A graph of displacement against position shows how the spring is deformed at one instant; it gives the wavelength. A graph of displacement against time shows how one coil oscillates; it gives the period. Always check the horizontal axis before deciding which quantity can be measured.",
-              "A sinusoidal curve can represent a sound wave too, but sound in air remains longitudinal. If the graph shows pressure against position, the height of the curve represents a pressure variation. It is not the path followed by the air. A maximum on this graph corresponds to a compression and a minimum to a rarefaction; the air moves back and forth along the direction of propagation.",
-              "Frequency and amplitude describe different properties. A higher frequency usually corresponds to a higher perceived pitch. A larger sound-pressure amplitude generally corresponds to a louder sound. On a microphone recording, the time between repetitions gives the period and hence the frequency, while the size of the recorded variation is related to the sound-pressure amplitude."
+              "On a snapshot of the spring, a crest and a trough are the greatest displacements on opposite sides of equilibrium. Amplitude is the greatest displacement from equilibrium. Wavelength is measured along the spring, from one crest to the next or from one trough to the next.",
+              "A graph against position shows the spring at one instant and lets us measure wavelength. A graph against time follows one coil and lets us measure its period. The curves can look similar, so the horizontal axis tells us which measurement is possible.",
+              "A sinusoidal curve can also represent sound pressure. Its height then gives a pressure variation, rather than a vertical movement of the air. A pressure maximum marks a compression and a minimum a rarefaction. The air’s acoustic motion is still along the direction of propagation.",
+              "For a pure tone, increasing frequency raises pitch. Increasing sound-pressure amplitude generally makes it louder. On a periodic microphone recording, the time between repetitions gives the period; the size of the signal reflects the pressure variation."
             ]
           },
           {
             "number": "3.4",
             "title": "Reflection at a fixed end",
-            "text": "What happens to an upward pulse when it reaches the end of a string? In the video, the right end is held by a clamp. Predict the direction and shape of the returning pulse, then watch the recording.",
+            "text": "The string’s right end is held by a clamp. Before watching, predict what an upward pulse will look like after it reaches this end and travels back.",
             "formula": null,
             "media": [
               {
@@ -217,7 +217,7 @@
                 "src": "media/scienteens/wave-on-string-reflection.mp4",
                 "alt": "",
                 "title": "A pulse reflected at a fixed end",
-                "caption": "Follow the pulse towards the clamp and compare its shape on the return journey. Then follow one blue point on the string as the pulse passes.",
+                "caption": "Compare the incident and reflected pulses. Follow a blue point to distinguish its local motion from the pulse’s travel.",
                 "poster": "media/scienteens/wave-on-string-reflection-poster.webp",
                 "reducedMotionSrc": "",
                 "credit": {
@@ -227,36 +227,36 @@
               }
             ],
             "paragraphs": [
-              "The source first raises the left end briefly, creating an upward pulse that travels towards the clamp. This is the incident pulse. After reaching the right end, the pulse travels back to the left, but its displacement is now downward: a crest returns as a trough. This returning disturbance is the reflected pulse. The blue points help us distinguish the two motions: each point moves up and down locally while the pulse travels along the string.",
-              "The clamp prevents the end of the string from moving. Its displacement must therefore remain zero throughout the reflection. Near the support, the incident and reflected disturbances overlap. At the support itself, their displacements are equal and opposite, so they cancel. This explains the inversion of the reflected pulse: the returning disturbance has the opposite displacement to the incoming one. The pulse also reverses its direction of propagation, so it now travels away from the clamp.",
-              "The video then shows another reflection at the left end. Once the source has returned to rest, this end also behaves as a fixed end: the downward pulse returns as an upward pulse. The setting Damping is zero, so the pulse continues travelling back and forth without progressively fading in this ideal model. On a real string, energy is gradually dissipated and the pulse becomes smaller.",
-              "Sound can also be reflected, as we hear in an echo. At the rigid, closed end of a tube, air cannot move through the wall. The boundary therefore constrains the displacement of the air. We must distinguish this displacement from pressure: a compression reflects from a rigid wall as a compression. The inversion observed on the string concerns displacement; it does not mean that a sound compression always returns as a rarefaction."
+              "The upward pulse travels towards the clamp. After reflection, it returns as a downward pulse. The pulse has reversed both its direction of travel and the sign of its displacement. The blue points continue moving locally as the pulse passes.",
+              "The clamp holds the end at zero displacement. At this point, the incident and reflected displacements must cancel. An upward incident displacement therefore requires an equal downward reflected displacement: this fixed boundary explains the inversion.",
+              "The pulse also reflects at the left end once the source has returned to rest. In this recording, damping is set to zero, so it continues travelling back and forth. On a real string, some energy is dissipated and the pulse gradually weakens.",
+              "Sound reflects too. At a rigid wall, air cannot move through the boundary, so the air displacement is constrained. Pressure behaves differently: a compression reflects as a compression. We must therefore say whether a diagram represents displacement or pressure when describing a reflection."
             ]
           },
           {
             "number": "3.5",
             "title": "Superposition and standing modes",
-            "text": "We have seen an isolated pulse return along the string. What happens if the source keeps oscillating while the reflected wave comes back? Make a prediction, then drive the Slinky regularly and change the frequency slowly. Watch whether any positions remain at equilibrium through a complete cycle.",
+            "text": "What happens when the source keeps oscillating while its reflected wave returns? Drive the Slinky regularly and vary the frequency. Look for positions that stay at equilibrium throughout a complete cycle.",
             "formula": null,
             "media": [],
             "paragraphs": [
-              "When two pulses overlap, their displacements add at each position. Displacements in the same direction reinforce one another. Displacements in opposite directions partly or completely cancel. For small disturbances, the pulses continue propagating after the overlap. This is the principle of superposition, which applies to both isolated pulses and periodic waves.",
-              "If the source oscillates continuously, the incident wave overlaps with its reflection. Two waves of the same frequency and wavelength, with equal amplitudes and travelling in opposite directions, produce an ideal standing wave. The combined pattern no longer advances along the spring. Some positions stay at rest while the sections between them continue to oscillate.",
-              "A displacement node is a position where the displacement remains zero throughout the cycle. A displacement antinode is a position where the oscillation amplitude is greatest. Between two neighbouring nodes, the section of spring moves first to one side of equilibrium, then to the other. The next section, on the other side of a node, moves in the opposite direction.",
-              "The distance between two neighbouring nodes is λ / 2. A node and its nearest antinode are separated by λ / 4. To identify a node, follow the point over a complete cycle: it must remain at equilibrium at every instant. A point that crosses equilibrium briefly can still be oscillating and is not necessarily a node.",
-              "Vary the frequency of the source. At certain frequencies, the amplitude becomes much larger. The source is then driving the spring close to one of its natural frequencies: this is resonance. The allowed standing modes depend on the length, the propagation speed and the constraints at the ends. A mode must satisfy these end conditions, which determines the wavelengths and frequencies that fit the system.",
-              "In a real spring or tube, damping dissipates energy, so the source must continue supplying energy to maintain the oscillation. The resonance does not produce an indefinitely growing amplitude. It produces a strong response that makes the spatial pattern easier to observe. Once the pattern is established, the spacing between its nodes allows us to measure the wavelength."
+              "Where two disturbances overlap, their displacements add. Displacements in the same direction reinforce each other; opposite displacements reduce or cancel each other. For small disturbances, each wave continues propagating after the overlap. This is superposition.",
+              "A continuously driven wave overlaps with its reflection. Two waves of equal amplitude, with the same frequency and wavelength, travelling in opposite directions form an ideal standing wave. Its pattern stays in place while the sections between its nodes oscillate.",
+              "A displacement node stays at zero displacement throughout the cycle. At an antinode, the oscillation amplitude is greatest. Sections on opposite sides of a node move in opposite directions.",
+              "Neighbouring nodes are separated by λ / 2. A node and its nearest antinode are separated by λ / 4. A point that briefly crosses equilibrium is not necessarily a node: follow it for a full cycle.",
+              "At certain driving frequencies, the response becomes much stronger. This is resonance: the source is driving close to one of the system’s natural frequencies. The standing modes must satisfy the constraints at both ends, so the length and end conditions determine which wavelengths fit.",
+              "A real spring loses energy through damping. Continued driving maintains the oscillation, and the response at resonance remains finite. A well-established pattern makes the nodes easier to locate and their spacing easier to measure."
             ]
           },
           {
             "number": "3.6",
             "title": "Standing waves on a guitar string",
-            "text": "Compare the two situations in Giancoli’s illustration. In (a), the string can vibrate between its two supports. In (b), a finger presses it against a fret. Which part can now vibrate, and what will happen to the note?",
+            "text": "In Giancoli’s illustration, compare the open string with the string pressed against a fret. Predict how shortening the vibrating section will change the note.",
             "paragraphs": [
-              "A stretched guitar string is approximately fixed at both ends of its vibrating length L. These ends are displacement nodes. In the simplest standing mode, one half-wavelength fits between them: λ₁ = 2L. Using v = fλ gives the fundamental frequency f₁ = vₛ / (2L). Here, vₛ is the wave speed along the string, not the speed of sound in air.",
-              "The fret provides a new support and shortens the vibrating length. If the tension and mass per unit length stay approximately unchanged, the wave speed is almost the same. A shorter wavelength then gives a higher frequency. At the twelfth fret, the vibrating length is halved, so the fundamental frequency doubles: the note rises by one octave.",
-              "How does this vibration reach our ears? The string transfers its motion through the bridge to the soundboard, which pushes on the surrounding air. Compressions and rarefactions then propagate through the air. The string moves transversely, while the audible wave in air is longitudinal. Their frequencies correspond, but their wave speeds and wavelengths differ.",
-              "The guitar illustrates two fixed displacement nodes; our closed Kundt tube has the same end constraint on air displacement."
+              "A guitar string is approximately fixed at both ends of its vibrating length L. Each end is a displacement node. In the fundamental mode, half a wavelength fits between them: λ₁ = 2L. This gives f₁ = vₛ / (2L), where vₛ is wave speed along the string.",
+              "Pressing a fret shortens the vibrating section. If tension and mass per unit length remain nearly unchanged, wave speed stays nearly the same, so the shorter wavelength produces a higher frequency. At the twelfth fret, the length is halved and the fundamental frequency doubles: the note rises by an octave.",
+              "The string transfers motion through the bridge to the soundboard, which sets the surrounding air in motion. The string’s wave is transverse; the sound wave in air is longitudinal. They share the vibration’s frequency, but their speeds and wavelengths are different.",
+              "The fixed ends determine the string’s allowed standing modes. We will use the same displacement constraint to find the modes of a tube with rigid, closed ends."
             ],
             "formula": null,
             "media": [
@@ -265,7 +265,7 @@
                 "src": "media/scienteens/giancoli-guitar-figure-12-8.png",
                 "alt": "Giancoli’s guitar illustration: (a) an open string in its fundamental standing mode; (b) a finger presses a fret and shortens the vibrating section between the fret and bridge.",
                 "title": "An open string and a fingered string",
-                "caption": "The paired curves show opposite extremes of the string’s fundamental mode. Pressing the fret shortens the vibrating section.",
+                "caption": "The two curves show opposite extremes of the fundamental mode. The fret shortens the section that can vibrate.",
                 "poster": "",
                 "reducedMotionSrc": "",
                 "credit": {
@@ -290,12 +290,12 @@
         "eyebrow": "Resonance and boundaries",
         "title": "From Chladni figures to a closed tube",
         "paragraphs": [
-          "How can we observe the pattern of a vibration when the motion itself is difficult to follow? Ernst Chladni used sand on vibrating plates and published his investigations in 1787. Drawing a bow along an edge set the plate in motion. The grains moved over its surface and formed patterns that changed with the mode of vibration.",
-          "The strongly vibrating regions disturb the sand, which tends to collect along nodal lines where the plate moves very little. A Chladni figure therefore marks positions of small displacement. Changing the excitation or the constraints changes the mode and the pattern. The plate vibrates in two dimensions. We will examine an air column in a narrow tube, where we can follow the variation mainly along one direction.",
-          "Consider an ideal tube of length L with two rigid, closed ends. Air cannot move through either wall, so there is a displacement node at each end. In the lowest non-zero mode, the distance between these end nodes is half a wavelength: L = λ₁ / 2. The next modes fit two, three and more half-wavelengths into the same length. Writing n for this number gives L = nλₙ / 2, hence λₙ = 2L / n.",
-          "From v = fλ, we obtain fₙ = nv / (2L), with n = 1, 2, 3, … . The fundamental frequency is f₁ = v / (2L), and the next resonant frequencies are its integer multiples. Before substituting numbers, predict what happens to the fundamental when the length is doubled. Then use the expression to check the prediction and calculate the change.",
-          "What does a node refer to in a sound wave? At a closed end, the air displacement is zero, but the pressure-oscillation amplitude is large. This position is a displacement node and a pressure antinode. Conversely, a displacement antinode corresponds to a pressure node in the ideal acoustic standing wave. The positions of the nodes therefore depend on whether we represent displacement or pressure.",
-          "A microphone responds to pressure variations. A large signal marks a pressure antinode, which a displacement diagram represents as a node. This lets us compare the microphone measurements with the diagrams without confusing the two quantities. In our apparatus, the loudspeaker drives a moving boundary. The two-rigid-end model is an approximation, and its predicted frequencies must be compared with the measured resonances."
+          "How can a vibration reveal its own pattern? Chladni sprinkled sand on a plate and set it vibrating with a bow. He published his investigations in 1787. The grains moved across the plate and gathered into patterns that changed with the mode.",
+          "Sand tends to leave the strongly vibrating regions and collect along nodal lines, where the plate moves very little. The plate’s vibration is two-dimensional. In a narrow tube, we can study the air’s standing-wave pattern mainly along its length.",
+          "Take an ideal tube of length L with two rigid, closed ends. Air cannot move through either wall, so each end is a displacement node. In the fundamental mode, half a wavelength fits between these nodes: L = λ₁ / 2. Higher modes fit n half-wavelengths into the same length, giving L = nλₙ / 2 and λₙ = 2L / n.",
+          "Substituting into v = fλ gives fₙ = nv / (2L), with n = 1, 2, 3, … . The resonant frequencies are integer multiples of the fundamental f₁ = v / (2L). Predict what happens to f₁ when the tube’s length doubles, then check using this expression.",
+          "At a closed end, the air cannot move, but its pressure can vary. This position is a displacement node and a pressure antinode. At a displacement antinode, the pressure variation is smallest: it is a pressure node. The two patterns have their nodes at different positions.",
+          "A microphone measures pressure variation. Its largest signal therefore identifies a pressure antinode, which corresponds to a displacement node. Our loudspeaker moves to drive the air, so the rigid-end tube is an approximate model of the apparatus. Its predicted frequencies guide the experiment; the wavelength comes from the measured spacing."
         ],
         "substeps": [],
         "formulas": [
@@ -308,14 +308,20 @@
           "src": "media/scienteens/chladni-plate-illustration.png",
           "alt": "Historical line drawing of a vibrating plate sprinkled with sand and excited with a bow.",
           "title": "Making nodal lines visible",
-          "caption": "The sand tends to leave the strongly vibrating regions and collect along nodal lines. The pattern marks positions where the plate moves very little. Changing the mode changes these lines and produces a different figure.",
+          "caption": "The sand marks nodal lines, where the plate’s motion is small. Changing the mode changes the pattern.",
           "poster": "",
           "reducedMotionSrc": ""
         },
         "source": {
           "label": "E. F. F. Chladni, Entdeckungen über die Theorie des Klanges (1787)",
           "url": "https://archive.org/details/entdeckungenuber00chla"
-        }
+        },
+        "references": [
+          {
+            "label": "OpenStax, Normal Modes of a Standing Sound Wave",
+            "url": "https://openstax.org/books/university-physics-volume-1/pages/17-4-normal-modes-of-a-standing-sound-wave"
+          }
+        ]
       },
       {
         "number": "05",
@@ -323,10 +329,10 @@
         "eyebrow": "Kundt · 1866",
         "title": "Kundt’s tube: measuring a wavelength",
         "paragraphs": [
-          "In 1866, August Kundt published a method for producing acoustic dust figures inside a tube and using them to determine the speed of sound in gases and solids. In his apparatus, a vibrating rod excited the gas in the tube. The gas motion rearranged a light powder, producing a repeated pattern along the tube. The spacing of this pattern could be measured to find the wavelength.",
+          "In 1866, August Kundt described acoustic dust figures and their use in measuring sound speed in gases and solids. A vibrating rod drove the gas in his tube, and light powder formed a repeated pattern. Measuring the spacing of this pattern gave the gas wavelength.",
           "A loudspeaker drives the air in the tube at a frequency we can control. We first find a strong resonant response, then move a microphone along the tube to locate the pressure nodes and antinodes.",
           "The microphone measures pressure oscillations. A pressure node gives a small signal; a pressure antinode gives a large one. Two neighbouring nodes are separated by half a wavelength, and the same is true of two neighbouring antinodes. We must compare positions of the same kind: a node and its nearest antinode are only a quarter-wavelength apart.",
-          "In the powder experiment, the repeated deposits also allow us to measure half a wavelength. The grains form a spatial pattern rather than tracing the motion of individual air particles. We can compare its spacing with the positions found using the microphone.",
+          "Light grains provide another way to reveal the tube’s spatial pattern. We measure the spacing between repeated deposits and compare it with the microphone measurements. The deposits show a repeated pattern; they do not trace the motion of individual air particles.",
           "For dry air at 22.8 °C, an ideal-gas calculation gives a speed of about 345 m/s. Our result is close to this value.",
           "The same method can be used with another gas. At a fixed frequency, a different wavelength means a different speed of sound. Mersenne measured a distance and a travel time; here, we measure a wavelength and use the frequency set at the source."
         ],
@@ -354,20 +360,20 @@
     "id": "resonance-game",
     "eyebrow": "Final activity",
     "title": "The Resonance Lab",
-    "description": "Choose a tube and identify its end conditions. Predict how changing its length or the driving frequency will affect the resonance, then test the change. Compare the modes to find which wavelengths fit the tube and how the resonant frequencies are related.",
+    "description": "Identify the tube’s end conditions, then find its resonances by varying frequency. Compare the modes you discover. In the Kundt activity, measure the spacing between deposits and use v = 2fd to calculate sound speed.",
     "src": "apps/resonance-game/index.html"
   },
   "other": {
     "id": "other",
-    "tab": "Other",
-    "eyebrow": "Other",
-    "title": "Supporting material",
-    "description": "I use Serway, Cutnell and Johnson, and Giancoli when preparing my physics courses. The notes below contain definitions, diagrams, worked examples and exercises on wave properties and musical instruments. In this workshop, the historical experiments give us the starting questions. We then follow the physical explanation and the calculations needed to interpret our own measurements.",
+    "tab": "Course notes",
+    "eyebrow": "Course notes",
+    "title": "Wave properties",
+    "description": "These French-language notes accompany the experiments. They explain superposition, standing waves and musical instruments, with worked examples and exercises. I use Serway, Cutnell and Johnson, and Giancoli to prepare my physics courses.",
     "resources": [
       {
         "label": "Course notes",
         "title": "Wave properties",
-        "description": "My French-language course notes on superposition, standing waves, open and closed tubes, harmonics, musical instruments and interference, with worked examples and exercises.",
+        "description": "Definitions, diagrams and exercises on standing waves, open and closed tubes, harmonics and interference.",
         "meta": "PDF · 28 pages · French",
         "href": "media/scienteens/wave-properties-course-notes.pdf"
       }

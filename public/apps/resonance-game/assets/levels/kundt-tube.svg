@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 160" role="img">
+  <title>Kundt tube with a loudspeaker and a closed end</title>
+  <g fill="#1C2A48" stroke="#5EC8D8" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+    
+<path d="M40 54H207V105H40Z"/>
+<path d="M42 48V111M207 49V110M50 62H196" fill="none"/>
+<path d="M20 60H31L42 48V111L31 99H20Z"/>
+<path d="M62 107V125H178V107" fill="none"/>
+
+  </g>
+</svg>

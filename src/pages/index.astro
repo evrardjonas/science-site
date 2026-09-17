@@ -7,10 +7,10 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
   <section class="hero container">
     <div>
       <p class="eyebrow">Physique · Comprendre · Expérimenter</p>
-      <h1>La science se construit en la mettant à l’épreuve.</h1>
-      <p class="hero-copy">Le futur point d’entrée vers des ressources, des jeux et des expériences interactives.</p>
+      <h1>Comprendre la physique par l’expérience.</h1>
+      <p class="hero-copy">Suivre une onde, chercher une résonance, mesurer la vitesse du son : retrouvez ici mes cours et les activités qui les accompagnent.</p>
       <div class="hero-actions">
-        <a class="primary-action" href={`${base}/simulations/`}>Explorer la structure</a>
+        <a class="primary-action" href={`${base}/scienteens-lab/`}>Découvrir l’atelier sur le son</a>
         <a class="secondary-action" href={`${base}/projets/`}>Voir les projets</a>
       </div>
     </div>
@@ -21,19 +21,19 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
   </section>
 
   <section class="container direction" aria-labelledby="direction-title">
-    <p class="eyebrow">Socle V0</p>
-    <h2 id="direction-title">Un contenant prêt pour les prochains contenus.</h2>
+    <p class="eyebrow">Cours et activités</p>
+    <h2 id="direction-title">Observer, essayer, puis expliquer.</h2>
     <div class="direction-grid">
-      <article><span>01</span><h3>Lire</h3><p>Des pages claires pour les cours, dossiers et explications.</p></article>
-      <article><span>02</span><h3>Observer</h3><p>Des cadres cohérents pour images, vidéos et animations.</p></article>
-      <article><span>03</span><h3>Expérimenter</h3><p>Des jeux et simulations autonomes, intégrables sans les réécrire.</p></article>
+      <article><span>01</span><h3>Lire</h3><p>Des notes de cours sur les ondes, avec des schémas, des exemples et des exercices. <a href={`${base}/ressources/`}>Consulter les ressources</a></p></article>
+      <article><span>02</span><h3>Observer</h3><p>Des vidéos et des animations pour suivre une impulsion, sa réflexion et la formation d’une onde stationnaire. <a href={`${base}/scienteens-lab/#wave-model`}>Suivre les expériences</a></p></article>
+      <article><span>03</span><h3>Expérimenter</h3><p>Cherchez les résonances d’un tube dans le jeu, ou faites varier les propriétés d’une corde dans la simulation. <a href={`${base}/jeux/`}>Essayer le jeu</a></p></article>
     </div>
   </section>
 </BaseLayout>
 
 <style>
   .hero { display: grid; min-height: calc(100vh - 4.8rem); grid-template-columns: minmax(0, 1.3fr) minmax(18rem, 0.7fr); align-items: center; gap: var(--space-6); padding-block: var(--space-7); }
-  h1 { max-width: 12ch; margin: 0; font-family: var(--font-display); font-size: clamp(3.1rem, 7.5vw, 7rem); font-weight: 760; letter-spacing: -0.065em; line-height: 0.92; }
+  h1 { max-width: 12ch; margin: 0; font-family: var(--font-display); font-size: clamp(2.7rem, 7.5vw, 7rem); font-weight: 760; letter-spacing: -0.065em; line-height: 0.92; }
   .hero-copy { max-width: 40rem; margin: var(--space-5) 0 0; color: var(--color-muted); font-size: clamp(1.05rem, 2vw, 1.28rem); }
   .hero-actions { display: flex; flex-wrap: wrap; gap: var(--space-3); margin-top: var(--space-5); }
   .hero-actions a { padding: 0.8rem 1.15rem; border-radius: var(--radius-sm); font-weight: 750; text-decoration: none; }

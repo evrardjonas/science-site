@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 160" role="img">
+  <title>Pan flute with open tops and closed bases</title>
+  <g fill="#1C2A48" stroke="#8FBF6B" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M33 33V135H49V33"/><ellipse cx="41" cy="33" rx="8" ry="4"/><path d="M56 33V123H72V33"/><ellipse cx="64" cy="33" rx="8" ry="4"/><path d="M79 33V111H95V33"/><ellipse cx="87" cy="33" rx="8" ry="4"/><path d="M102 33V99H118V33"/><ellipse cx="110" cy="33" rx="8" ry="4"/><path d="M125 33V87H141V33"/><ellipse cx="133" cy="33" rx="8" ry="4"/><path d="M148 33V75H164V33"/><ellipse cx="156" cy="33" rx="8" ry="4"/><path d="M171 33V63H187V33"/><ellipse cx="179" cy="33" rx="8" ry="4"/><path d="M28 58H202M29 67H201" fill="none"/>
+  </g>
+</svg>

@@ -3,7 +3,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 ---
 <BaseLayout title="Page introuvable">
-  <section class="page-intro container not-found"><p class="eyebrow">Erreur 404</p><h1>Cette page reste à découvrir.</h1><p>Le lien suivi n’existe pas ou a été déplacé.</p><a href={`${base}/`}>Revenir à l’accueil</a></section>
+  <section class="page-intro container not-found"><p class="eyebrow">Erreur 404</p><h1>Page introuvable</h1><p>Cette adresse ne correspond à aucune page du site. Retrouvez les cours et les activités depuis l’accueil.</p><a href={`${base}/`}>Revenir à l’accueil</a></section>
 </BaseLayout>
 <style>
   .not-found { min-height: 65vh; }

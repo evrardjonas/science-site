@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 160" role="img">
+  <title>Didgeridoo with the player’s lips at the mouth end</title>
+  <g fill="#1C2A48" stroke="#B08D57" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+    
+<path d="M57 74L211 56V104L57 88Z"/>
+<ellipse cx="211" cy="80" rx="9" ry="24"/>
+<path d="M65 74V89M115 68V95M165 61V101" fill="none"/>
+<path d="M37 38Q15 39 19 60L34 68L40 74H57V88H40L33 104V123" fill="none"/>
+<path d="M40 77H57M40 85H57" fill="none"/>
+
+  </g>
+</svg>

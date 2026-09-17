@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 160" role="img">
+  <title>A road culvert open at both ends</title>
+  <g fill="#1C2A48" stroke="#8B8F94" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+    
+<path d="M17 37H223M25 37L48 60M215 37L190 60" fill="none"/>
+<path d="M72 59L172 48C208 46 212 111 177 115L77 128Z"/>
+<ellipse cx="76" cy="94" rx="31" ry="36"/>
+<ellipse cx="177" cy="81" rx="23" ry="33" fill="none"/>
+<path d="M24 136H220" fill="none"/>
+
+  </g>
+</svg>

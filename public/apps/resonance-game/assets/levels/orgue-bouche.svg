@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 160" role="img">
+  <title>Stopped organ pipe with a closed top</title>
+  <g fill="#1C2A48" stroke="#B08D57" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M95 28V119H145V28"/><path d="M90 23H150V34H90Z"/>
+<path d="M95 119L108 141H132L145 119"/>
+<path d="M104 103H136V116H104Z"/>
+<path d="M111 141V150M129 141V150" fill="none"/>
+  </g>
+</svg>

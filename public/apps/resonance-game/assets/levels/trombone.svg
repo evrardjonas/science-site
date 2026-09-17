@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 160" role="img">
+  <title>Trombone with a mouthpiece, slide and open bell</title>
+  <g fill="#1C2A48" stroke="#B08D57" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+    
+<path d="M28 38H133Q202 38 202 86Q202 119 171 119H45Q27 119 27 104Q27 87 45 87H127" fill="none"/>
+<path d="M26 49H131Q190 49 190 86Q190 107 170 107H46" fill="none"/>
+<path d="M127 81L163 62V108L127 92Z"/><ellipse cx="163" cy="85" rx="7" ry="23"/>
+<path d="M19 32L29 38V50L19 56Z"/>
+
+  </g>
+</svg>

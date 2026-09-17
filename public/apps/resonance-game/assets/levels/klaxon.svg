@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 160" role="img">
+  <title>Horn with a driven closed base and an open bell</title>
+  <g fill="#1C2A48" stroke="#6B7A8F" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+    
+<path d="M30 61H59V99H30Z"/><path d="M59 71H111L202 43V117L111 89H59Z"/>
+<ellipse cx="202" cy="80" rx="10" ry="37"/><path d="M79 92V118H123" fill="none"/>
+
+  </g>
+</svg>

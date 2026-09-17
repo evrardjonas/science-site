@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 160" role="img">
+  <title>Bottle with an open narrow neck and a closed wide body</title>
+  <g fill="#1C2A48" stroke="#4FA3A0" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+    
+<path d="M103 25V51C102 69 75 66 73 88V131Q73 143 88 143H152Q167 143 167 131V88C165 66 138 69 137 51V25"/>
+<ellipse cx="120" cy="25" rx="17" ry="5"/>
+<path d="M82 93V126" fill="none"/>
+
+  </g>
+</svg>

@@ -825,22 +825,22 @@
   <div class="screen active" id="menuScreen">
     <div class="heading">
       <h1>Resonance — the game</h1>
-      <p>Find a tube's natural modes by sweeping its frequency. Work through the levels, from simplest to most demanding.</p>
+      <p>Vary the driving frequency to find a tube’s resonances. Compare the modes you discover as you work through the levels.</p>
     </div>
     <div class="panel">
       <div class="section-label">Sandbox</div>
       <div class="sandbox-grid">
         <div class="sandbox-mini-card ends-oo" id="sandboxOO">
           <h4>Open — Open</h4>
-          <p>All harmonics.</p>
+          <p>Two open ends.</p>
         </div>
         <div class="sandbox-mini-card ends-oc" id="sandboxOC">
           <h4>Open — Closed</h4>
-          <p>Odd harmonics.</p>
+          <p>One open end, one closed end.</p>
         </div>
         <div class="sandbox-mini-card ends-cc" id="sandboxCC">
           <h4>Closed — Closed</h4>
-          <p>Just like in the lab.</p>
+          <p>Two closed ends.</p>
         </div>
       </div>
       <div class="section-label" style="margin-top:18px;">Experiment — Kundt's Tube</div>
@@ -863,7 +863,7 @@
       <div class="level-grid" id="levelGrid"></div>
       <button class="icon-btn unlock-all-btn" id="unlockAllBtn">🔓 Unlock all levels</button>
       <div class="section-label" style="margin-top:18px;">Find the Length</div>
-      <p class="section-hint">You're given the frequency — find the tube's length. No harmonics to hunt, just a good ear.</p>
+      <p class="section-hint">You're given the frequency — find the tube's length. Adjust the length until the tube resonates.</p>
       <div class="level-grid" id="lengthLevelGrid"></div>
     </div>
   </div>
@@ -879,7 +879,7 @@
         <div class="mission-image-box" id="missionImgBox"><img class="mission-image" id="missionImg" alt=""></div>
         <div class="mission-title" id="missionTitle"></div>
       </div>
-      <div class="mission-question">Based on the drawing, what do you think about this resonator's two ends?</div>
+      <div class="mission-question">Which end conditions describe the resonator shown here?</div>
       <div class="mission-options" id="missionOptions">
         <button class="mission-opt" data-ends="OO">Open — Open</button>
         <button class="mission-opt" data-ends="OC">Open — Closed</button>
@@ -920,6 +920,7 @@
         <canvas id="tubeCanvas"></canvas>
         <div class="toast" id="toast"></div>
       </div>
+      <p class="step-hint">The curve shows air displacement along the tube. Its height represents longitudinal motion, rather than sideways movement.</p>
 
       <div class="readout-row">
         <div class="freq-block">
@@ -961,7 +962,7 @@
         <button class="step fine" data-step="10">+10</button>
       </div>
       <div class="step-hint" id="stepHint">Arrow step: <strong id="stepHintValue">1</strong> Hz</div>
-      <div class="step-hint" id="lengthHint" hidden>Tip: click the slider, then use ← → to fine-tune the length to the millimeter.</div>
+      <div class="step-hint" id="lengthHint" hidden>Tip: click the slider, then use ← → to adjust the length in 1 cm steps.</div>
 
       <div class="footer-row" id="footerRow">
         <label class="hint-toggle" id="hintRow">
@@ -1082,22 +1083,25 @@
     return fMin + 10;
   }
 
-  function nodePositions(tubeType, idx){
+  function nodePositions(tubeType, idx, ends = 'CC'){
     const positions = [];
     if (tubeType === 'OC'){
       const m = 2 * idx - 1;
       for (let k = 1; k < idx; k++) positions.push((2 * k) / m);
+    } else if (ends === 'OO'){
+      for (let k = 0; k < idx; k++) positions.push((2 * k + 1) / (2 * idx));
     } else {
       for (let k = 1; k < idx; k++) positions.push(k / idx);
     }
     return positions;
   }
 
-  function modeShape(tubeType, idx, xNorm){
+  function modeShape(tubeType, idx, xNorm, ends = 'CC'){
     if (tubeType === 'OC'){
       const m = 2 * idx - 1;
       return Math.sin(m * Math.PI * xNorm / 2);
     }
+    if (ends === 'OO') return Math.cos(idx * Math.PI * xNorm);
     return Math.sin(idx * Math.PI * xNorm);
   }
 
@@ -1107,67 +1111,67 @@
     { title: "Kundt's tube (lab)", ends: 'CC', tubeType: 'CF', L: 1.7,
       tolerance: 0.5, sigma: 3.5, modesToFind: 1, hints: true, timeLimit: null, parTime: 12,
       tint: '#5EC8D8', image: 'assets/levels/kundt-tube.svg',
-      blurb: "A rigid tube closed at both ends, just like in a physics lab session." },
+      blurb: "A tube with two closed ends. Find its first resonance." },
 
     { title: 'A transverse flute', ends: 'OO', tubeType: 'CF', L: 0.66,
       tolerance: 0.4, sigma: 3.2, modesToFind: 2, hints: true, timeLimit: null, parTime: 22,
       tint: '#C9B37A', image: 'assets/levels/flute-traversiere.svg',
-      blurb: "Open at the mouthpiece and the far end: every harmonic can resonate." },
+      blurb: "Model the air column as open at the mouth hole and the far end. Find two resonances." },
 
     { title: 'A pan flute', ends: 'OC', tubeType: 'OC', L: 0.4,
       tolerance: 0.35, sigma: 3.0, modesToFind: 2, hints: true, timeLimit: null, parTime: 25,
       tint: '#8FBF6B', image: 'assets/levels/flute-de-pan.svg',
-      blurb: "A reed closed at its base, open at the top: only odd harmonics resonate." },
+      blurb: "One pipe is closed at its base and open at the top. Compare its first two resonances." },
 
     { title: 'A clarinet', ends: 'OC', tubeType: 'OC', L: 0.6,
       tolerance: 0.3, sigma: 2.8, modesToFind: 3, hints: false, timeLimit: 100,
       tint: '#3B2A20', image: 'assets/levels/clarinette.svg',
-      blurb: "The reed closes one end of the tube; the bell stays open." },
+      blurb: "Use the closed-open approximation: the reed end is effectively closed and the bell is open." },
 
     { title: 'A road culvert', ends: 'OO', tubeType: 'CF', L: 3.0,
       tolerance: 0.25, sigma: 2.5, modesToFind: 3, hints: false, timeLimit: 90,
       tint: '#8B8F94', image: 'assets/levels/ponceau.svg',
-      blurb: "A drainage pipe under a road: open at both ends, long and low-pitched." },
+      blurb: "Both ends are open. Compare the resonances of this long pipe with those of a shorter tube." },
 
-    { title: 'A bottle', ends: 'OC', tubeType: 'OC', L: 0.22,
+    { title: 'A bottle (tube approximation)', ends: 'OC', tubeType: 'OC', L: 0.22,
       tolerance: 0.3, sigma: 2.6, modesToFind: 2, hints: false, timeLimit: 75, meterHidden: true,
       tint: '#4FA3A0', image: 'assets/levels/bouteille.svg',
-      blurb: "Blowing across the neck excites the fundamental mode — no gauge this time, trust your ear." },
+      blurb: "This challenge uses a uniform closed-open tube. A real bottle mainly behaves as a Helmholtz resonator. Find the modes by listening." },
 
-    { title: 'A didgeridoo', ends: 'OO', tubeType: 'CF', L: 1.4,
+    { title: 'A didgeridoo', ends: 'OC', tubeType: 'OC', L: 1.4,
       tolerance: 0.22, sigma: 2.3, modesToFind: 2, hints: false, timeLimit: 75, meterHidden: true,
       tint: '#7A4B2A', image: 'assets/levels/didgeridoo.svg',
-      blurb: "A long tube open at both ends. Still no gauge: listen for the sound to swell." },
+      blurb: "The player’s lips close the mouth end. Use the closed-open tube approximation and listen for resonance." },
 
     { title: 'A stopped organ pipe', ends: 'OC', tubeType: 'OC', L: 1.0,
       tolerance: 0.16, sigma: 2.0, modesToFind: 3, hints: false, timeLimit: 65,
       tint: '#B08D57', image: 'assets/levels/orgue-bouche.svg',
-      blurb: "A stopped pipe sounds an octave lower than an open pipe of the same length." },
+      blurb: "The pipe is closed at one end. Find its first three resonances and compare their spacing." },
 
     { title: 'An open organ pipe', ends: 'OO', tubeType: 'CF', L: [0.8, 2.0],
       tolerance: 0.12, sigma: 1.8, modesToFind: 3, hints: false, timeLimit: 60,
       tint: '#C9A227', image: 'assets/levels/orgue-ouvert.svg',
-      blurb: "Unknown length: track down the whole harmonic series." },
+      blurb: "The length is hidden. Find three resonances of this open pipe." },
 
     { title: 'Master resonator', ends: 'OC', tubeType: 'OC', L: [0.4, 3.0],
       tolerance: 0.08, sigma: 1.5, modesToFind: 3, hints: false, timeLimit: 90, meterHidden: true,
       tint: '#E8A33D',
-      blurb: "Extreme tolerance, no gauge: perfect pitch has to be earned." },
+      blurb: "Find three sharp resonance peaks using sound alone." },
 
     { title: 'A drinking straw', ends: 'OO', tubeType: 'CF', L: 0.19,
       tolerance: 0.07, sigma: 1.3, modesToFind: 3, hints: false, timeLimit: 70, meterHidden: true,
       tint: '#E85D9E', image: 'assets/levels/paille.svg',
-      blurb: "Very short, so very high-pitched: modes are spaced more than 800 Hz apart. No gauge." },
+      blurb: "A short tube with open ends. Listen for its high-frequency resonances." },
 
     { title: 'A vacuum cleaner hose', ends: 'OO', tubeType: 'CF', L: [1.8, 2.6],
       tolerance: 0.06, sigma: 1.2, modesToFind: 3, hints: false, timeLimit: 55, meterHidden: true,
       tint: '#6B7A8F', image: 'assets/levels/aspirateur.svg',
-      blurb: "Long, floppy, unknown length: three modes to track down by ear." },
+      blurb: "Model the hose as an open tube. Its length is hidden; find three modes by listening." },
 
     { title: 'The cathedral bourdon', ends: 'OC', tubeType: 'OC', L: [2.0, 4.0],
       tolerance: 0.05, sigma: 1.0, modesToFind: 3, hints: false, timeLimit: 50, meterHidden: true,
       tint: '#4A3B6B', image: 'assets/levels/grand-bourdon.svg',
-      blurb: "A cathedral-sized pipe, deep and oversized. Record tolerance, no gauge: the final challenge." },
+      blurb: "A long stopped pipe with low resonant frequencies. Find three modes using sound alone." },
   ];
 
   const SAVE_KEY = 'resonance_game_save_v1';
@@ -1177,6 +1181,18 @@
       if (p && typeof p.unlocked === 'number'){
         p.notebook = p.notebook || {};
         p.lengthStars = p.lengthStars || {};
+        // Keep saved results while refreshing descriptions and corrected tube models.
+        Object.entries(p.notebook).forEach(([num, entry]) => {
+          const level = LEVELS[Number(num) - 1];
+          if (!level || !entry) return;
+          if (entry.tubeType !== level.tubeType && typeof level.L === 'number'){
+            entry.fundamental = modeFreq(level.tubeType, 1, level.L);
+          }
+          Object.assign(entry, {
+            title: level.title, image: level.image, ends: level.ends,
+            tubeType: level.tubeType, tint: level.tint, sentence: level.blurb,
+          });
+        });
         return p;
       }
     }catch(e){}
@@ -1221,24 +1237,24 @@
   // tolerance/sigma are computed on level entry (see enterLengthLevel) so they stay reachable with the slider's step.
   const FINEST_L_STEP = 0.01;
   const LENGTH_LEVELS = [
-    { title: 'A slide whistle', ends: 'OO', tubeType: 'CF', tint: '#5EC8D8', image: 'assets/levels/flute-traversiere.svg',
+    { title: 'A slide whistle', ends: 'OC', tubeType: 'OC', tint: '#5EC8D8', image: 'assets/levels/slide-whistle.svg',
       targetFreq: 440, Lrange: [0.15, 1.2], timeLimit: null, parTime: 25,
-      blurb: "A slide whistle changes length to change pitch. Find L to get an A (440 Hz)." },
-    { title: 'A recorder', ends: 'OO', tubeType: 'CF', tint: '#C9B37A', image: 'assets/levels/flute-de-pan.svg',
+      blurb: "The piston closes one end. Adjust the air-column length to produce A (440 Hz)." },
+    { title: 'A recorder', ends: 'OO', tubeType: 'CF', tint: '#C9B37A', image: 'assets/levels/flute-a-bec.svg',
       targetFreq: 523.3, Lrange: [0.1, 0.9], timeLimit: null, parTime: 20,
-      blurb: "Find L to get a high C (523 Hz) on this flute, open at both ends." },
-    { title: 'A slide trombone', ends: 'OC', tubeType: 'OC', tint: '#B08D57', image: 'assets/levels/clarinette.svg',
+      blurb: "Use the open-open tube approximation. Find the length that resonates at C (523 Hz)." },
+    { title: 'A slide trombone', ends: 'OC', tubeType: 'OC', tint: '#B08D57', image: 'assets/levels/trombone.svg',
       targetFreq: 233, Lrange: [0.2, 2.2], timeLimit: 60,
-      blurb: "The slide lengthens the tube. Find L to get a B♭ (233 Hz)." },
-    { title: 'A foghorn', ends: 'OC', tubeType: 'OC', tint: '#6B7A8F', image: 'assets/levels/aspirateur.svg',
+      blurb: "This challenge uses a uniform closed-open tube to model the effect of the slide. Find its length for B♭ (233 Hz)." },
+    { title: 'A foghorn', ends: 'OC', tubeType: 'OC', tint: '#6B7A8F', image: 'assets/levels/klaxon.svg',
       targetFreq: 110, Lrange: [0.5, 3.0], timeLimit: 60,
-      blurb: "Deep and powerful. Find L to get a low A (110 Hz)." },
-    { title: 'A duck call', ends: 'OC', tubeType: 'OC', tint: '#8FBF6B', image: 'assets/levels/paille.svg',
+      blurb: "Find the length of this closed-open tube for A (110 Hz)." },
+    { title: 'A duck call', ends: 'OC', tubeType: 'OC', tint: '#8FBF6B', image: 'assets/levels/appeau.svg',
       targetFreq: 880, Lrange: [0.05, 0.5], timeLimit: 40,
-      blurb: "Very short, so very sensitive to length. Find L to get a high A (880 Hz)." },
+      blurb: "Use the closed-open tube model. Find its length for A (880 Hz)." },
     { title: 'Mystery system', ends: null, tubeType: null, tint: '#E8A33D', image: null,
       targetFreq: null, Lrange: [0.15, 2.5], timeLimit: 40,
-      blurb: "Both the tube type AND the frequency are unknown each time: the final challenge of this lab." },
+      blurb: "Identify the tube model and use the target frequency to find its length." },
   ];
 
   // ================= Game state =================
@@ -1363,17 +1379,17 @@
     return modeFreq(level.tubeType, 1, L);
   }
 
-  function modeShapeSVG(tubeType, idx, color){
+  function modeShapeSVG(tubeType, idx, color, ends){
     const left = 14, right = 146, midY = 50, amp = 28, steps = 48;
     let d = '';
     for (let i = 0; i <= steps; i++){
       const xNorm = i / steps;
       const x = left + xNorm * (right - left);
-      const y = midY - amp * modeShape(tubeType, idx, xNorm);
+      const y = midY - amp * modeShape(tubeType, idx, xNorm, ends);
       d += (i === 0 ? 'M' : 'L') + x.toFixed(1) + ',' + y.toFixed(1) + ' ';
     }
     let nodes = '';
-    nodePositions(tubeType, idx).forEach((xNorm) => {
+    nodePositions(tubeType, idx, ends).forEach((xNorm) => {
       const x = left + xNorm * (right - left);
       nodes += `<circle cx="${x.toFixed(1)}" cy="${midY}" r="3" fill="${color}"/>`;
     });
@@ -1384,12 +1400,12 @@
     </svg>`;
   }
 
-  function revealRowHTML({ tubeType, m, idx, L, f, image, tint }){
+  function revealRowHTML({ tubeType, ends, m, idx, L, f, image, tint }){
     const color = tint || '#5EC8D8';
     const objectPanel = image
       ? `<div class="reveal-panel"><div class="reveal-box"><img src="${image}" alt=""></div><span>Object</span></div>`
       : '';
-    const shapePanel = `<div class="reveal-panel"><div class="reveal-box">${modeShapeSVG(tubeType, idx, color)}</div><span>Mode n=${m}</span></div>`;
+    const shapePanel = `<div class="reveal-panel"><div class="reveal-box">${modeShapeSVG(tubeType, idx, color, ends)}</div><span>Air displacement · n=${m}</span></div>`;
     const formulaPanel = `<div class="reveal-panel formula-panel"><div class="formula">${formulaFor(tubeType, m, L, f)}</div><span>Formula</span></div>`;
     return `<div class="reveal-row">${objectPanel}${shapePanel}${formulaPanel}</div>`;
   }
@@ -1673,7 +1689,7 @@
   function showSandboxFound(r){
     const desc = `You've reached mode n = ${r.m}.`;
     const body = `<p>${desc}</p>` +
-      revealRowHTML({ tubeType: LEVEL.tubeType, m: r.m, idx: r.idx, L: LEVEL.L, f: r.f, image: SANDBOX_IMAGE[LEVEL.ends], tint: LEVEL.tint }) +
+      revealRowHTML({ tubeType: LEVEL.tubeType, ends: LEVEL.ends, m: r.m, idx: r.idx, L: LEVEL.L, f: r.f, image: SANDBOX_IMAGE[LEVEL.ends], tint: LEVEL.tint }) +
       `<p>Tube length L = ${LEVEL.L.toFixed(2)} m · speed of sound v = ${V} m/s</p>`;
     showOverlay({
       title: 'Resonance found',
@@ -1813,8 +1829,8 @@
     const qualityMsg = errPct <= 3
       ? 'Excellent — very close to the reference value.'
       : errPct <= 8
-      ? 'Correct, within the usual experimental margin of error.'
-      : 'Pretty far off — measurement imprecision explains the gap, just like in a real lab.';
+      ? 'Your result is reasonably close to the model’s reference speed.'
+      : 'Check that you selected neighbouring piles and used v = 2fΔx, with Δx in metres.';
 
     fb.innerHTML = `<p>Measured Δx ≈ ${measuredDxCm.toFixed(1)} cm → v ≈ ${v.toFixed(0)} m/s.</p><p>${qualityMsg}</p>`;
 
@@ -1842,7 +1858,7 @@
       ${trialLine}
       <p>Frequency found: <strong>${hit.f.toFixed(1)} Hz</strong> (mode n = ${hit.idx}, ${nInterior} internal node${nInterior > 1 ? 's' : ''}).</p>
       <div class="kundt-svg-wrap" id="kundtRulerWrap">${svgHtml}</div>
-      <p>Powder collects at the nodes, with a bit of scatter just like in a real experiment. <strong>Click two consecutive piles</strong> to measure Δx.</p>
+      <p>In this model, the piles mark displacement nodes. Their positions include a small random scatter. <strong>Click two consecutive piles</strong> to measure Δx.</p>
       <div class="kundt-measured">Measured Δx: <strong id="kundtMeasuredDx">—</strong></div>
       <div class="kundt-inputs">
         <label>v (m/s) <input type="number" id="kundtV" step="1"></label>
@@ -1877,7 +1893,7 @@
         <tbody>${rows}</tbody>
       </table></div>
       <p>Average of ${trials.length} measurement${trials.length > 1 ? 's' : ''}: <strong>v ≈ ${avgV.toFixed(0)} m/s</strong> (${errPct.toFixed(1)}% off the reference value, ${V} m/s).</p>
-      ${trials.length > 1 ? '<p>Just like in a real lab, averaging several independent measurements reduces the effect of individual reading errors.</p>' : ''}
+      ${trials.length > 1 ? '<p>Each measurement uses a different mode. The mean combines your three estimates of the same speed.</p>' : ''}
     `;
     showOverlay({
       title: Game.kundtMode === 'full' ? 'Experiment summary' : 'Result',
@@ -2078,7 +2094,7 @@
     function showFiche(){
       const entry = progress.notebook[levelNum];
       const tint = entry.tint || '#5EC8D8';
-      const revealHTML = revealRowHTML({ tubeType: level.tubeType, m: t1.m, idx: t1.idx, L: Lm, f: t1.f, image: null, tint });
+      const revealHTML = revealRowHTML({ tubeType: level.tubeType, ends: level.ends, m: t1.m, idx: t1.idx, L: Lm, f: t1.f, image: null, tint });
       const imageHTML = entry.image
         ? `<div class="notebook-card-image" style="background:${rgba(tint, 0.14)};"><img src="${entry.image}" alt=""></div>`
         : '';
@@ -2122,7 +2138,7 @@
     const tint = entry.tint || '#5EC8D8';
     const k = entry.tubeType === 'OC' ? 4 : 2;
     const Lm = V / (k * entry.fundamental);
-    const revealHTML = revealRowHTML({ tubeType: entry.tubeType, m: 1, idx: 1, L: Lm, f: entry.fundamental, image: null, tint });
+    const revealHTML = revealRowHTML({ tubeType: entry.tubeType, ends: entry.ends, m: 1, idx: 1, L: Lm, f: entry.fundamental, image: null, tint });
     const imageHTML = entry.image
       ? `<div class="notebook-card-image" style="background:${rgba(tint, 0.14)};"><img src="${entry.image}" alt=""></div>`
       : '';
@@ -2180,7 +2196,7 @@
     }
     if (hasNext) buttons.push({ label: 'Menu', onClick: backToMenu });
 
-    const revealHTML = revealRowHTML({ tubeType: level.tubeType, m: hit.m, idx: hit.idx, L: LEVEL.L, f: hit.f, image: level.image, tint: level.tint });
+    const revealHTML = revealRowHTML({ tubeType: level.tubeType, ends: level.ends, m: hit.m, idx: hit.idx, L: LEVEL.L, f: hit.f, image: level.image, tint: level.tint });
     showOverlay({
       title: 'Length found!',
       bodyHTML: `<p>L ≈ <strong>${LEVEL.L.toFixed(2)} m</strong> makes this tube resonate at ${hit.f.toFixed(1)} Hz (mode n=${hit.m}).</p>` +
@@ -2585,7 +2601,7 @@
 
     ctx.strokeStyle = 'rgba(255,255,255,0.08)';
     ctx.lineWidth = 1;
-    nodePositions(LEVEL.tubeType, drawMode).forEach((xNorm) => {
+    nodePositions(LEVEL.tubeType, drawMode, ends).forEach((xNorm) => {
       const x = tubeLeft + xNorm * tubeWidth;
       ctx.beginPath();
       ctx.moveTo(x, centerY - tubeHalfHeight);
@@ -2602,7 +2618,7 @@
     for (let i = 0; i <= steps; i++){
       const xNorm = i / steps;
       const x = tubeLeft + xNorm * tubeWidth;
-      const shape = modeShape(LEVEL.tubeType, drawMode, xNorm);
+      const shape = modeShape(LEVEL.tubeType, drawMode, xNorm, ends);
       const y = centerY - amp * shape * Math.cos(visualPhase * 2.6);
       if (i === 0) ctx.moveTo(x, y); else ctx.lineTo(x, y);
     }

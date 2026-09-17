@@ -1,10 +1,15 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import InteractiveFrame from '../../components/InteractiveFrame.astro';
+const assetUrl = (path: string) => `${import.meta.env.BASE_URL}${path}`;
 ---
 <BaseLayout title="Jeux">
-  <section class="page-intro container"><p class="eyebrow">Chercher en jouant</p><h1>Jeux</h1><p>Cette page présentera les missions et jeux scientifiques, avec un accès direct à chaque expérience.</p></section>
-  <section class="placeholder-grid container" aria-label="Structure prévue">
-    <article class="placeholder-card"><span>01</span><h2>Découvrir</h2><p>Prédire, essayer et construire une règle à partir du résultat.</p></article>
-    <article class="placeholder-card"><span>02</span><h2>Réinvestir</h2><p>Mobiliser les modèles physiques dans une situation nouvelle.</p></article>
+  <section class="page-intro container"><p class="eyebrow">Chercher en jouant</p><h1>Jeux</h1><p>Dans Resonance Lab, cherchez les fréquences auxquelles un tube répond le plus fortement. Comparez les modes de différents résonateurs, puis utilisez une longueur d’onde pour calculer la vitesse du son. Le jeu est en anglais.</p></section>
+  <section class="container" aria-label="Jeu Resonance Lab">
+    <InteractiveFrame src={assetUrl('apps/resonance-game/index.html')} title="Resonance Lab" />
+  </section>
+  <section class="placeholder-grid container" aria-label="Activités du jeu">
+    <article class="placeholder-card"><span>01</span><h2>Trouver les résonances</h2><p>Variez la fréquence et repérez les réponses les plus fortes. Après deux modes, essayez de prédire le suivant. Les extrémités du tube déterminent les modes autorisés.</p></article>
+    <article class="placeholder-card"><span>02</span><h2>Mesurer avec Kundt</h2><p>Trouvez un mode, mesurez l’écart d entre deux dépôts voisins et calculez λ = 2d. La fréquence f étant connue, v = fλ = 2fd. L’activité complète combine trois mesures.</p></article>
   </section>
 </BaseLayout>

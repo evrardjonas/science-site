@@ -5,22 +5,23 @@ import InteractiveFrame from '../../components/InteractiveFrame.astro';
 const assetUrl = (path: string) => `${import.meta.env.BASE_URL}${path}`;
 ---
 <BaseLayout title="Simulations">
-  <section class="page-intro container"><p class="eyebrow">Observer et manipuler</p><h1>Simulations</h1><p>Les animations et expériences interactives seront réunies ici, qu’elles soient intégrées ou ouvertes en plein écran.</p></section>
+  <section class="page-intro container"><p class="eyebrow">Observer et manipuler</p><h1>Simulations</h1><p>Faites varier un paramètre, observez la réponse et comparez-la à votre prédiction. Étudiez les modes d’une corde et la propagation du son dans l’air.</p></section>
   <section class="sim-section container" aria-labelledby="standing-waves-title">
     <p class="eyebrow">Ondes mécaniques</p>
     <h2 id="standing-waves-title">Ondes stationnaires</h2>
-    <p>Faites varier la fréquence, l’amplitude, la tension et la densité linéique d’une corde tendue pour observer la formation des ondes stationnaires et retrouver les harmoniques prédites.</p>
+    <p>Une onde se propage le long de la corde et se réfléchit à son extrémité. À certaines fréquences, un motif stationnaire apparaît : des positions bougent très peu tandis que les sections entre elles oscillent.</p>
+    <p>Choisissez une extrémité fixe avec <strong>Fixed far end</strong>. Faites varier la fréquence et cherchez un mode stationnaire. Suivez le mouvement au ralenti pour repérer les nœuds ; avec la règle, mesurez leur écart et doublez-le pour obtenir la longueur d’onde.</p>
     <InteractiveFrame src={assetUrl("simulations/standing-waves/")} title="Ondes stationnaires" />
   </section>
   <section class="sim-section container" aria-labelledby="sound-waves-title">
     <p class="eyebrow">Ondes mécaniques</p>
     <h2 id="sound-waves-title">Ondes sonores</h2>
-    <p>Comparez la propagation d'une onde plane et d'une onde sphérique, observez les compressions et raréfactions dans un champ de particules, et faites le lien avec le graphe de pression.</p>
+    <p>Suivez un point lorsqu’une compression passe. Il oscille localement tandis que la perturbation se propage. Affichez le graphe de pression pour relier ses maxima aux compressions et ses minima aux raréfactions. Comparez ensuite une onde plane et une onde sphérique.</p>
     <InteractiveFrame src={assetUrl("simulations/sound-waves/")} title="Ondes sonores" />
   </section>
-  <section class="placeholder-grid container" aria-label="Structure prévue">
-    <article class="placeholder-card"><span>01</span><h2>Intégrées</h2><p>Des simulations insérées directement dans une page pédagogique.</p></article>
-    <article class="placeholder-card"><span>02</span><h2>Autonomes</h2><p>Des applications complètes utilisables seules en classe.</p></article>
+  <section class="placeholder-grid container" aria-label="Pistes d’exploration">
+    <article class="placeholder-card"><span>01</span><h2>Fréquence et amplitude</h2><p>Changer la fréquence peut faire apparaître un autre mode. Changer l’amplitude modifie l’ampleur du mouvement, sans changer les fréquences naturelles dans ce modèle.</p></article>
+    <article class="placeholder-card"><span>02</span><h2>Les propriétés de la corde</h2><p>À vitesse identique, raccourcir la corde augmente ses fréquences naturelles. Augmenter la tension accélère la propagation ; augmenter la masse par unité de longueur la ralentit.</p></article>
   </section>
 </BaseLayout>
 

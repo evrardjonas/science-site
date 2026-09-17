@@ -92,7 +92,7 @@ const assetUrl = (path: string) => `${import.meta.env.BASE_URL}${path}`;
 
               {step.source && (
                 <a class="source-link" href={step.source.url} target="_blank" rel="noreferrer">
-                  <span>Primary source</span>
+                  <span>Source</span>
                   {step.source.label}
                   <span aria-hidden="true">↗</span>
                 </a>
@@ -100,7 +100,7 @@ const assetUrl = (path: string) => `${import.meta.env.BASE_URL}${path}`;
 
               {('references' in step ? step.references ?? [] : []).map((reference) => (
                 <a class="source-link" href={reference.url} target="_blank" rel="noreferrer">
-                  <span>Historical reference</span>
+                  <span>Reference</span>
                   {reference.label}
                   <span aria-hidden="true">↗</span>
                 </a>
@@ -137,20 +137,20 @@ const assetUrl = (path: string) => `${import.meta.env.BASE_URL}${path}`;
                   {substep.number === '3.2' && (
                     <div class="sound-waves-embed">
                       <h5>Exploring sound propagation</h5>
-                      <p>Switch between a plane wave and a spherical wave, and turn on the pressure graph to see exactly how compressions, rarefactions and the particles' own back-and-forth motion relate to each other.</p>
-                      <InteractiveFrame src={assetUrl('simulations/sound-waves/')} title="Sound Waves simulation" height="46rem" />
+                      <p>Choose a plane wave. Follow one dot as a compression passes, then compare its motion with the pressure graph. The dots move locally while the pressure pattern travels. Switch to a spherical wave and observe how the disturbance spreads from its source.</p>
+                      <InteractiveFrame src={assetUrl('simulations/sound-waves/')} title="Sound Waves simulation" height="46rem" lang="en" />
                     </div>
                   )}
 
                   {substep.number === '3.5' && (
                     <div class="standing-waves-embed">
                       <h5>Exploring the standing wave</h5>
-                      <p>The animation below represents a stretched string driven up and down at its left end. The wave travels along the string and reflects at the other end. The curve shows the transverse displacement of each position at that instant. Its horizontal coordinate locates a point along the string; its height shows how far that point is from equilibrium. A point on the string oscillates vertically while the disturbance propagates along it.</p>
-                      <p>Keep the far end set to <strong>Fixed far end</strong> and use a small driving amplitude. Before selecting the first frequency under <strong>Predicted Harmonics</strong>, predict how many oscillating sections will fit along the string. Switch on the drive with <strong>Driving on/off</strong> and let the motion build up. Select <strong>Slow</strong> to follow one section through a complete cycle, or use <strong>Pause</strong> followed by <strong>Step Forward</strong> to inspect successive positions. Look for positions that remain at equilibrium and positions that move furthest from it. The driven left end moves slightly, so it is only approximately a node.</p>
-                      <InteractiveFrame src={assetUrl('simulations/standing-waves/')} title="Standing Waves simulation" height="46rem" />
-                      <p>Select a higher harmonic and compare the number of oscillating sections. Neighbouring sections move in opposite directions. Use <strong>Show ruler</strong> to measure the distance between two neighbouring nodes: doubling this distance gives the wavelength. Follow the motion before turning on <strong>Show predicted nodes</strong>. These markers give the nodes of the nearest ideal mode; they help you compare a prediction with the motion, but they do not identify measured nodes automatically.</p>
-                      <p>Now move the driving frequency away from a resonance. Observe how the amplitude and the pattern change, then return to the resonant frequency. Change one property of the string at a time and predict the result before finding the new resonances. A shorter string has higher natural frequencies if its wave speed stays the same. Greater tension raises the wave speed, whereas greater mass per unit length lowers it. Changing the driving amplitude changes how far the string moves; it does not change the natural frequencies in this model.</p>
-                      <p>This is a transverse wave on a string. In the Kundt tube, the air oscillates along the tube and the disturbance is longitudinal. The nodes and antinodes of displacement have the same meaning in both cases. The static diagram above uses the height of a curve to represent displacement along the tube; it does not show air moving vertically.</p>
+                      <p>The left end drives a stretched string up and down. The disturbance travels along the string and reflects at the far end. The curve is a snapshot: its height shows each point’s displacement from equilibrium. Follow one point to see its local motion.</p>
+                      <p>Set the far end to <strong>Fixed far end</strong> and choose a small driving amplitude. Predict the shape of the fundamental mode, then select the first frequency under <strong>Predicted Harmonics</strong>. Turn on <strong>Driving on/off</strong> and allow the response to build. Use <strong>Slow</strong>, or <strong>Pause</strong> and <strong>Step Forward</strong>, to follow a full cycle. Find the positions that remain still and those that move most. The driven left end moves slightly and is only approximately a node.</p>
+                      <InteractiveFrame src={assetUrl('simulations/standing-waves/')} title="Standing Waves simulation" height="46rem" lang="en" />
+                      <p>Select a higher harmonic and count the oscillating sections. Watch neighbouring sections move in opposite directions. With <strong>Show ruler</strong>, measure the spacing between two neighbouring nodes and double it to find the wavelength. Locate the nodes yourself before turning on <strong>Show predicted nodes</strong>: the markers show the nearest ideal mode’s predicted positions.</p>
+                      <p>Move the frequency away from resonance and watch the response weaken or the pattern change. Then vary one string property at a time. A shorter string has higher natural frequencies at the same wave speed. Greater tension increases wave speed; greater mass per unit length decreases it. Driving amplitude changes how far the string moves, while the natural frequencies stay the same in this model.</p>
+                      <p>The simulation shows transverse motion on a string. In the tube, air oscillates along the tube’s length. The static diagram represents this longitudinal displacement using a curve: its height is a displacement value, so the air is not moving vertically.</p>
                     </div>
                   )}
                 </li>
@@ -178,7 +178,7 @@ const assetUrl = (path: string) => `${import.meta.env.BASE_URL}${path}`;
     <div class="game-shell">
       <div class="game-toolbar">
         <span>Tube resonances</span>
-        <a href={assetUrl(game.src)} target="_blank" rel="noreferrer">Open full screen <span aria-hidden="true">↗</span></a>
+        <a href={assetUrl(game.src)} target="_blank" rel="noreferrer">Play in a new tab <span aria-hidden="true">↗</span></a>
       </div>
       <iframe
         src={assetUrl(game.src)}

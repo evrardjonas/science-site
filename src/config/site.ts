@@ -1,7 +1,7 @@
 export const site = {
   name: 'Jonas · Sciences',
   shortName: 'JS',
-  description: 'Ressources, jeux et simulations pour explorer la physique.',
+  description: 'Cours de physique, expériences sur les ondes, jeux de résonance et simulations.',
   author: 'Jonas Evrard',
 };
 
