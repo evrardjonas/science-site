@@ -324,13 +324,11 @@
         "title": "Kundt’s tube: measuring a wavelength",
         "paragraphs": [
           "In 1866, August Kundt published a method for producing acoustic dust figures inside a tube and using them to determine the speed of sound in gases and solids. In his apparatus, a vibrating rod excited the gas in the tube. The gas motion rearranged a light powder, producing a repeated pattern along the tube. The spacing of this pattern could be measured to find the wavelength.",
-          "In our apparatus, a loudspeaker supplies a frequency that can be set, and a microphone measures the pressure variation at different positions along the tube. Vary the frequency slowly to find a strong response, then examine the signal along the tube. For the mode being studied, predict where pressure nodes and antinodes should occur and compare these positions with the measurements.",
-          "Let d be the distance between equivalent neighbouring positions. Two adjacent displacement nodes are separated by λ / 2. Two adjacent pressure nodes have the same spacing, as do two adjacent pressure antinodes. A pressure antinode is a position where the pressure-oscillation amplitude is greatest. Take care to compare the same kind of position: a pressure node and its nearest pressure antinode are only λ / 4 apart.",
-          "In the elementary interpretation of a dust figure, the spacing between the main repeated deposits gives half a wavelength. The grains do not directly trace the displacement of the air: their motion also depends on acoustic forces and air circulation. The powder reveals a repeated spatial pattern, whose spacing can be checked independently with the microphone.",
-          "Measure across several intervals to reduce the effect of uncertainty in locating a single position. Suppose the distance from the first chosen pressure antinode to the sixth is 0.85 m. Six positions enclose five intervals, so d = 0.85 / 5 = 0.17 m. Since d = λ / 2, the wavelength is λ = 2d = 0.34 m. Count the intervals before dividing the measured distance.",
-          "With the driving frequency known, we can calculate v = fλ. For example, f = 1000 Hz and λ = 0.34 m give v = 340 m/s. For the experiment, use the actual frequency and measured distances. Repeat the measurement and compare the speeds obtained from different modes. Uncertainty in locating the pressure antinodes produces uncertainty in λ and therefore in v.",
-          "Record the air temperature too, since the speed of sound in air depends on temperature. If the result differs from a reference value, examine the measurements and assumptions. Were equivalent positions compared? Was the frequency stable? How accurately were distances measured? Did the assumed end conditions describe the apparatus? These checks help us assess the result before attributing the difference to the gas itself.",
-          "We can repeat the experiment with a different gas. At the same driving frequency, a change in wavelength means a change in propagation speed. Mersenne estimated the speed from a distance and a travel time. Kundt’s method uses a wavelength and a frequency. Both determine how quickly a disturbance propagates, using quantities that their apparatus allows us to measure."
+          "A loudspeaker drives the air in the tube at a frequency we can control. We first find a strong resonant response, then move a microphone along the tube to locate the pressure nodes and antinodes.",
+          "The microphone measures pressure oscillations. A pressure node gives a small signal; a pressure antinode gives a large one. Two neighbouring nodes are separated by half a wavelength, and the same is true of two neighbouring antinodes. We must compare positions of the same kind: a node and its nearest antinode are only a quarter-wavelength apart.",
+          "In the powder experiment, the repeated deposits also allow us to measure half a wavelength. The grains form a spatial pattern rather than tracing the motion of individual air particles. We can compare its spacing with the positions found using the microphone.",
+          "For dry air at 22.8 °C, an ideal-gas calculation gives a speed of about 345 m/s. Our result is close to this value.",
+          "The same method can be used with another gas. At a fixed frequency, a different wavelength means a different speed of sound. Mersenne measured a distance and a travel time; here, we measure a wavelength and use the frequency set at the source."
         ],
         "substeps": [],
         "formulas": [
@@ -342,7 +340,13 @@
         "source": {
           "label": "August Kundt, On a New Kind of Acoustic Dust Figures (1866)",
           "url": "https://onlinelibrary.wiley.com/doi/10.1002/andp.18662030402"
-        }
+        },
+        "references": [
+          {
+            "label": "NASA Glenn Research Center · Speed of sound in a gas",
+            "url": "https://www1.grc.nasa.gov/beginners-guide-to-aeronautics/speed-of-sound-interactive/"
+          }
+        ]
       }
     ]
   },

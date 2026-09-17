@@ -28,8 +28,8 @@ const assetUrl = (path: string) => `${import.meta.env.BASE_URL}${path}`;
     <h4 id="kundt-measurement-title">Measurement</h4>
     <p>{spacing}</p>
     <p>{powder}</p>
-    <p>The measurements below were taken at an air temperature of {measurements.airTemperatureC.toFixed(1)} °C, using a {measurements.tubeLengthM.toFixed(2)} m tube closed at both ends. The driving frequencies were chosen from the calculated modes of this tube: fₙ = n v₀ / (2L), with a reference speed v₀ = {measurements.referenceSpeedMS.toFixed(0)} m/s. The frequency is the quantity we set; the wavelength is determined from the distances we measure.</p>
-    <p>For each mode, the reported distance d is the mean of the measured distances between neighbouring nodes. Since two neighbouring nodes are separated by half a wavelength, λ = 2d. For mode 2, d = 50.5 cm gives λ = 1.010 m. Each point combines the frequency selected at the source with a wavelength calculated from the measured spacings.</p>
+    <p>We used a {measurements.tubeLengthM.toFixed(2)} m tube closed at both ends, with air at {measurements.airTemperatureC.toFixed(1)} °C. The frequencies for modes 2 to 5 were taken from the calculated modes of this tube, using a reference speed of {measurements.referenceSpeedMS.toFixed(0)} m/s.</p>
+    <p>For each mode, we measured the distances between neighbouring nodes and took their mean, d. The wavelength is twice this mean: λ = 2d. For mode 2, the measured spacing of {measurements.readings[0].meanNodeSpacingCm.toFixed(1)} cm therefore gives a wavelength of {(2 * measurements.readings[0].meanNodeSpacingCm / 100).toFixed(3)} m.</p>
     <figure class="video-reservation" data-kundt-stage="measurement">
       <div class="video-space">
         <strong>Measurement video</strong>
@@ -38,6 +38,10 @@ const assetUrl = (path: string) => `${import.meta.env.BASE_URL}${path}`;
       <figcaption>Identify neighbouring nodes, measure their separations and compare the mean distances for modes 2, 3, 4 and 5.</figcaption>
     </figure>
 
+  </section>
+
+  <section class="experiment-stage" aria-labelledby="kundt-results-title">
+    <h4 id="kundt-results-title">Results</h4>
     <figure class="measurement-graph" data-kundt-stage="graph">
       <picture>
         <source media="(max-width: 38rem)" srcset={assetUrl('media/scienteens/kundt-sound-speed-mobile.svg')} width="440" height="550" />
@@ -52,7 +56,7 @@ const assetUrl = (path: string) => `${import.meta.env.BASE_URL}${path}`;
       </picture>
       <figcaption>
         <strong>Driving frequency as a function of inverse wavelength</strong>
-        <span>The points use the selected frequencies and the wavelengths obtained from the measured mean spacings. The dashed line is a least-squares fit of f = v × (1/λ), constrained to pass through the origin. Its slope gives v = {regression.speedMS.toFixed(2)} m/s, with R² = {regression.rSquared.toFixed(6)}.</span>
+        <span>Each point represents one mode. The dashed line is the linear regression through the origin; its slope gives the speed of sound.</span>
       </figcaption>
     </figure>
 
@@ -78,8 +82,8 @@ const assetUrl = (path: string) => `${import.meta.env.BASE_URL}${path}`;
       </tbody>
     </table>
 
-    <p>The relation v = fλ can be written f = v × (1/λ). We therefore plot 1/λ horizontally, in m⁻¹, and f vertically, in Hz. If the sound travels at the same speed for these four frequencies, the points should lie close to a straight line passing through the origin. The slope has units of Hz divided by m⁻¹, which gives metres per second: it is the speed of sound.</p>
-    <p>Using all four points, the least-squares fit constrained to pass through the origin gives v = {regression.speedMS.toFixed(2)} m/s. We fit a proportional relation, with no constant term. The coefficient R² = {regression.rSquared.toFixed(6)} indicates how closely the points follow this line. Here R² is calculated as 1 − Σ(fᵢ − v/λᵢ)² / Σ(fᵢ − f̄)², where f̄ is the mean of the four driving frequencies.</p>
+    <p>As the frequency increases, the measured wavelength decreases. We plot the frequency f against 1/λ. Since f = v × (1/λ), the slope of this graph gives the speed of sound. The regression uses all four points and passes through the origin.</p>
+    <p>The slope gives <strong>v = {regression.speedMS.toFixed(2)} m/s</strong>. The four points lie very close to the fitted line (R² = {regression.rSquared.toFixed(6)}), so the measurements are consistent with the same speed of sound for all four frequencies.</p>
   </section>
 </div>
 
