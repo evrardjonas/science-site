@@ -1,9 +1,12 @@
 {
   "airTemperatureC": 22.8,
+  "tubeLengthM": 1.0,
+  "referenceSpeedMS": 343.0,
+  "frequencySource": "Frequencies selected from the earlier table for a 1.00 m tube closed at both ends, calculated with a reference speed of 343 m/s.",
   "readings": [
-    { "mode": 2, "meanNodeSpacingCm": 50.5 },
-    { "mode": 3, "meanNodeSpacingCm": 33.5 },
-    { "mode": 4, "meanNodeSpacingCm": 25.0 },
-    { "mode": 5, "meanNodeSpacingCm": 20.1 }
+    { "mode": 2, "frequencyHz": 343.0, "meanNodeSpacingCm": 50.5 },
+    { "mode": 3, "frequencyHz": 514.5, "meanNodeSpacingCm": 33.5 },
+    { "mode": 4, "frequencyHz": 686.0, "meanNodeSpacingCm": 25.0 },
+    { "mode": 5, "frequencyHz": 857.5, "meanNodeSpacingCm": 20.1 }
   ]
 }

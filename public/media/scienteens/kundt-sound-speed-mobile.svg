@@ -1,0 +1,193 @@
+<?xml version='1.0' encoding='utf-8'?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:ns2="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:xlink="http://www.w3.org/1999/xlink" width="316.8pt" height="396pt" viewBox="0 0 316.8 396" version="1.1">
+ <title>Driving frequency as a function of inverse measured wavelength</title><desc>mode 2: f = 343 Hz, λ = 1.010 m; mode 3: f = 514.5 Hz, λ = 0.670 m; mode 4: f = 686 Hz, λ = 0.500 m; mode 5: f = 857.5 Hz, λ = 0.402 m. Air temperature: 22.8 °C. Least-squares fit through the origin: f = v / λ, v = 344.33 m/s, centred R² = 0.999914.</desc><metadata>
+  <rdf:RDF>
+   <ns2:Work>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+    <dc:format>image/svg+xml</dc:format>
+    <dc:creator>
+     <ns2:Agent>
+      <dc:title>Matplotlib v3.10.8, https://matplotlib.org/</dc:title>
+     </ns2:Agent>
+    </dc:creator>
+   </ns2:Work>
+  </rdf:RDF>
+ </metadata>
+ <defs>
+  <style type="text/css">*{stroke-linejoin: round; stroke-linecap: butt}</style>
+ </defs>
+ <g id="figure_1">
+  <g id="patch_1">
+   <path d="M 0 396  L 316.8 396  L 316.8 0  L 0 0  z " style="fill: #fffdf8" />
+  </g>
+  <g id="axes_1">
+   <g id="patch_2">
+    <path d="M 60.192 316.8  L 304.128 316.8  L 304.128 83.16  L 60.192 83.16  z " style="fill: #fffdf8" />
+   </g>
+   <g id="matplotlib.axis_1">
+    <g id="xtick_1">
+     <g id="line2d_1" />
+     <g id="text_1">
+      <text style="font-size: 12px; font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif; text-anchor: middle; fill: #63706b" x="60.192" y="333.918125" transform="rotate(-0 60.192 333.918125)">0.0</text>
+     </g>
+    </g>
+    <g id="xtick_2">
+     <g id="line2d_2" />
+     <g id="text_2">
+      <text style="font-size: 12px; font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif; text-anchor: middle; fill: #63706b" x="103.752" y="333.918125" transform="rotate(-0 103.752 333.918125)">0.5</text>
+     </g>
+    </g>
+    <g id="xtick_3">
+     <g id="line2d_3" />
+     <g id="text_3">
+      <text style="font-size: 12px; font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif; text-anchor: middle; fill: #63706b" x="147.312" y="333.918125" transform="rotate(-0 147.312 333.918125)">1.0</text>
+     </g>
+    </g>
+    <g id="xtick_4">
+     <g id="line2d_4" />
+     <g id="text_4">
+      <text style="font-size: 12px; font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif; text-anchor: middle; fill: #63706b" x="190.872" y="333.918125" transform="rotate(-0 190.872 333.918125)">1.5</text>
+     </g>
+    </g>
+    <g id="xtick_5">
+     <g id="line2d_5" />
+     <g id="text_5">
+      <text style="font-size: 12px; font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif; text-anchor: middle; fill: #63706b" x="234.432" y="333.918125" transform="rotate(-0 234.432 333.918125)">2.0</text>
+     </g>
+    </g>
+    <g id="xtick_6">
+     <g id="line2d_6" />
+     <g id="text_6">
+      <text style="font-size: 12px; font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif; text-anchor: middle; fill: #63706b" x="277.992" y="333.918125" transform="rotate(-0 277.992 333.918125)">2.5</text>
+     </g>
+    </g>
+    <g id="text_7">
+     <text style="font-size: 12px; font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif; text-anchor: middle; fill: #17231f" x="182.16" y="349.531875" transform="rotate(-0 182.16 349.531875)">Inverse wavelength 1/λ (m⁻¹)</text>
+    </g>
+   </g>
+   <g id="matplotlib.axis_2">
+    <g id="ytick_1">
+     <g id="line2d_7">
+      <path d="M 60.192 316.8  L 304.128 316.8  " clip-path="url(#pce36672c97)" style="fill: none; stroke: #d9ddd5; stroke-width: 0.8; stroke-linecap: square" />
+     </g>
+     <g id="line2d_8" />
+     <g id="text_8">
+      <text style="font-size: 12px; font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif; text-anchor: end; fill: #63706b" x="52.192" y="321.359062" transform="rotate(-0 52.192 321.359062)">0</text>
+     </g>
+    </g>
+    <g id="ytick_2">
+     <g id="line2d_9">
+      <path d="M 60.192 270.072  L 304.128 270.072  " clip-path="url(#pce36672c97)" style="fill: none; stroke: #d9ddd5; stroke-width: 0.8; stroke-linecap: square" />
+     </g>
+     <g id="line2d_10" />
+     <g id="text_9">
+      <text style="font-size: 12px; font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif; text-anchor: end; fill: #63706b" x="52.192" y="274.631062" transform="rotate(-0 52.192 274.631062)">200</text>
+     </g>
+    </g>
+    <g id="ytick_3">
+     <g id="line2d_11">
+      <path d="M 60.192 223.344  L 304.128 223.344  " clip-path="url(#pce36672c97)" style="fill: none; stroke: #d9ddd5; stroke-width: 0.8; stroke-linecap: square" />
+     </g>
+     <g id="line2d_12" />
+     <g id="text_10">
+      <text style="font-size: 12px; font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif; text-anchor: end; fill: #63706b" x="52.192" y="227.903063" transform="rotate(-0 52.192 227.903063)">400</text>
+     </g>
+    </g>
+    <g id="ytick_4">
+     <g id="line2d_13">
+      <path d="M 60.192 176.616  L 304.128 176.616  " clip-path="url(#pce36672c97)" style="fill: none; stroke: #d9ddd5; stroke-width: 0.8; stroke-linecap: square" />
+     </g>
+     <g id="line2d_14" />
+     <g id="text_11">
+      <text style="font-size: 12px; font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif; text-anchor: end; fill: #63706b" x="52.192" y="181.175062" transform="rotate(-0 52.192 181.175062)">600</text>
+     </g>
+    </g>
+    <g id="ytick_5">
+     <g id="line2d_15">
+      <path d="M 60.192 129.888  L 304.128 129.888  " clip-path="url(#pce36672c97)" style="fill: none; stroke: #d9ddd5; stroke-width: 0.8; stroke-linecap: square" />
+     </g>
+     <g id="line2d_16" />
+     <g id="text_12">
+      <text style="font-size: 12px; font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif; text-anchor: end; fill: #63706b" x="52.192" y="134.447062" transform="rotate(-0 52.192 134.447062)">800</text>
+     </g>
+    </g>
+    <g id="ytick_6">
+     <g id="line2d_17">
+      <path d="M 60.192 83.16  L 304.128 83.16  " clip-path="url(#pce36672c97)" style="fill: none; stroke: #d9ddd5; stroke-width: 0.8; stroke-linecap: square" />
+     </g>
+     <g id="line2d_18" />
+     <g id="text_13">
+      <text style="font-size: 12px; font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif; text-anchor: end; fill: #63706b" x="52.192" y="87.719062" transform="rotate(-0 52.192 87.719062)">1000</text>
+     </g>
+    </g>
+    <g id="text_14">
+     <text style="font-size: 12px; font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif; text-anchor: middle; fill: #17231f" x="15.156375" y="199.98" transform="rotate(-90 15.156375 199.98)">Driving frequency f (Hz)</text>
+    </g>
+   </g>
+   <g id="line2d_19">
+    <path d="M 60.192 316.8  L 304.128 91.543112  L 304.128 91.543112  " clip-path="url(#pce36672c97)" style="fill: none; stroke-dasharray: 7.2,5.4; stroke-dashoffset: 0; stroke: #63706b; stroke-width: 1.8" />
+   </g>
+   <g id="patch_3">
+    <path d="M 60.192 316.8  L 60.192 83.16  " style="fill: none; stroke: #63706b; stroke-width: 0.8; stroke-linejoin: miter; stroke-linecap: square" />
+   </g>
+   <g id="patch_4">
+    <path d="M 60.192 316.8  L 304.128 316.8  " style="fill: none; stroke: #63706b; stroke-width: 0.8; stroke-linejoin: miter; stroke-linecap: square" />
+   </g>
+   <g id="PathCollection_1">
+    <defs>
+     <path id="m18590245ba" d="M 0 4.031129  C 1.069068 4.031129 2.094493 3.606384 2.850439 2.850439  C 3.606384 2.094493 4.031129 1.069068 4.031129 0  C 4.031129 -1.069068 3.606384 -2.094493 2.850439 -2.850439  C 2.094493 -3.606384 1.069068 -4.031129 0 -4.031129  C -1.069068 -4.031129 -2.094493 -3.606384 -2.850439 -2.850439  C -3.606384 -2.094493 -4.031129 -1.069068 -4.031129 0  C -4.031129 1.069068 -3.606384 2.094493 -2.850439 2.850439  C -2.094493 3.606384 -1.069068 4.031129 0 4.031129  z " style="stroke: #0d6b57" />
+    </defs>
+    <g clip-path="url(#pce36672c97)">
+     <use xlink:href="#m18590245ba" x="146.449426" y="236.66148" style="fill: #0d6b57; stroke: #0d6b57" />
+     <use xlink:href="#m18590245ba" x="190.221851" y="196.59222" style="fill: #0d6b57; stroke: #0d6b57" />
+     <use xlink:href="#m18590245ba" x="234.432" y="156.52296" style="fill: #0d6b57; stroke: #0d6b57" />
+     <use xlink:href="#m18590245ba" x="276.908418" y="116.4537" style="fill: #0d6b57; stroke: #0d6b57" />
+    </g>
+   </g>
+   <g id="text_15">
+    <text style="font-size: 10px; font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif; text-anchor: end; fill: #08483c" x="138.449426" y="226.66148" transform="rotate(-0 138.449426 226.66148)">n = 2</text>
+   </g>
+   <g id="text_16">
+    <text style="font-size: 10px; font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif; text-anchor: end; fill: #08483c" x="182.221851" y="186.59222" transform="rotate(-0 182.221851 186.59222)">n = 3</text>
+   </g>
+   <g id="text_17">
+    <text style="font-size: 10px; font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif; text-anchor: end; fill: #08483c" x="226.432" y="146.52296" transform="rotate(-0 226.432 146.52296)">n = 4</text>
+   </g>
+   <g id="text_18">
+    <text style="font-size: 10px; font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif; text-anchor: end; fill: #08483c" x="268.908418" y="106.4537" transform="rotate(-0 268.908418 106.4537)">n = 5</text>
+   </g>
+   <g id="text_19">
+    <text style="font-size: 12px; font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif; fill: #17231f" transform="translate(74.82816 103.960125)">f = v × (1/λ)</text>
+    <text style="font-size: 12px; font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif; fill: #17231f" transform="translate(74.82816 120.132937)">v = 344.33 m/s</text>
+    <text style="font-size: 12px; font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif; fill: #17231f" transform="translate(74.82816 136.30575)">R² = 0.999914</text>
+   </g>
+  </g>
+  <g id="text_20">
+   <text style="font-weight: 700; font-size: 14px; font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif; text-anchor: middle; fill: #17231f" x="158.4" y="30.437813" transform="rotate(-0 158.4 30.437813)">Frequency and inverse wavelength</text>
+  </g>
+  <g id="text_21">
+   <text style="font-size: 11px; font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif; text-anchor: middle; fill: #63706b" x="158.4" y="51.966406" transform="rotate(-0 158.4 51.966406)">Closed tube: 1.00 m | Air: 22.8 °C</text>
+  </g>
+  <g id="legend_1">
+   <g id="PathCollection_2">
+    <g>
+     <use xlink:href="#m18590245ba" x="114.112688" y="365.637187" style="fill: #0d6b57; stroke: #0d6b57" />
+    </g>
+   </g>
+   <g id="text_22">
+    <text style="font-size: 10px; font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif; text-anchor: start; fill: #17231f" x="132.112688" y="368.262187" transform="rotate(-0 132.112688 368.262187)">Measurements</text>
+   </g>
+   <g id="line2d_20">
+    <path d="M 104.112688 379.440313  L 114.112688 379.440313  L 124.112688 379.440313  " style="fill: none; stroke-dasharray: 7.2,5.4; stroke-dashoffset: 0; stroke: #63706b; stroke-width: 1.8" />
+   </g>
+   <g id="text_23">
+    <text style="font-size: 10px; font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif; text-anchor: start; fill: #17231f" x="132.112688" y="382.940313" transform="rotate(-0 132.112688 382.940313)">Linear fit through origin</text>
+   </g>
+  </g>
+ </g>
+ <defs>
+  <clipPath id="pce36672c97">
+   <rect x="60.192" y="83.16" width="243.936" height="233.64" />
+  </clipPath>
+ </defs>
+</svg>
