@@ -14,7 +14,7 @@ const assetUrl = (path: string) => `${import.meta.env.BASE_URL}${path}`;
 <div class="kundt-experiment">
   <section class="experiment-stage" aria-labelledby="kundt-demonstration-title">
     <h4 id="kundt-demonstration-title">Demonstration</h4>
-    <p>{apparatus}</p>
+    <p>The video shows mode 2. The beads rise in two distinct regions, marking the two displacement antinodes. At the displacement node in the centre, the beads remain still.</p>
     <figure class="video-reservation" data-kundt-stage="demonstration">
       <div class="video-space">
         <video controls playsinline preload="metadata" poster={assetUrl('media/scienteens/kundt-demonstration-poster.webp')} aria-label="Kundt tube demonstration with beads">
@@ -22,12 +22,13 @@ const assetUrl = (path: string) => `${import.meta.env.BASE_URL}${path}`;
           Your browser does not support embedded video.
         </video>
       </div>
-      <figcaption>Observe how the pattern changes as the driving frequency is varied, then follow one resonant mode.</figcaption>
+      <figcaption>Mode 2: two antinodes where the beads rise, separated by a central node where they remain still.</figcaption>
     </figure>
   </section>
 
   <section class="experiment-stage" aria-labelledby="kundt-measurement-title">
     <h4 id="kundt-measurement-title">Measurement</h4>
+    <p>{apparatus}</p>
     <p>{spacing}</p>
     <p>{powder}</p>
     <p>We used a {measurements.tubeLengthM.toFixed(2)} m tube closed at both ends, with air at {measurements.airTemperatureC.toFixed(1)} °C. The frequencies for modes 2 to 5 were taken from the calculated modes of this tube, using a reference speed of {measurements.referenceSpeedMS.toFixed(0)} m/s.</p>

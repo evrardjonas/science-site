@@ -2228,6 +2228,19 @@
   }
 
   // ================= Navigation =================
+  function enableCardKeyboard(card, label){
+    card.setAttribute('role', 'button');
+    card.setAttribute('aria-label', label);
+    card.tabIndex = 0;
+    card.addEventListener('keydown', (event) => {
+      if (event.target !== card) return;
+      if (event.key === 'Enter' || event.key === ' '){
+        event.preventDefault();
+        card.click();
+      }
+    });
+  }
+
   function renderLevelGrid(){
     levelGrid.innerHTML = '';
     LEVELS.forEach((level, i) => {
@@ -2236,7 +2249,8 @@
       const stars = progress.stars[num] || 0;
       const card = document.createElement('div');
       card.className = 'level-card' + (isLocked ? ' locked' : '');
-      const flags = [`<span class="level-flag">${endsLabel(level.ends)}</span>`];
+      const flags = [];
+      if (progress.notebook[num]) flags.push(`<span class="level-flag">${endsLabel(level.ends)}</span>`);
       if (level.meterHidden) flags.push('<span class="level-flag blind">no gauge</span>');
       if (level.timeLimit) flags.push(`<span class="level-flag">⏱ ${level.timeLimit}s</span>`);
       const thumb = level.image ? `<div class="level-thumb"><img src="${level.image}" alt=""></div>` : '';
@@ -2247,6 +2261,7 @@
            <div class="level-stars">${'★'.repeat(stars)}${'☆'.repeat(3 - stars)}</div>
            <div class="level-flags">${flags.join('')}</div>`;
       if (!isLocked){
+        enableCardKeyboard(card, `Level ${num}: ${level.title}`);
         card.addEventListener('click', () => {
           if (progress.notebook[num]) showLevelFicheFromMenu(num);
           else startMission(i);
@@ -2272,6 +2287,7 @@
       const stars = progress.lengthStars[num] || 0;
       const card = document.createElement('div');
       card.className = 'level-card';
+      enableCardKeyboard(card, `Find the length: ${level.title}`);
       const flags = [`<span class="level-flag">${level.ends ? endsLabel(level.ends) : 'unknown type'}</span>`];
       if (level.timeLimit) flags.push(`<span class="level-flag">⏱ ${level.timeLimit}s</span>`);
       const thumb = level.image ? `<div class="level-thumb"><img src="${level.image}" alt=""></div>` : '';
@@ -2640,6 +2656,9 @@
   }
 
   // ================= Init =================
+  [sandboxOO, sandboxOC, sandboxCC, kundtEasyCard, kundtFullCard].forEach(card => {
+    enableCardKeyboard(card, card.querySelector('h3, h4').textContent.trim());
+  });
   resizeCanvas();
   renderLevelGrid();
   renderLengthLevelGrid();
