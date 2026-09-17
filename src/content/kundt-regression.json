@@ -1,0 +1,47 @@
+{
+  "model": "f = v / lambda",
+  "throughOrigin": true,
+  "speedMS": 344.3284055242223,
+  "rSquared": 0.9999140080832776,
+  "rSquaredDefinition": "1 - sum((f - v / lambda)^2) / sum((f - mean(f))^2)",
+  "residualSumSquaresHz2": 12.646078763098613,
+  "centredSumSquaresHz2": 147061.25,
+  "points": [
+    {
+      "mode": 2,
+      "frequencyHz": 343.0,
+      "meanNodeSpacingCm": 50.5,
+      "wavelengthM": 1.01,
+      "inverseWavelengthM": 0.9900990099009901,
+      "predictedFrequencyHz": 340.9192133903191,
+      "residualHz": 2.0807866096808993
+    },
+    {
+      "mode": 3,
+      "frequencyHz": 514.5,
+      "meanNodeSpacingCm": 33.5,
+      "wavelengthM": 0.67,
+      "inverseWavelengthM": 1.4925373134328357,
+      "predictedFrequencyHz": 513.9229933197348,
+      "residualHz": 0.5770066802651854
+    },
+    {
+      "mode": 4,
+      "frequencyHz": 686.0,
+      "meanNodeSpacingCm": 25.0,
+      "wavelengthM": 0.5,
+      "inverseWavelengthM": 2.0,
+      "predictedFrequencyHz": 688.6568110484446,
+      "residualHz": -2.656811048444638
+    },
+    {
+      "mode": 5,
+      "frequencyHz": 857.5,
+      "meanNodeSpacingCm": 20.1,
+      "wavelengthM": 0.402,
+      "inverseWavelengthM": 2.487562189054726,
+      "predictedFrequencyHz": 856.5383221995579,
+      "residualHz": 0.9616778004420894
+    }
+  ]
+}
